@@ -10,6 +10,7 @@ import "./Navbar.scss";
 import { FaShoppingCart } from "react-icons/fa";
 
 import logo from "../../assets/home/logo.svg";
+
 function Navbar() {
   const context = useContext(myContext);
   const { mode, toggleMode } = context;
@@ -17,6 +18,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   const user = JSON.parse(localStorage.getItem("user"));
+  // console.log("user", user.providerUid);
 
   const logout = () => {
     localStorage.clear("user");
@@ -26,7 +28,7 @@ function Navbar() {
   const cartItems = useSelector((state) => state.cart);
 
   return (
-    <div className="bg-primary-900 sticky top-0 z-50">
+    <div className="bg-gradient-to-l from-primary-900 to-primary-500 sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
@@ -231,6 +233,17 @@ function Navbar() {
                   >
                     Home
                   </Link>
+
+                  {user?.providerUid ===
+                    import.meta.env.VITE_APP_ADMIN_EMAIL && (
+                    <Link
+                      to={"/dashboard"}
+                      className="text-sm font-medium text-white "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Dashboard
+                    </Link>
+                  )}
                   <Link
                     to={"/About"}
                     className="text-sm font-medium text-white "

@@ -47,13 +47,13 @@ function ProductCard() {
             //   (obj) =>
             //     Array.isArray(obj.price) && obj.price.includes(filterPrice)
             // )
-            // .slice(0, 8)
+            .slice(0, 4)
             .map((item, index) => {
               const { title, price, description, imageUrl, id } = item;
               return (
-                <div key={index} className="p-4  drop-shadow-sm cust-card ">
+                <div key={index} className="p-4 md:w-1/4  rounded-lg z-50 ">
                   <div
-                    className="h-full bottom-5  duration-300 ease-in-out    rounded-md bg-primary-600 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110"
+                    className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-primary-300 to-primary-400 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110"
                     style={{
                       backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                       color: mode === "dark" ? "white" : "",
@@ -69,7 +69,7 @@ function ProductCard() {
                         alt="blog"
                       />
                     </div>
-                    <div className="p-4 border-t border-opacity-20  border-gray-400">
+                    <div className="p-4 border-t border-opacity-20  ">
                       <h2
                         className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 rale-font"
                         style={{ color: mode === "dark" ? "white" : "" }}
@@ -84,7 +84,7 @@ function ProductCard() {
                       </h1>
                       {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                       <p
-                        className="leading-relaxed mb-3 w-20 py-2  bg-primary-900 rounded-lg flex items-center justify-center font-bold text-heading-color"
+                        className="leading-relaxed mb-3 w-20 py-2 bg-gradient-to-bl from-primary-500 to-primary-600 rounded-lg flex items-center justify-center font-bold text-heading-color"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         ₹ {price}

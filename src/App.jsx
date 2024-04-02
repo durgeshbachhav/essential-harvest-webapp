@@ -26,6 +26,7 @@ import UpdateProduct from "./pages/admin/page/UpdateProduct";
 import UpdateOrderStatus from "./pages/admin/page/UpdateOrderStatus";
 import { Toaster } from "sonner";
 import Allproducts from "./pages/allproducts/Allproducts";
+import ProtectedRouteForAdmin from "./pages/admin/ProtectedRouteForAdmin/ProtectedRouteForAdmin";
 
 function App() {
   return (
@@ -42,7 +43,11 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={
+            <ProtectedRoute>
+              <Cart />
+            </ProtectedRoute>
+          } />
           <Route
             path="/dashboard"
             element={
@@ -99,20 +104,6 @@ export const ProtectedRoute = ({ children }) => {
   const user = localStorage.getItem("user");
   console.log("user", user);
   if (user) {
-    return children;
-  } else {
-    return <Navigate to={"/login"} />;
-  }
-};
-
-// admin
-
-const ProtectedRouteForAdmin = ({ children }) => {
-  const admin = JSON.parse(localStorage.getItem("user"));
-
-  console.log("admin", admin);
-
-  if (admin && admin.providerUid === "sinss.durgesh@gmail.com") {
     return children;
   } else {
     return <Navigate to={"/login"} />;

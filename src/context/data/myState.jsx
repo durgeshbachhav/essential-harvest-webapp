@@ -183,7 +183,7 @@ function myState(props) {
     setLoading(true);
     const updateStatusPromise = databases.updateDocument(
       import.meta.env.VITE_APP_DATABASE_ID,
-      import.meta.env.VITE_APP_PRODUCTS_COLLECTION_ID,
+      import.meta.env.VITE_APP_ORDERS_COLLECTION_ID,
       order.id,
       {
         status: order.status,
@@ -211,10 +211,11 @@ function myState(props) {
     setLoading(true);
     const orderDataPromise = databases.listDocuments(
       import.meta.env.VITE_APP_DATABASE_ID,
-      import.meta.env.VITE_APP_PRODUCTS_COLLECTION_ID
+      import.meta.env.VITE_APP_ORDERS_COLLECTION_ID
     );
     orderDataPromise.then(
       function (response) {
+        console.log("order response", response);
         seTotalOrder(response.total);
         // Extract data from the documents
         const originalOrdersArray = response.documents.map((doc) => ({

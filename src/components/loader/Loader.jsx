@@ -1,6 +1,6 @@
 import React from "react";
 
-function Loader() {
+function  Loader() {
   return (
     <div>
       <div

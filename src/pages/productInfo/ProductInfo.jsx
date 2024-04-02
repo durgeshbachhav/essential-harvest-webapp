@@ -4,7 +4,7 @@ import myContext from "../../context/data/myContext";
 import { useParams } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { toast } from "sonner";
+import { Toaster, toast } from "sonner";
 import { addToCart } from "../../redux/cartSlice";
 import { Query } from "appwrite";
 import { databases } from "../../appwrite/appwriteConfig";
@@ -56,13 +56,19 @@ function ProductInfo() {
     setIsInCart(!!isProductInCart);
   }, [cartItems, products.$id]);
 
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const addCart = () => {
-    if (isInCart) {
-      navigate("/cart");
+    if (user) {
+      if (isInCart) {
+        navigate("/cart");
+      } else {
+        dispatch(addToCart(products));
+        navigate("/cart");
+        toast.success("Added to cart");
+      }
     } else {
-      dispatch(addToCart(products));
-      navigate("/cart");
-      toast.success("Added to cart");
+      toast.error("Please log in to add items to cart.");
     }
   };
 

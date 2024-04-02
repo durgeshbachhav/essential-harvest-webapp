@@ -75,7 +75,7 @@ function AboutSectionTwo() {
             </div>
           </div>
           <div
-            className="flex items-center justify-start gap-3 text-center px-4 rounded-lg text-sub-heading-color w-40  h-10 bg-primary-400"
+            className="flex items-center justify-start gap-3 text-center px-4 rounded-lg text-heading-color w-40  py-2 bg-primary-300 border-primary-300 border-5 cursor-pointer font-bold "
             onClick={() => navigate("/allproducts")}
           >
             Shop now

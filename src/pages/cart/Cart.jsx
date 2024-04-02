@@ -111,12 +111,12 @@ function Cart() {
       amount: parseInt(grandTotal * 100),
       currency: "INR",
       order_receipt: "order_rcptid_" + name,
-      name: "Smaira Luxe",
+      name: "Essential Harvest",
       description: "for testing purpose",
       // razorpay
       handler: function (response) {
         toast.success("Payment Successful");
-
+        console.log(response);
         const paymentId = response.razorpay_payment_id;
         // const cartItemsJsonString = JSON.stringify(cartItems);
         const addressInfoJsonString = JSON.stringify(addressInfo);
@@ -147,19 +147,23 @@ function Cart() {
           paymentId,
         };
 
+        // console.log("new order", orderInfo);
         const addPromise = databases.createDocument(
           import.meta.env.VITE_APP_DATABASE_ID,
-          import.meta.env.VITE_APP_ORDERS_COLLECTION_ID,
+          import.meta.env.VITE_APP_RELATIONSHIP_ID,
           ID.unique(),
           orderInfo
         );
         addPromise.then(
           function (response) {
+            console.log("response", response);
             clearAllCart();
             getOrderData();
             navigate("/order");
           },
-          function (error) {}
+          function (error) {
+            console.log("error", error);
+          }
         );
       },
 

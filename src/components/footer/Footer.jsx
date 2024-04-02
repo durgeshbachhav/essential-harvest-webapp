@@ -8,7 +8,7 @@ function Footer() {
   const { mode } = context;
   return (
     <div>
-      <footer className=" bg-primary-900 ">
+      <footer className=" bg-gradient-to-tr from-primary-300 to-primary-600 ">
         <div className="container px-5 py-24 mx-auto cust-footer-container">
           <div className="flex flex-wrap md:text-left text-center order-first footer-custom">
             <div className="lg:w-1/4 md:w-1/2 w-full px-4 ">
@@ -77,13 +77,13 @@ function Footer() {
         </div>
 
         <div
-          className="bg-gray-200"
+          className="bg-gradient-to-tl from-primary-50 to-primary-100"
           style={{
             backgroundColor: mode === "dark" ? "rgb(55 57 61)" : "",
             color: mode === "dark" ? "white" : "",
           }}
         >
-          <div className="px-10 bg-primary-200  py-3 mx-auto flex items-center sm:flex-row flex-col">
+          <div className="px-10   py-3 mx-auto flex items-center sm:flex-row flex-col">
             <p className="text-sm text-black sm:ml-6 sm:mt-0 mt-4">
               Copyright © 2024
               <a

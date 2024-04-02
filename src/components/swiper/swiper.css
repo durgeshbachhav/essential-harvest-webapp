@@ -19,19 +19,27 @@
   justify-content: center;
   align-items: center;
   scroll-snap-align: start;
-  background-image: linear-gradient(
-    to bottom,
-    #103d2c,
-    #02452c,
-    #015b3a,
-    #017148,
-    #048956,
-    #199963,
-    #29aa70,
-    #36bb7e,
-    #4ac98f,
-    #5dd7a0,
-    #6fe6b2,
-    #81f4c3
-  );
+}
+@keyframes floatingRose {
+  0% {
+    transform: translateY(-20%) scale(70%) rotate(100deg);
+  }
+  50% {
+    transform: translateY(-100%) scale(90%) rotate(110deg);
+  }
+  100% {
+    transform: translateY(-20%) scale(70%) rotate(100deg);
+  }
+}
+
+@keyframes rotatePetals {
+  0% {
+    transform: translateY(-20%) scale(100%) rotate(90deg);
+  }
+  50% {
+    transform: translateX(0%) scale(120%) rotate(90deg);
+  }
+  100% {
+    transform: translateY(-20%) scale(100%) rotate(90deg);
+  }
 }

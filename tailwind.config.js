@@ -21,10 +21,10 @@ export default {
           '950': '#003721',
         },
         'heading': {
-          'color': '#ffffff'
+          'color': '#000'
         },
         'sub-heading': {
-          'color': "#FBF9F1"
+          'color': "#333333"
         }
       },
 

@@ -1,10 +1,10 @@
 import React, { useContext, useRef, useEffect } from "react";
 import myContext from "../../context/data/myContext";
 
-import confirmIcon from "../../assets/home/confirmation.png";
-import deliveredIcon from "../../assets/home/delivered.png";
-import deliveryIcon from "../../assets/home/delivery.png";
-import checkoutIcon from "../../assets/home/checkout.png";
+import confirmIcon from "../../assets/home/orderConfirm.svg";
+import deliveredIcon from "../../assets/home/deliver.svg";
+import deliveryIcon from "../../assets/home/order.svg";
+import checkoutIcon from "../../assets/home/cart.svg";
 import underline from "../../assets/home/underline.png";
 import { useNavigate } from "react-router-dom";
 
@@ -95,7 +95,7 @@ function Track() {
           <div className="flex flex-wrap  text-center">
             {cardContent.map((item, index) => (
               <div key={index} className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                <div className="hover:shadow-sm hover:shadow-primary-300 flex items-center justify-center flex-col gap-3 border-1 rounded-lg bg-primary-600 px-4 py-6 h-56 hover:scale-105 ease-in-out duration-300">
+                <div className="hover:shadow-sm hover:shadow-primary-300 flex items-center justify-center flex-col gap-3 border-5 border-primary-200 rounded-lg bg-gradient-to-tl from-primary-400 to-primary-200 px-4 py-6 h-56 hover:scale-105 ease-in-out duration-300 cursor-progress">
                   <img
                     src={item.icon}
                     className="w-20 h-20 items-center"

@@ -33,10 +33,10 @@ function ProductCard() {
     <section className="w-full ">
       <div className="w-full ">
         <div className=" w-full mb-6 lg:mb-10">
-          <h1 className="sm:text-3xl text-2xl font-medium title-font mb-1 text-heading-color rale-font">
+          <h1 className="sm:text-3xl  text-2xl font-medium title-font mb-1 text-heading-color primary-font">
             Our Products
           </h1>
-          <div className="h-1 w-32 gold-primary rounded"></div>
+          <div className="h-1 w-32  rounded"></div>
         </div>
 
         <div className="flex flex-wrap -m-4">
@@ -51,9 +51,12 @@ function ProductCard() {
             .map((item, index) => {
               const { title, price, description, imageUrl, id } = item;
               return (
-                <div key={index} className="p-4 md:w-1/4  rounded-lg z-50 ">
+                <div
+                  key={index}
+                  className="p-4 md:w-1/4  rounded-lg z-50   secondary-font"
+                >
                   <div
-                    className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-primary-300 to-primary-400 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110"
+                    className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-gray-50 to-gray-200 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110 "
                     style={{
                       backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                       color: mode === "dark" ? "white" : "",
@@ -71,7 +74,7 @@ function ProductCard() {
                     </div>
                     <div className="p-4 border-t border-opacity-20  ">
                       <h2
-                        className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 rale-font"
+                        className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 primary-font"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Essential Harvest
@@ -84,7 +87,7 @@ function ProductCard() {
                       </h1>
                       {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                       <p
-                        className="leading-relaxed mb-3 w-20 py-2 bg-gradient-to-bl from-primary-500 to-primary-600 rounded-lg flex items-center justify-center font-bold text-heading-color"
+                        className="focus:outline-none text-white  font-medium text-sm px-4 py-2 w-20 bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         ₹ {price}

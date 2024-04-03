@@ -11,24 +11,24 @@ function Contact() {
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
             <div className="mb-4">
               <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12 custom-container">
-                <p className="text-2xl font-semibold  tracking-wide text-primary-900  bilbo-font">
+                <p className="text-2xl font-semibold  tracking-wide text-primary-900  primary-font">
                   Contact
                 </p>
-                <h2 className="font-heading mb-4  tracking-tight text-  text-3xl sm:text-5xl rale-font uppercase">
+                <h2 className="font-heading mb-4  tracking-tight text-  text-3xl sm:text-5xl secondary-font uppercase">
                   Get in Touch
                 </h2>
                 <img src={underline} alt="" />
               </div>
             </div>
-            <div className="flex items-stretch justify-center">
-              <div className="grid md:grid-cols-2">
+            <div className="flex items-stretch justify-center secondary-font">
+              <div className="grid md:grid-cols-2 w-full lg:px-20">
                 <div className="h-full pr-6">
                   <p className="mt-3 mb-12 text-lg text-gray-600 ">
                     Feel free to reach out to us for any query :)
                   </p>
                   <ul className="mb-6 md:mb-0">
                     <li className="flex">
-                      <div className="flex h-10 w-10 items-center justify-center  gold-primary text-gray-50">
+                      <div className="flex h-10 w-10 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500 text-gray-50">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -54,7 +54,7 @@ function Contact() {
                       </div>
                     </li>
                     <li className="flex">
-                      <div className="flex h-10 w-10 items-center justify-center  gold-primary text-gray-50">
+                      <div className="flex h-10 w-10 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500 text-gray-50">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -83,7 +83,7 @@ function Contact() {
                       </div>
                     </li>
                     <li className="flex">
-                      <div className="flex h-10 w-10 items-center justify-center  gold-primary text-gray-50">
+                      <div className="flex h-10 w-10 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500 text-gray-50">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -115,7 +115,9 @@ function Contact() {
                   </ul>
                 </div>
                 <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
-                  <h2 className="mb-4 text-2xl ">Ready to Get Started?</h2>
+                  <h2 className="mb-4 text-xl primary-font">
+                    Ready to Get Started?
+                  </h2>
                   <form id="contactForm">
                     <div className="mb-6">
                       <div className="mx-0 mb-1 sm:mb-4">
@@ -129,7 +131,7 @@ function Contact() {
                             id="name"
                             autocomplete="given-name"
                             placeholder="Your name"
-                            className="mb-2 w-full -md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                            className="bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full  text-white placeholder:text-white outline-none"
                             name="name"
                           />
                         </div>
@@ -143,7 +145,7 @@ function Contact() {
                             id="email"
                             autocomplete="email"
                             placeholder="Your email address"
-                            className="mb-2 w-full -md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                            className="bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
                             name="email"
                           />
                         </div>
@@ -159,14 +161,14 @@ function Contact() {
                           cols="30"
                           rows="5"
                           placeholder="Write your message..."
-                          className="mb-2 w-full -md border border-gray-400 py-2 pl-2 pr-4 shadow-md dark:text-gray-300 sm:mb-0"
+                          className="bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
                         ></textarea>
                       </div>
                     </div>
                     <div className="text-center">
                       <button
                         type="submit"
-                        className="w-full gold-primary text-white px-6 py-3 font-xl  sm:mb-0"
+                        className="w-full focus:outline-none text-white  font-medium text-xl  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font  px-6 py-3 font-xl  sm:mb-0"
                       >
                         Send Message
                       </button>

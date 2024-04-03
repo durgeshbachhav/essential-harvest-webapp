@@ -13,7 +13,7 @@ function UpdateOrderStatus() {
   return (
     <div>
       <div className=" flex justify-center items-center h-screen bg-primary-50 ">
-        <div className=" bg-primary-800 px-10 py-10  rounded-lg ">
+        <div className=" bg-gradient-to-tr from-primary-300 to-primary-400 border-opacity-20  px-10 py-10  rounded-lg ">
           <div className="">
             <h1 className="text-center text-white text-xl mb-4 font-bold">
               Update Order Status
@@ -22,11 +22,11 @@ function UpdateOrderStatus() {
           <div>
             <select
               id="orderStatus"
-              className=" bg-primary-600 mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-gray-200 outline-none"
+              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               value={selectedStatus}
               onChange={handleStatusChange}
             >
-              <option value="" disabled>
+              <option className="text-white bg-black" value="" disabled>
                 Select an option
               </option>
               {orderStatusOptions.map((status, index) => (
@@ -48,7 +48,7 @@ function UpdateOrderStatus() {
           <div className=" flex justify-center mb-3">
             <button
               onClick={updateOrderStatus}
-              className="focus:outline-none text-white  font-medium text-xl w-full px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800  "
+              className="focus:outline-none text-white  font-medium text-xl w-full px-4 py-2  bg-blue-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-blue-800  "
             >
               Update Status
             </button>

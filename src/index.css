@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Maven+Pro:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+.primary-font {
+  font-family: "Berkshire Swash", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.secondary-font {
+  font-family: "Maven Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.bg-nav-and-foot {
+  background-color: rgb(0, 195, 91);
+}

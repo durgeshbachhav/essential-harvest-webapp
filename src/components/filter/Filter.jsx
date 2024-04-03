@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import myContext from "../../context/data/myContext";
 import { isAllOf } from "@reduxjs/toolkit";
-import "./Filter.scss";
 
 function Filter() {
   const context = useContext(myContext);

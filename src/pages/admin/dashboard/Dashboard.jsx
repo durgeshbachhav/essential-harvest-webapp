@@ -10,7 +10,7 @@ function Dashboard() {
   const { mode, totalOrder, totalProduct } = context;
   return (
     <Layout>
-      <section className=" body-font pt-10 pb-10 bg-primary-50">
+      <section className=" body-font pt-10 pb-10 ">
         <div className="container px-5 mx-auto mb-10">
           <div className="flex flex-wrap -m-4 text-center">
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
@@ -34,7 +34,7 @@ function Dashboard() {
                   {totalProduct}
                 </h2>
                 <p
-                  className=" text-heading-color  font-bold"
+                  className=" text-heading-color primary-font  "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Total Products

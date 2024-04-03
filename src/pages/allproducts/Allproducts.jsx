@@ -40,10 +40,10 @@ function Allproducts() {
       <section className=" body-font">
         <div className="container px-5 py-8 md:py-16 mx-auto">
           <div className="lg:w-1/2 w-full mb-6 lg:mb-10">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary-500 rale-font">
+            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary-500 primary-font">
               Our Products
             </h1>
-            <div className="h-1 w-20 gold-primary rounded"></div>
+            <div className="h-1 w-40 bg-primary-500 rounded"></div>
           </div>
 
           <div className="flex flex-wrap -m-4">
@@ -66,7 +66,7 @@ function Allproducts() {
                     className="p-4 md:w-1/4  rounded-lg   "
                   >
                     <div
-                      className="h-full border-2 rounded-lg  duration-300 ease-in-out border-opacity-20  overflow-hidden cursor-pointer bg-gradient-to-t from-primary-600 to-primary-800 border-700"
+                      className="h-full border-2 rounded-lg  duration-300 ease-in-out border-opacity-20  overflow-hidden cursor-pointer bg-gradient-to-tr from-gray-50 to-gray-200 "
                       style={{
                         backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                         color: mode === "dark" ? "white" : "",
@@ -80,11 +80,11 @@ function Allproducts() {
                         />
                       </div>
                       <div className="p-5 border-t-2">
-                        <h2 className="tracking-widest text-xs title-font font-medium text-sub-heading-color mb-1 rale-font">
+                        <h2 className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 primary-font">
                           Essential Harvest
                         </h2>
                         <h1
-                          className="title-font text-lg font-medium text-gray-900 mb-3 rale-font"
+                          className="title-font text-lg font-medium text-heading-color mb-3 secondary-font"
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
                           {title}
@@ -92,7 +92,7 @@ function Allproducts() {
                         {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                         <div className="flex items-center justify-between">
                           <p
-                            className="leading-relaxed mb-3 rale-font"
+                            className="leading-relaxed mb-3 secondary-font"
                             style={{ color: mode === "dark" ? "white" : "" }}
                           >
                             ₹{price}
@@ -100,7 +100,7 @@ function Allproducts() {
                           <div className=" flex justify-center">
                             <button
                               type="button"
-                              className="focus:outline-none text-white  font-medium text-sm w-full px-2 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 "
+                              className="focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
                             >
                               Order Now
                             </button>

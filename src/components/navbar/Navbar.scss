@@ -1,25 +1,28 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Mr+De+Haviland&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bilbo+Swash+Caps&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Maven+Pro:wght@400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap");
+berkshire-swash-bold .primary-font {
+  font-family: "Berkshire Swash", serif;
+  font-weight: 700;
+  font-style: normal;
+}
 
-.gold-primary {
-  background-color: #3cff00;
-  background: linear-gradient(90deg, #6cfe80 0%, #4cc348 100%) !important;
+.maven-pro-font {
+  font-family: "Maven Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
-.text-primary {
-  color: #e6c361;
-}
+
 .nav-light {
   background: rgba(17, 17, 17, 0.7);
 }
-.nav-custom {
-}
+
 .height-adjust {
   margin-top: -100px;
 }
 .custom-border {
   // border: 0.9px dashed #E6C361;
-  border: 0.9px solid #ffffff;
+  border: 0.9px solid #000000;
   padding: 0px;
   padding-top: 5px;
   width: 50px;
@@ -79,7 +82,7 @@
       font-size: 35px;
       width: 100%;
       text-align: center;
-      color: #fff;
+      color: #000000;
       //    font-family: "Mr De Haviland", cursive;
       font-weight: 100 !important;
       font-style: normal;
@@ -90,10 +93,9 @@
       font-size: 50px;
       width: 100%;
       text-align: center;
-      color: #fff;
+      color: #000000;
     }
     button {
-      background-color: #3cff00;
       width: 35%;
       max-width: 300px;
       margin-top: 25px;
@@ -101,19 +103,19 @@
       font-size: 16px;
       font-weight: 400;
       font-family: "Raleway", sans-serif;
-      color: #fff;
+      color: #000000;
       text-transform: uppercase;
-      border: 1px solid #e6c36100;
-      background: linear-gradient(90deg, #3cff00 0%, #48c36be2 100%);
+      border: 2px solid #e6c36100;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #f1ffec 0%, #ffffffe2 100%);
       transition: transform 0.4s ease;
-      border-right: 1px solid #3cff00;
     }
     button:hover {
       // transition: all;
-      border: 1px solid #3cff00;
-      border-right: 1px solid #3cff00;
-      background: #00000000;
-      color: #3cff00;
+      border: 2px solid #ffffff;
+      background: #b4b4b4e5;
+      color: #000000;
+      border-radius: 2px;
       transition: ease-in;
       transform: scale(0.95);
     }
@@ -121,16 +123,6 @@
 }
 // mobile
 
-// font
-.mr-font {
-  font-family: "Mr De Haviland", cursive;
-}
-.rale-font {
-  font-family: "Raleway", sans-serif;
-}
-.bilbo-font {
-  font-family: "Bilbo Swash Caps", cursive;
-}
 // About
 .about {
   width: 80%;
@@ -140,16 +132,7 @@
   margin-top: 50px;
   .about-content {
     margin-top: 20px;
-    h3 {
-      font-size: 32px;
-      word-spacing: 10px;
-      font-weight: 100;
-    }
-    h4 {
-      font-size: 35px;
-      font-weight: 200;
-      letter-spacing: 3px;
-    }
+
     img {
       display: block;
       margin: auto;
@@ -157,20 +140,7 @@
   }
   .about-para {
     margin-top: 30px;
-    h4 {
-      font-size: 24px;
-      font-weight: 400;
-    }
-    p {
-      font-size: 15px;
-      margin-top: 10px !important;
-      width: 80%;
-      margin: auto;
-      font-weight: 300;
-      max-width: 1000px;
-      line-height: 30px;
-      color: #1b1a1a;
-    }
+
     img {
       margin-top: 30px !important;
       display: block;
@@ -191,8 +161,7 @@
     border-radius: 100%;
     width: 50px !important;
   }
-  .custom-border {
-  }
+
   .nav-width {
     width: 100%;
     margin: auto;
@@ -221,50 +190,6 @@
       justify-content: center;
       flex-direction: column;
       width: 80%;
-
-      h1 {
-        font-size: 20px;
-        width: 100%;
-        text-align: center;
-        color: #fff;
-        //    font-family: "Mr De Haviland", cursive;
-        font-weight: 100 !important;
-        font-style: normal;
-      }
-      h2 {
-        font-family: "Raleway", sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        width: 100%;
-        text-align: center;
-        color: #fff;
-      }
-      button {
-        background-color: #e6c361;
-        width: 35%;
-        min-width: 200px;
-        max-width: 300px;
-        margin-top: 25px;
-        padding: 15px 10px;
-        font-size: 16px;
-        font-weight: 400;
-        font-family: "Raleway", sans-serif;
-        color: #fff;
-        text-transform: uppercase;
-        border: 1px solid #e6c36100;
-        background: linear-gradient(90deg, #e6c361 0%, #c38e48e2 100%);
-        transition: transform 0.4s ease;
-        border-right: 1px solid #c38d48;
-      }
-      button:hover {
-        // transition: all;
-        border: 1px solid #e6c361;
-        border-right: 1px solid #c38d48;
-        background: #00000000;
-        color: #e6c361;
-        transition: ease-in;
-        transform: scale(0.95);
-      }
     }
   }
   // About
@@ -327,16 +252,6 @@
   .left {
     width: 50%;
     .heading {
-      h3 {
-        font-size: 32px;
-        word-spacing: 10px;
-      }
-      h4 {
-        font-size: 30px;
-        font-weight: 200;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-      }
       img {
         margin: 20px 0;
       }
@@ -362,12 +277,6 @@
             height: 6px;
             border-radius: 100%;
           }
-        }
-        p {
-          font-family: "Raleway";
-          font-size: 15px;
-          color: #1b1a1a;
-          font-weight: 300;
         }
       }
     }
@@ -470,50 +379,6 @@
       justify-content: center;
       flex-direction: column;
       width: 80%;
-
-      h1 {
-        font-size: 20px;
-        width: 100%;
-        text-align: center;
-        color: #fff;
-        //    font-family: "Mr De Haviland", cursive;
-        font-weight: 100 !important;
-        font-style: normal;
-      }
-      h2 {
-        font-family: "Raleway", sans-serif;
-        font-weight: 400;
-        font-size: 20px;
-        width: 100%;
-        text-align: center;
-        color: #fff;
-      }
-      button {
-        background-color: #e6c361;
-        width: 35%;
-        min-width: 200px;
-        max-width: 300px;
-        margin-top: 25px;
-        padding: 15px 10px;
-        font-size: 16px;
-        font-weight: 400;
-        font-family: "Raleway", sans-serif;
-        color: #fff;
-        text-transform: uppercase;
-        border: 1px solid #e6c36100;
-        background: linear-gradient(90deg, #e6c361 0%, #c38e48e2 100%);
-        transition: transform 0.4s ease;
-        border-right: 1px solid #c38d48;
-      }
-      button:hover {
-        // transition: all;
-        border: 1px solid #e6c361;
-        border-right: 1px solid #c38d48;
-        background: #00000000;
-        color: #e6c361;
-        transition: ease-in;
-        transform: scale(0.95);
-      }
     }
   }
   // About
@@ -525,16 +390,7 @@
     margin-top: 50px;
     .about-content {
       margin-top: 20px;
-      h3 {
-        font-size: 20px;
-        word-spacing: 10px;
-        font-weight: 100;
-      }
-      h4 {
-        font-size: 25px;
-        font-weight: 200;
-        letter-spacing: 3px;
-      }
+
       img {
         display: block;
         margin: auto;
@@ -542,20 +398,7 @@
     }
     .about-para {
       margin-top: 30px;
-      h4 {
-        font-size: 18px;
-        font-weight: 400;
-      }
-      p {
-        font-size: 12px;
-        margin-top: 10px !important;
-        width: 80%;
-        margin: auto;
-        font-weight: 300;
-        max-width: 1000px;
-        line-height: 24px;
-        color: #1b1a1a;
-      }
+
       img {
         margin-top: 30px !important;
         display: block;
@@ -576,16 +419,6 @@
       width: 100%;
       padding: 0 32px;
       .heading {
-        h3 {
-          font-size: 32px;
-          word-spacing: 10px;
-        }
-        h4 {
-          font-size: 30px;
-          font-weight: 200;
-          letter-spacing: 3px;
-          text-transform: uppercase;
-        }
         img {
           margin: 20px 0;
         }
@@ -611,12 +444,6 @@
               height: 6px;
               border-radius: 100%;
             }
-          }
-          p {
-            font-family: "Raleway";
-            font-size: 15px;
-            color: #1b1a1a;
-            font-weight: 300;
           }
         }
       }

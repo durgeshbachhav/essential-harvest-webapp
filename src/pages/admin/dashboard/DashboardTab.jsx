@@ -38,13 +38,12 @@ function DashboardTab() {
         <div className="tab container mx-auto ">
           <Tabs defaultIndex={0} className=" ">
             <TabList className="md:flex md:space-x-8 bg-  grid grid-cols-2 text-center gap-4   md:justify-center mb-10 ">
-              
               <Tab>
                 <button
                   type="button"
-                  className="focus:outline-none text-white  font-medium text-xl w-full px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800"
+                  className="focus:outline-none text-white  font-medium text-xl px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
                 >
-                  <div className="flex gap-2 items-center text-heading-color">
+                  <div className="flex gap-2 items-center ">
                     <MdOutlineProductionQuantityLimits color="white" />
                     Products
                   </div>{" "}
@@ -53,7 +52,7 @@ function DashboardTab() {
               <Tab>
                 <button
                   type="button"
-                  className="focus:outline-none text-white  font-medium text-xl w-full px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800"
+                  className="focus:outline-none text-white  font-medium text-xl px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
                 >
                   <div className="flex gap-2 items-center">
                     <AiFillShopping /> Order
@@ -75,7 +74,7 @@ function DashboardTab() {
                   <button
                     onClick={add}
                     type="button"
-                    className="focus:outline-none text-white  font-medium text-xl px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 mb-8"
+                    className="focus:outline-none text-white  font-medium text-xl px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font mb-8"
                     style={{
                       backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                       color: mode === "dark" ? "white" : "",
@@ -130,9 +129,9 @@ function DashboardTab() {
                         date,
                       } = item;
                       return (
-                        <tbody className="">
+                        <tbody className="bg-primary-100">
                           <tr
-                            className="bg-gradient-to-tr from-primary-400 to-primary-600 border-b  dark:border-gray-700"
+                            className=" border-2  "
                             style={{
                               backgroundColor:
                                 mode === "dark" ? "rgb(46 49 55)" : "",

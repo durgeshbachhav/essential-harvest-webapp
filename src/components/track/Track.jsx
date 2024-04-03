@@ -82,11 +82,11 @@ function Track() {
   return (
     <div>
       <section className="">
-        <div className="flex font-mono flex-col items-center text-heading-color">
-          <h3 className="" ref={titleRef}>
+        <div className="flex  flex-col items-center text-heading-color">
+          <h3 className="primary-font" ref={titleRef}>
             How To
           </h3>
-          <h4 className="text-sub-heading-color" ref={subtitleRef}>
+          <h4 className="text-sub-heading-color primary-font" ref={subtitleRef}>
             Track your Order?
           </h4>
           <img src={underline} alt="" className="mt-3" ref={imageRef} />
@@ -95,19 +95,21 @@ function Track() {
           <div className="flex flex-wrap  text-center">
             {cardContent.map((item, index) => (
               <div key={index} className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                <div className="hover:shadow-sm hover:shadow-primary-300 flex items-center justify-center flex-col gap-3 border-5 border-primary-200 rounded-lg bg-gradient-to-tl from-primary-400 to-primary-200 px-4 py-6 h-56 hover:scale-105 ease-in-out duration-300 cursor-progress">
+                <div className="hover:shadow-sm hover:shadow-primary-300 flex items-center justify-center flex-col gap-3 border-5 border-primary-800 rounded-lg bg-gradient-to-tl from-gray-50 to-gray-100 px-4 py-6 h-56 hover:scale-105 ease-in-out duration-300 cursor-progress">
                   <img
                     src={item.icon}
                     className="w-20 h-20 items-center"
                     alt=""
                   />
                   <h2
-                    className="title-font font-medium text-lg text-heading-color rale-font"
+                    className="title-font font-medium text-lg text-heading-color secondary-font"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     {item.heading}
                   </h2>
-                  <p className="text-sub-heading-color">{item.desc}</p>
+                  <p className="text-sub-heading-color secondary-font">
+                    {item.desc}
+                  </p>
                 </div>
               </div>
             ))}

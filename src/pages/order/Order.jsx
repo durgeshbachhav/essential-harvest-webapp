@@ -8,6 +8,7 @@ import less from "../../assets/order/close.png";
 import nocart from "../../assets/home/nocart.png";
 import { useNavigate } from "react-router-dom";
 import LoaderTwo from "../../components/loader/LoaderTwo";
+import { TiShoppingCart } from "react-icons/ti";
 
 function Order() {
   const userid = JSON.parse(localStorage.getItem("user")).userId;
@@ -240,12 +241,12 @@ function Order() {
           </div>
         </>
       ) : (
-        <div className="flex w-100 items-center justify-center flex-col h-60 cart mt-40">
-          <img src={nocart} alt="" width={70} />
-          <p className=" text-sm"> No Orders</p>
+        <div className=" w-100 h-[60vh]  cart  flex flex-col items-center justify-center gap-6">
+          <TiShoppingCart size={70} color="green" />
+          <p className=" text-sm secondary-font"> no order</p>
           <button
             onClick={() => navigate("/allproducts")}
-            className=" focus:outline-none text-white  font-medium text-sm w-80 px-2 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800"
+            className=" focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
           >
             Shop Now
           </button>

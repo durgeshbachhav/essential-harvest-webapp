@@ -75,7 +75,7 @@ function ProductInfo() {
   return (
     <Layout>
       <section className="text-gray-600 body-font overflow-hidden product bg-primary-100">
-        <div className="container px-5 py-10 mx-auto">
+        <div className="container px-5 py-10 mx-auto lg:h-[80vh]">
           {products && (
             <div className="lg:w-4/5 mx-auto flex flex-wrap">
               <img
@@ -84,10 +84,10 @@ function ProductInfo() {
                 src={products.imageUrl}
               />
               <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                <h2 className="text-sm title-font text-primary-950 tracking-widest">
-                  ESSENTIAL HARVEST
+                <h2 className="text-sm primary-font text-primary-950 tracking-widest">
+                  Essential Harvest
                 </h2>
-                <h1 className="text-primary-800 text-3xl title-font font-medium mb-1">
+                <h1 className="text-primary-800 text-3xl secondary-font font-medium mb-1">
                   {products.title}
                 </h1>
                 <div className="flex mb-4">{/* ... existing code */}</div>

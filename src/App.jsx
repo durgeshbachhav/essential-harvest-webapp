@@ -15,7 +15,6 @@ import NoPage from "./pages/nopage/NoPage";
 import ReturnPolicy from "./pages/other/ReturnPolicy";
 import PrivacyPolicy from "./pages/other/PrivacyPolicy";
 import AboutUs from "./pages/other/AboutUs";
-import TermsCondition from "./pages/other/TermsCondition";
 import ContactUs from "./pages/other/ContactUs";
 import MyState from "./context/data/myState";
 import Login from "./pages/registration/Login";
@@ -43,11 +42,14 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route path="/cart" element={
-            <ProtectedRoute>
-              <Cart />
-            </ProtectedRoute>
-          } />
+          <Route
+            path="/cart"
+            element={
+              <ProtectedRoute>
+                <Cart />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/dashboard"
             element={
@@ -86,7 +88,6 @@ function App() {
           <Route path="/*" element={<NoPage />} />
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/terms-condition" element={<TermsCondition />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         </Routes>

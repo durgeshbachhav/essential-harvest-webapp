@@ -60,13 +60,15 @@ function AboutSectionTwo() {
       <div className="flex items-center justify-center gap-4 w-full h-[80vh]">
         <div className="w-1/2 flex flex-col items-start justify-start gap-4  ">
           <div className="">
-            <h3 className="bilbo-font text-2xl text-heading-color">
+            <h3 className="primary-font text-2xl text-heading-color">
               Essential Harvest
             </h3>
-            <h4 className=" text-sub-heading-color">Why Choose Us</h4>
+            <h4 className="primary-font text-sub-heading-color">
+              Why Choose Us
+            </h4>
             <img src={underline} alt="" className="mt-4" />
           </div>
-          <div className="">
+          <div className="secondary-font">
             <div className="text-sub-heading-color">
               At Essential Harvest, we meticulously craft our products with
               attention to detail. Our commitment to integrity and care ensures
@@ -75,7 +77,7 @@ function AboutSectionTwo() {
             </div>
           </div>
           <div
-            className="flex items-center justify-start gap-3 text-center px-4 rounded-lg text-heading-color w-40  py-2 bg-primary-300 border-primary-300 border-5 cursor-pointer font-bold "
+            className="flex items-center justify-start gap-3 text-center focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
             onClick={() => navigate("/allproducts")}
           >
             Shop now
@@ -91,6 +93,7 @@ function AboutSectionTwo() {
             autoPlay
             mute
             loop
+            
           >
             <source
               src={heroVideo}

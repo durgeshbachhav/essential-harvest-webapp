@@ -10,16 +10,14 @@ function About() {
         <div className=" py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-5xl lg:text-center flex flex-col justify-center items-center">
-              {/* <h2 className="text-base font-semibold leading-7 text-blue-100 bg-blue-600 px-3  uppercase mb-4 lg:mb-8">
-        Key Features</h2> */}
-              <h1 className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-primary-400 text-center">
+              <h1 className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-primary-400 text-center primary-font">
                 About
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-yellow-450 to-primary-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-yellow-450 to-primary-500 primary-font">
                   {" "}
                   Essential Harvest
                 </span>
               </h1>
-              <p className="mt-6 text-md text-gray-600 max-w-lg text-center">
+              <p className="secondary-font mt-6 text-md text-sub-heading-color max-w-lg text-center">
                 Crafting products with meticulous attention to detail and
                 integrity. Experience our natural luxury at an affordable price.
               </p>
@@ -27,8 +25,8 @@ function About() {
             <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
               <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
                 <div className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  gold-primary">
+                  <dt className="text-base font-semibold leading-7 text-sub-heading-color">
+                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -47,14 +45,14 @@ function About() {
                     </div>
                     Customized Healthcare Plans
                   </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
+                  <dd className="mt-2 text-base leading-7 text-sub-heading-color">
                     Tailor your coverage to your specific needs with our
                     customizable plans. Only pay for what matters most to you.
                   </dd>
                 </div>
                 <div className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  gold-primary">
+                  <dt className="text-base font-semibold leading-7 text-sub-heading-color">
+                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -73,15 +71,15 @@ function About() {
                     </div>
                     Expert Risk Assessment
                   </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
+                  <dd className="mt-2 text-base leading-7 text-sub-heading-color">
                     Our cutting-edge model provides accurate insights into
                     potential risks, ensuring your coverage aligns perfectly
                     with your risk profile.
                   </dd>
                 </div>
                 <div className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  gold-primary">
+                  <dt className="text-base font-semibold leading-7 text-sub-heading-color">
+                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center bg-gradient-to-l from-primary-900 to-primary-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -100,15 +98,15 @@ function About() {
                     </div>
                     Affordable Premiums
                   </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
+                  <dd className="mt-2 text-base leading-7 text-sub-heading-color">
                     Experience cost-effective insurance solutions with
                     competitive premiums, ensuring optimal coverage without
                     overspending.
                   </dd>
                 </div>
                 <div className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-gray-900">
-                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  gold-primary">
+                  <dt className="text-base font-semibold leading-7 text-sub-heading-color">
+                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -127,7 +125,7 @@ function About() {
                     </div>
                     24/7 Customer Support
                   </dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600">
+                  <dd className="mt-2 text-base leading-7 text-sub-heading-color">
                     Our dedicated team is here day and night to promptly address
                     your insurance inquiries.
                   </dd>

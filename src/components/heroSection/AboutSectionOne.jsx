@@ -82,13 +82,13 @@ function AboutSectionOne() {
       <div className="about">
         <div className="about-content">
           <h3
-            className="mr-font text-primary animate__animated animate__slideInUp text-heading-color"
+            className="primary-font text-primary animate__animated animate__slideInUp text-heading-color"
             ref={titleRef}
           >
             Welcome To
           </h3>
           <h4
-            className="rale-font animate__animated animate__slideInUp text-heading-color"
+            className="primary-font animate__animated animate__slideInUp text-heading-color"
             ref={subtitleRef}
           >
             Essential Harvest
@@ -96,10 +96,10 @@ function AboutSectionOne() {
           <img src={underline} ref={imageRef} alt="" className="py-2" />
         </div>
         <div className="flex flex-col w-full items-center justify-center">
-          <h4 className="rale-font text-heading-color">
+          <h4 className="secondary-font text-sub-heading-color">
             Welcome to Essential Harvest Pure, holistic well-being.
           </h4>
-          <p className=" text-sub-heading-color">
+          <p className="secondary-font text-sub-heading-color">
             Essential Harvest is Nature's wellness, crafted sustainably.
             Discover our signature Rose Geranium Hydrosol and Essential Oil,
             offering pure, effective solutions for holistic self-care.

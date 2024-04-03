@@ -59,16 +59,12 @@ function Signup() {
   };
 
   return (
-    <div className=" flex justify-center items-center h-screen flex-col singup">
+    <div className=" flex justify-center items-center h-screen flex-col bg-primary-50">
       {loading && <Loader />}
-      <img
-        src={logo}
-        alt=""
-        className="w-24 mb-5 bg-primary-800 rounded-full p-2"
-      />
-      <div className="px-10 py-10 singup-bg rounded-lg">
+      <img src={logo} alt="" className="w-24 mb-5  rounded-full p-2" />
+      <div className="px-10 py-10 bg-gradient-to-tr from-gray-300 to-gray-400 border-opacity-20 rounded-lg">
         <div className="">
-          <h1 className="text-center text-white text-xl mb-4 font-bold">
+          <h1 className="text-center text-gray-900 text-xl mb-4 font-bold ">
             Signup
           </h1>
         </div>
@@ -84,7 +80,7 @@ function Signup() {
               });
             }}
             name="name"
-            className=" bg-primary-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
             placeholder="Name"
           />
         </div>
@@ -101,7 +97,7 @@ function Signup() {
               });
             }}
             name="email"
-            className=" bg-primary-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
             placeholder="Email"
           />
         </div>
@@ -117,7 +113,7 @@ function Signup() {
               });
             }}
             name="phoneNum"
-            className=" bg-primary-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
             placeholder="Phone Number"
           />
         </div>
@@ -132,22 +128,25 @@ function Signup() {
                 password: e.target.value,
               });
             }}
-            className=" bg-primary-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
             placeholder="Password"
           />
         </div>
         <div className=" flex justify-center mb-3">
           <button
             onClick={signup}
-            className="focus:outline-none text-white  font-medium text-sm w-full px-2 py-2  bg-primary-700 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-900"
+            className="focus:outline-none text-white   text-xm font-bold px-4 py-2  bg-blue-400 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-blue-800 secondary-font w-full"
           >
             Signup
           </button>
         </div>
         <div>
-          <h2 className="text-white">
+          <h2 className="text-blue-500">
             Have an account?{" "}
-            <Link className=" text-heading-color font-bold" to={"/login"}>
+            <Link
+              className=" text-white hover:underline hover:text-blue-500 font-bold"
+              to={"/login"}
+            >
               Login
             </Link>
           </h2>
@@ -158,7 +157,3 @@ function Signup() {
 }
 
 export default Signup;
-
-
-
-

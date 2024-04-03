@@ -28,7 +28,7 @@ function Navbar() {
   const cartItems = useSelector((state) => state.cart);
 
   return (
-    <div className="bg-gradient-to-l from-primary-900 to-primary-500 sticky top-0 z-50">
+    <div className="bg-white sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
           <Transition.Child
@@ -180,7 +180,7 @@ function Navbar() {
 
         <nav
           aria-label="Top"
-          className=" px-4 sm:px-6 lg:px-8 shadow-xl nav-height"
+          className=" px-4 sm:px-6 lg:px-8 shadow-md nav-height"
           // style={{
           //   backgroundColor: mode === "dark" ? "#282c34" : "",
           //   color: mode === "dark" ? "white" : "",
@@ -190,7 +190,7 @@ function Navbar() {
             <div className="flex nav-height nav-width items-center">
               <button
                 type="button"
-                className="gold-primary p-2 text-white lg:hidden"
+                className=" p-2  lg:hidden"
                 onClick={() => setOpen(true)}
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(80 82 87)" : "",
@@ -218,7 +218,7 @@ function Navbar() {
               <div className="ml-4 flex lg:ml-0">
                 <Link to={"/"} className="flex">
                   <div className="flex">
-                    <img src={logo} alt="" className="w-16 h-16 logo p-1" />
+                    <img src={logo} alt="" className="w-20 h-20 logo p-1" />
                     {/* <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>E-Bharat</h1> */}
                   </div>
                 </Link>
@@ -228,7 +228,7 @@ function Navbar() {
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <Link
                     to={"/"}
-                    className="text-sm font-medium text-white "
+                    className="text-sm font-medium  "
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     Home
@@ -238,7 +238,7 @@ function Navbar() {
                     import.meta.env.VITE_APP_ADMIN_EMAIL && (
                     <Link
                       to={"/dashboard"}
-                      className="text-sm font-medium text-white "
+                      className="text-sm font-medium  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Dashboard
@@ -246,14 +246,14 @@ function Navbar() {
                   )}
                   <Link
                     to={"/About"}
-                    className="text-sm font-medium text-white "
+                    className="text-sm font-medium  "
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     About
                   </Link>
                   <Link
                     to={"/allproducts"}
-                    className="text-sm font-medium text-white "
+                    className="text-sm font-medium  "
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     All Products
@@ -261,7 +261,7 @@ function Navbar() {
                   {user ? (
                     <Link
                       to={"/order"}
-                      className="text-sm font-medium text-white "
+                      className="text-sm font-medium  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Order
@@ -269,7 +269,7 @@ function Navbar() {
                   ) : (
                     <Link
                       to={"/signup"}
-                      className="text-sm font-medium text-white "
+                      className="text-sm font-medium  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Signup
@@ -279,7 +279,7 @@ function Navbar() {
                   {user?.user?.email === "harshadwhocodes@gmail.com" ? (
                     <Link
                       to={"/dashboard"}
-                      className="text-sm font-medium text-white "
+                      className="text-sm font-medium  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Admin
@@ -291,7 +291,7 @@ function Navbar() {
                   {user ? (
                     <a
                       onClick={logout}
-                      className="text-sm font-medium text-white cursor-pointer  "
+                      className="text-sm font-medium  cursor-pointer  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Logout
@@ -318,7 +318,7 @@ function Navbar() {
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     <FaShoppingCart
-                      color="white"
+                      color="black"
                       className="w-7 h-7 lg:w-8 lg:h-8"
                     />
 

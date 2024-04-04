@@ -15,7 +15,7 @@ function Dashboard() {
           <div className="flex flex-wrap -m-4 text-center">
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div
-                className=" border-1  bg-gradient-to-b from-primary-200 to-primary-400 rounded-lg    px-4 py-3 "
+                className=" border-2   bg-white rounded-lg    px-4 py-3 "
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                   color: mode === "dark" ? "white" : "",
@@ -25,10 +25,10 @@ function Dashboard() {
                   className="text-primary-gold w-12 h-12 mb-3 inline-block"
                   viewBox="0 0 24 24"
                 >
-                  <FaUserTie color="green" size={50} />
+                  <FaUserTie color="black" size={50} />
                 </div>
                 <h2
-                  className="title-font font-medium text-3xl text-heading-color fonts1"
+                  className=" font-medium text-3xl text-heading-color "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   {totalProduct}
@@ -43,7 +43,7 @@ function Dashboard() {
             </div>
             <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div
-                className=" border-1  bg-gradient-to-b from-primary-200 to-primary-400 rounded-lg    px-4 py-3  "
+                className=" border-2  bg-white rounded-lg    px-4 py-3  "
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                   color: mode === "dark" ? "white" : "",
@@ -53,16 +53,16 @@ function Dashboard() {
                   className="text-primary-gold w-12 h-12 mb-3 inline-block"
                   viewBox="0 0 24 24"
                 >
-                  <FaUserTie color="green" size={50} />
+                  <FaUserTie color="black" size={50} />
                 </div>
                 <h2
-                  className="title-font font-medium text-3xl text-heading-color fonts1"
+                  className="font-medium text-3xl text-heading-color"
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   {totalOrder}
                 </h2>
                 <p
-                  className=" text-heading-color  font-bold"
+                  className=" text-heading-color primary-font "
                   style={{ color: mode === "dark" ? "white" : "" }}
                 >
                   Total Orders

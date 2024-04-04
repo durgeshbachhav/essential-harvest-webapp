@@ -42,19 +42,19 @@ function Order() {
       {loading && <LoaderTwo />}
       {order?.length > 0 ? (
         <>
-          <div className="h-full py-10 cust-bg">
+          <div className="h-full py-10 ">
             {order
               .filter((obj) => obj.userid == userid)
-              .map((order) => {
+              .map((order, index) => {
                 return (
                   <div
-                    key={order.paymentId}
-                    className="mx-auto max-w-5xl justify-center content-center px-6 md:flex md:space-x-6 xl:px-0 order  flex-col"
+                    key={index}
+                    className="mx-auto max-w-5xl justify-center content-center px-6 md:flex md:space-x-6 xl:px-0   flex"
                   >
                     {order.cartItems.slice(0, 1).map((item) => (
-                      <div className="md:w-2/3 custom-margin" key={item.id}>
+                      <div className="md:w-2/3 " key={item.id}>
                         <div
-                          className="justify-between my-2 mx-2  bg-white p-6 border sm:flex sm:justify-start"
+                          className="justify-between my-2 mx-2  bg-white p-6 border-2 rounded-lg sm:flex sm:justify-start"
                           style={{
                             backgroundColor: mode === "dark" ? "#282c34" : "",
                             color: mode === "dark" ? "white" : "",
@@ -68,7 +68,7 @@ function Order() {
                           <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                             <div className="mt-5 sm:mt-0">
                               <h2
-                                className="text-lg font-bold text-gray-900"
+                                className="text-lg font-bold primary-font text-gray-900"
                                 style={{
                                   color: mode === "dark" ? "white" : "",
                                 }}
@@ -76,7 +76,7 @@ function Order() {
                                 {item.title}
                               </h2>
                               <p
-                                className="mt-1 text-xs text-gray-700"
+                                className="mt-1 text-xs secondary-font text-gray-700"
                                 style={{
                                   color: mode === "dark" ? "white" : "",
                                 }}
@@ -84,20 +84,20 @@ function Order() {
                                 {item.description}
                               </p>
                               <p
-                                className="mt-1 text-s text-gray-700"
+                                className="mt-1 mb-2 text-sm secondary-font font-bold text-gray-700"
                                 style={{
                                   color: mode === "dark" ? "white" : "",
                                 }}
                               >
-                                ₹{item.price}
+                                ₹ {item.price}
                               </p>
                               <p
-                                className="mt-1 text-xs p-1 text-gray-700 border rounded-sm inline border-yellow-500"
+                                className="mt-4 text-xs p-1 text-gray-700 border-2 rounded-sm inline "
                                 style={{
                                   color: mode === "dark" ? "white" : "",
                                 }}
                               >
-                                X
+                                Quantity :{" "}
                                 {item.quantity !== undefined
                                   ? String(item.quantity)
                                   : ""}
@@ -117,7 +117,7 @@ function Order() {
                       //     ? 'Hide complete order'
                       //     : 'View complete order'}
                       // </button>
-                      <div className="cust-image-container">
+                      <div className="cust-image-container bg-primary-400">
                         <div
                           className="toggle-btn"
                           onClick={() => handleToggle(order.paymentId)}
@@ -204,37 +204,40 @@ function Order() {
                       </>
                     )}
 
-                    <p
-                      className="mt-1 text-xs text-gray-700 status"
-                      style={{
-                        color: mode === "dark" ? "white" : "",
-                      }}
-                    >
-                      Status:{" "}
-                      <span
+                    <div className="py-8 flex flex-col items-start justify-start gap-4">
+                      <p
+                        className="mt-1 text-xs text-heading-color "
                         style={{
-                          backgroundColor: getStatusStyles(order.status)
-                            .backgroundColor,
-                          color: getStatusStyles(order.status).color,
+                          color: mode === "dark" ? "white" : "",
                         }}
                       >
-                        {order.status}
-                      </span>
-                    </p>
-                    {/* updated Date */}
-                    <p
-                      className="mt-1 text-xs text-gray-700 status-date"
-                      style={{
-                        color: mode === "dark" ? "white" : "",
-                      }}
-                    >
-                      Last Update:{" "}
-                      <span>
-                        {!order.statusDate
-                          ? new Date().toLocaleDateString()
-                          : new Date(order.statusDate).toLocaleDateString()}
-                      </span>
-                    </p>
+                        Status:{" "}
+                        <span
+                          className="p-1 secondary-font text-sub-heading-color rounded-lg px-2"
+                          style={{
+                            backgroundColor: getStatusStyles(order.status)
+                              .backgroundColor,
+                            color: getStatusStyles(order.status).color,
+                          }}
+                        >
+                          {order.status}
+                        </span>
+                      </p>
+                      {/* updated Date */}
+                      <p
+                        className="mt-1 text-xs font-bold secondary-font text-sub-heading-color "
+                        style={{
+                          color: mode === "dark" ? "white" : "",
+                        }}
+                      >
+                        Last Update:{" "}
+                        <span className="text-sub-heading-color ">
+                          {!order.statusDate
+                            ? new Date().toLocaleDateString()
+                            : new Date(order.statusDate).toLocaleDateString()}
+                        </span>
+                      </p>
+                    </div>
                   </div>
                 );
               })}

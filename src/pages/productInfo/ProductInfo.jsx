@@ -34,6 +34,7 @@ function ProductInfo() {
         setLoading(false);
       },
       function (error) {
+        console.log(error)
         setLoading(false);
       }
     );

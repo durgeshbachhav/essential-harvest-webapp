@@ -14,16 +14,16 @@ function HeroSection({ head, para }) {
         alt=""
       />
       <div className="hero-content">
-        <h1 className="primary-font animate__animated animate__slideInUp  ">
+        <h1 className="primary-font text-primary-800 mb-4 text-5xl animate__animated animate__slideInUp  ">
           {head}
         </h1>
         {/* <h2>CELEBRATING 25 YEARS IN UAE</h2> */}
-        <h2 className="maven-pro-font animate__animated animate__slideInUp">
+        <h2 className="maven-pro-font text-3xl animate__animated animate__slideInUp">
           {para}
         </h2>
         <button
           onClick={() => navigate("/allproducts")}
-          className="animate__animated animate__slideInUp focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
+          className="animate__animated animate__slideInUp focus:outline-none text-white  font-medium mt-10 secondary-font px-10 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 text-2xl secondary-font"
         >
           Shop Now
         </button>

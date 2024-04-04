@@ -136,6 +136,11 @@ function Cart() {
           return acc;
         }, {});
         const cartItemsJsonString = JSON.stringify(cartItemsJsonString1);
+        // console.log("cart item json string", cartItemsJsonString);
+        // console.log("address json string", addressInfoJsonString);
+        // console.log("cart item json string", cartItemsJsonString);
+        // console.log("cart item json string", cartItemsJsonString);
+        // console.log("cart item json string", cartItemsJsonString);
 
         const orderInfo = {
           cartItemsJsonString,
@@ -147,10 +152,10 @@ function Cart() {
           paymentId,
         };
 
-        // console.log("new order", orderInfo);
+        console.log("new order", orderInfo);
         const addPromise = databases.createDocument(
           import.meta.env.VITE_APP_DATABASE_ID,
-          import.meta.env.VITE_APP_RELATIONSHIP_ID,
+          import.meta.env.VITE_APP_ORDERS_COLLECTION_ID,
           ID.unique(),
           orderInfo
         );
@@ -180,7 +185,7 @@ function Cart() {
       {cartItems.length > 0 ? (
         <Layout className="cart">
           <div
-            className=" bg-primary-200 pt-5 mb-[0%]"
+            className=" bg-gray-50 pt-5 mb-[0%]"
             style={{
               backgroundColor: mode === "dark" ? "#282c34" : "",
               color: mode === "dark" ? "white" : "",
@@ -199,7 +204,7 @@ function Cart() {
                   return (
                     <div
                       key={index}
-                      className="justify-between mb-6  border-1 rounded-lg  drop-shadow-sm bg-gradient-to-tl from-primary-500 to-primary-800 p-6  sm:flex  sm:justify-start"
+                      className="justify-between mb-6  border-3 border-gray-500 rounded-lg  drop-shadow-sm bg-white  p-6  sm:flex  sm:justify-start"
                       style={{
                         backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "",
                         color: mode === "dark" ? "white" : "",
@@ -269,7 +274,7 @@ function Cart() {
               </div>
 
               <div
-                className="mt-6 h-full  border-1 bg-gradient-to-tl from-primary-500 to-primary-800 rounded-lg  p-6 shadow-md md:mt-0 md:w-1/3"
+                className="mt-6 h-full  border-1 bg-white rounded-lg  p-6 shadow-md md:mt-0 md:w-1/3"
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "",
                   color: mode === "dark" ? "white" : "",

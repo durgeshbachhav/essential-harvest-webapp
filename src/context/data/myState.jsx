@@ -91,8 +91,8 @@ function myState(props) {
     // console.log("productdata", productData);
     productData.then(
       function (response) {
-        setTotalProduct(response.total);
         console.log(response);
+        setTotalProduct(response.total);
         const productArray = response.documents.map((doc) => ({
           ...doc,
           id: doc.$id,
@@ -179,6 +179,7 @@ function myState(props) {
   const editOrderhandle = (item) => {
     setOrder(item);
   };
+  console.log("orderid", order);
   const updateOrderStatus = async () => {
     setLoading(true);
     const updateStatusPromise = databases.updateDocument(
@@ -192,8 +193,8 @@ function myState(props) {
     );
     updateStatusPromise.then(
       function (response) {
-        console.log(response);
         toast.success("Order Status Updated Status");
+        console.log(response);
         setTimeout(() => {
           window.location.href = "/#/dashboard";
         }, 800);

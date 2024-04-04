@@ -57,8 +57,8 @@ function AboutSectionTwo() {
   }, []);
   return (
     <>
-      <div className="flex items-center justify-center gap-4 w-full h-[80vh]">
-        <div className="w-1/2 flex flex-col items-start justify-start gap-4  ">
+      <div className="p-2 flex flex-col  items-center justify-center lg:flex-row  lg:gap-4 lg:w-full lg:h-[80vh] lg:p-0">
+        <div className="w-full p-4 lg:p-0 lg:w-1/2 flex flex-col items-start justify-start lg:gap-4  ">
           <div className="">
             <h3 className="primary-font text-2xl text-heading-color">
               Essential Harvest
@@ -68,8 +68,9 @@ function AboutSectionTwo() {
             </h4>
             <img src={underline} alt="" className="mt-4" />
           </div>
-          <div className="secondary-font">
-            <div className="text-sub-heading-color">
+          <div className="secondary-font mt-4
+             lg:mt-0 ">
+            <div className="text-sub-heading-color ">
               At Essential Harvest, we meticulously craft our products with
               attention to detail. Our commitment to integrity and care ensures
               the quality of every Essential Harvest item. We prioritize
@@ -77,14 +78,15 @@ function AboutSectionTwo() {
             </div>
           </div>
           <div
-            className="flex items-center justify-start gap-3 text-center focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
+            className="mt-4
+             lg:mt-0 flex items-center justify-start gap-3 text-center focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
             onClick={() => navigate("/allproducts")}
           >
             Shop now
             <img src={arrow} alt="" className="w-5 h-5" />
           </div>
         </div>
-        <div className="w-1/2 rounded-lg">
+        <div className="w-full p-4 lg:p-0  lg:w-1/2 rounded-lg">
           <video
             ref={videoRef}
             // width="320"
@@ -93,7 +95,7 @@ function AboutSectionTwo() {
             autoPlay
             mute
             loop
-            
+            className="rounded-lg"
           >
             <source
               src={heroVideo}

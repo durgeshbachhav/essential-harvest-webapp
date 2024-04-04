@@ -8,17 +8,17 @@ function Footer() {
   const { mode } = context;
   return (
     <div>
-      <footer className=" bg-gray-100 ">
-        <div className="container px-5 py-24 mx-auto cust-footer-container">
+      <footer className=" bg-gray-200 rounded-t-3xl">
+        <div className="container px-5 lg:py-24 mx-auto cust-footer-container">
           <div className="flex flex-wrap md:text-left text-center order-first footer-custom">
-            <div className="lg:w-1/4 md:w-1/2 w-full flex items-start justify-between flex-col  ">
+            <div className="lg:w-1/4 md:w-1/2 w-full flex items-center justify-center md:items-start md:justify-between flex-col  ">
               <img src={logo} alt="" className="w-full" />
-              <h5 className="text-green-800 text-2xl primary-font">
+              <h5 className="text-green-800 lg:text-2xl primary-font">
                 Essential Harvest
               </h5>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="secondary-font text-heading-color font-extrabold tracking-widest  mb-3">
+              <h2 className="sm:mt-4 secondary-font text-heading-color font-extrabold tracking-widest  mb-3">
                 PAGES
               </h2>
               <nav className="list-none mb-10">

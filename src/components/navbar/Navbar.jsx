@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import myContext from "../../context/data/myContext";
 // import { BsFillCloudSunFill } from 'react-icons/bs'
 // import { FiSun } from 'react-icons/fi'
@@ -13,7 +13,7 @@ import logo from "../../assets/home/logo.svg";
 
 function Navbar() {
   const context = useContext(myContext);
-  const { mode, toggleMode } = context;
+  const { mode } = context;
 
   const [open, setOpen] = useState(false);
 
@@ -60,7 +60,7 @@ function Navbar() {
                   color: mode === "dark" ? "white" : "",
                 }}
               >
-                <div className="flex px-4 pb-2 pt-28">
+                <div className="flex px-4 pb-2 pt-20">
                   <button
                     type="button"
                     className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
@@ -80,6 +80,18 @@ function Navbar() {
                       Home
                     </Link>
                   </div>
+                  {user?.providerUid ===
+                    import.meta.env.VITE_APP_ADMIN_EMAIL && (
+                    <div className="flow-root">
+                      <Link
+                        to={"/dashboard"}
+                        className="text-sm font-medium text-gray-900 "
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        Dashboard
+                      </Link>
+                    </div>
+                  )}
                   <div className="flow-root">
                     <Link
                       to={"/about"}
@@ -99,7 +111,7 @@ function Navbar() {
                     </Link>
                   </div>
 
-                  {user ? (
+                  {user ?? (
                     <div className="flow-root">
                       <Link
                         to={"/order"}
@@ -109,22 +121,6 @@ function Navbar() {
                         Order
                       </Link>
                     </div>
-                  ) : (
-                    ""
-                  )}
-
-                  {user?.user?.email === "harshadwhocodes@gmail.com" ? (
-                    <div className="flow-root">
-                      <Link
-                        to={"/dashboard"}
-                        className="-m-2 block p-2 font-medium text-gray-900"
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        admin
-                      </Link>
-                    </div>
-                  ) : (
-                    ""
                   )}
 
                   {user ? (
@@ -149,18 +145,6 @@ function Navbar() {
                     </div>
                   )}
                 </div>
-
-                {/* <div className="border-t border-gray-200 px-4 py-6">
-                    <a href="#" className="-m-2 flex items-center p-2">
-                      <img
-                        src="img/indiaflag.png"
-                        alt=""
-                        className="block h-auto w-5 flex-shrink-0"
-                      />
-                      <span className="ml-3 block text-base font-medium text-gray-900" style={{ color: mode === 'dark' ? 'white' : '', }}>INDIA</span>
-                      <span className="sr-only">, change currency</span>
-                    </a>
-                  </div> */}
               </Dialog.Panel>
             </Transition.Child>
           </div>
@@ -168,23 +152,9 @@ function Navbar() {
       </Transition.Root>
 
       <header className="relative">
-        {/* <p
-          className="flex h-10 items-center justify-center  px-4 text-sm font-medium text-white sm:px-6 lg:px-8 gold-primary"
-          style={{
-            backgroundColor: mode === "dark" ? "" : "",
-            color: mode === "dark" ? "white" : "",
-          }}
-        >
-          Get free delivery on orders over ₹1000
-        </p> */}
-
         <nav
           aria-label="Top"
           className=" px-4 sm:px-6 lg:px-8 shadow-md nav-height"
-          // style={{
-          //   backgroundColor: mode === "dark" ? "#282c34" : "",
-          //   color: mode === "dark" ? "white" : "",
-          // }}
         >
           <div className="">
             <div className="flex nav-height nav-width items-center">
@@ -276,39 +246,18 @@ function Navbar() {
                     </Link>
                   )}
 
-                  {user?.user?.email === "harshadwhocodes@gmail.com" ? (
-                    <Link
-                      to={"/dashboard"}
-                      className="text-sm font-medium  "
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      Admin
-                    </Link>
-                  ) : (
-                    ""
-                  )}
-
                   {user ? (
-                    <a
+                    <Link
                       onClick={logout}
                       className="text-sm font-medium  cursor-pointer  "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Logout
-                    </a>
+                    </Link>
                   ) : (
                     ""
                   )}
                 </div>
-                {/* <div className="flex lg:ml-6">
-                    <button className='' onClick={toggleMode}>
-                      {mode === 'light' ?
-                        (<FiSun className='' size={30} />
-                        ) : 'dark' ?
-                          (<BsFillCloudSunFill size={30} />
-                          ) : ''}
-                    </button>
-                  </div> */}
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6 custom-border">
@@ -319,12 +268,12 @@ function Navbar() {
                   >
                     <FaShoppingCart
                       color="black"
-                      className="w-7 h-7 lg:w-8 lg:h-8"
+                      className="w-5 h-5 lg:w-8 lg:h-8"
                     />
 
                     <div className="custom-count">
                       <span
-                        className="ml-2 text-sm font-medium   group-"
+                        className="ml-2 text-sm font-medium   "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         {cartItems.length}

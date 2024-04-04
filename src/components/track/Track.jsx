@@ -94,20 +94,20 @@ function Track() {
         <div className="mt-3">
           <div className="flex flex-wrap  text-center">
             {cardContent.map((item, index) => (
-              <div key={index} className="p-4 md:w-1/4 sm:w-1/2 w-full">
-                <div className="hover:shadow-sm hover:shadow-primary-300 flex items-center justify-center flex-col gap-3 border-5 border-primary-800 rounded-lg bg-gradient-to-tl from-gray-50 to-gray-100 px-4 py-6 h-56 hover:scale-105 ease-in-out duration-300 cursor-progress">
+              <div key={index} className="p-4 w-1/2 md:w-1/4  lg:w-1/4 ">
+                <div className="hover:shadow-sm hover:shadow-primary-300 flex items-center justify-center flex-col gap-3 border-5 border-primary-800 rounded-lg bg-gradient-to-tl from-gray-50 to-gray-100 px-4 py-6 md:h-56 hover:scale-105 ease-in-out duration-300 cursor-progress">
                   <img
                     src={item.icon}
-                    className="w-20 h-20 items-center"
+                    className="w-10 h-10 md:w-20 md:h-20 items-center"
                     alt=""
                   />
                   <h2
-                    className="title-font font-medium text-lg text-heading-color secondary-font"
+                    className="text-xs font-bold title-font  md:text-xl text-heading-color secondary-font"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     {item.heading}
                   </h2>
-                  <p className="text-sub-heading-color secondary-font">
+                  <p className="hidden lg:block text-sub-heading-color secondary-font">
                     {item.desc}
                   </p>
                 </div>

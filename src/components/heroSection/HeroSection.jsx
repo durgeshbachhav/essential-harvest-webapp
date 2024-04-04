@@ -7,18 +7,17 @@ function HeroSection({ head, para }) {
   const navigate = useNavigate();
   return (
     <div className="hero">
-      <img className="w-full h-full" src={hero} alt="" />
+      <img className="hidden w-full h-full md:block" src={hero} alt="" />
       <img
-        className="height-adjust animate__animated animate__fadeIn mob"
+        className=" height-adjust animate__animated animate__fadeIn mob "
         src={heroH5}
         alt=""
       />
       <div className="hero-content">
-        <h1 className="primary-font text-primary-800 mb-4 text-5xl animate__animated animate__slideInUp  ">
+        <h1 className="text-3xl primary-font text-white mb-4 lg:text-5xl animate__animated animate__slideInUp  ">
           {head}
         </h1>
-        {/* <h2>CELEBRATING 25 YEARS IN UAE</h2> */}
-        <h2 className="maven-pro-font text-3xl animate__animated animate__slideInUp">
+        <h2 className="maven-pro-font text-xl text-white lg:text-3xl animate__animated animate__slideInUp">
           {para}
         </h2>
         <button

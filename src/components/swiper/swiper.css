@@ -23,6 +23,12 @@
   align-items: center;
   scroll-snap-align: start;
 }
+@media only screen and (max-width: 600px) {
+  .swipe-section {
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+}
 @keyframes floatingRose {
   0% {
     transform: translateY(-20%) scale(70%) rotate(100deg);

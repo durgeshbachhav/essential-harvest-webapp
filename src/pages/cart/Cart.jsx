@@ -191,7 +191,7 @@ function Cart() {
               color: mode === "dark" ? "white" : "",
             }}
           >
-            <h1 className="mt-5 mb-10 text-center text-4xl font-bold bilbo-font text-heading-color">
+            <h1 className="mt-5 mb-10 text-center text-4xl font-bold primary-font text-heading-color">
               Cart items
             </h1>
             <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0 py-4">

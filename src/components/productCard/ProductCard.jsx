@@ -49,11 +49,11 @@ function ProductCard() {
             // )
             .slice(0, 4)
             .map((item, index) => {
-              const { title, price, description, imageUrl, id } = item;
+              const { title, price, imageUrl, id } = item;
               return (
                 <div
                   key={index}
-                  className="p-4 md:w-1/4  rounded-lg z-50   secondary-font"
+                  className="p-4 w-full md:w-1/4  rounded-lg z-50   secondary-font"
                 >
                   <div
                     className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-gray-50 to-gray-200 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110 "

@@ -228,204 +228,200 @@ function DashboardTab() {
                   Order Details
                 </h1>
 
-                {order.map((allorder, index) => {
-                  return (
-                    <div
-                      key={index}
-                      className="relative  overflow-x-auto rounded-lg"
-                    >
-                      <table className="w-full  border-2   text-sm text-left font-bold  rounded-lg  ">
-                        <thead className="border  bg-primary-300 secondary-font  text-heading-color  uppercase rounded-lg  ">
-                          <tr className="rounded-lg ">
-                            <th scope="col" className="px-6 py-3">
-                              Payment Id
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Image
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Title
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Price
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Category
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Name
-                            </th>
-                            <th scope="col" className="px-6 py-3 ">
-                              Address
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Pincode
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Phone Number
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Email
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Date
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Status
-                            </th>
-                            <th scope="col" className="px-6 py-3">
-                              Update
-                            </th>
-                          </tr>
-                        </thead>
+                <div className="relative overflow-x-auto rounded-lg">
+                  <table className="w-full border-2 text-sm text-left font-bold rounded-lg">
+                    <thead className="border bg-primary-300 secondary-font text-heading-color uppercase rounded-lg">
+                      <tr className="rounded-lg">
+                        <th scope="col" className="px-6 py-3">
+                          Payment Id
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Image
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Title
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Price
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Category
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Name
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Address
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Pincode
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Phone Number
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Email
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Date
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Status
+                        </th>
+                        <th scope="col" className="px-6 py-3">
+                          Update
+                        </th>
+                      </tr>
+                    </thead>
 
-                        {allorder.cartItems.map((item, index) => {
+                    {order.map((allorder, index) => (
+                      <tbody key={index}>
+                        {allorder.cartItems.map((item, rowIndex) => {
                           const { title, category, imageUrl, price } = item;
                           let formattedDateforadmin = new Date(
                             allorder.date
                           ).toLocaleString();
-                          console.log();
-                          return (
-                            <tbody key={index}>
-                              <tr className="bg-white font-bold  text-sub-heading-color  secondary-font">
-                                <td
-                                  className="px-6 py-4 font-bold border "
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                    cursor: "pointer", // Change cursor to pointer
-                                    userSelect: "all", // Allow text selection
-                                    WebkitUserSelect: "all", // For Safari
-                                    MozUserSelect: "all", // For Firefox
-                                    msUserSelect: "all",
-                                  }}
-                                >
-                                  <div className="w-full px-5 py-1 bg-primary-200 rounded-lg">
-                                    {allorder.paymentId}
-                                  </div>
-                                </td>
-                                <th
-                                  scope="row"
-                                  className="px-6 py-4 font-bold  whitespace-nowrap"
-                                >
-                                  <img
-                                    className="w-16"
-                                    src={imageUrl}
-                                    alt="img"
-                                  />
-                                </th>
-                                <td
-                                  className="px-6 py-4 font-bold  border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {title}
-                                </td>
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  ₹{price}
-                                </td>
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {category}
-                                </td>
 
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {allorder.addressInfo.name}
-                                </td>
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {allorder.addressInfo.address}
-                                </td>
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {allorder.addressInfo.pincode}
-                                </td>
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {allorder.addressInfo.phoneNumber}
-                                </td>
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {allorder.email}
-                                </td>
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {formattedDateforadmin}
-                                </td>
-                                <td
-                                  className="px-6 py-4 font-medium border"
-                                  style={{
-                                    color: mode === "dark" ? "white" : "",
-                                  }}
-                                >
-                                  {allorder.status}
-                                </td>
-                                <td className="">
-                                  {/* <Link to={'/updateproduct'}>  */}
-                                  <Link to={"/updateOrderStatus"}>
-                                    <div
-                                      className="flex items-center justify-center mx-auto text-center"
-                                      onClick={() => editOrderhandle(allorder)}
+                          return (
+                            <tr
+                              key={rowIndex}
+                              className="bg-white font-bold text-sub-heading-color secondary-font"
+                            >
+                              <td
+                                className="px-6 py-4 font-bold border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                  cursor: "pointer",
+                                  userSelect: "all",
+                                  WebkitUserSelect: "all",
+                                  MozUserSelect: "all",
+                                  msUserSelect: "all",
+                                }}
+                              >
+                                <div className="w-full px-5 py-1 bg-primary-200 rounded-lg">
+                                  {rowIndex === 0 ? allorder.paymentId : ""}
+                                </div>
+                              </td>
+                              <th
+                                scope="row"
+                                className="px-6 py-4 font-bold whitespace-nowrap border"
+                              >
+                                <img
+                                  className="w-16"
+                                  src={imageUrl}
+                                  alt="img"
+                                />
+                              </th>
+                              <td
+                                className="px-6 py-4 font-bold border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {title}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                ₹{price}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {category}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {allorder.addressInfo.name}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {allorder.addressInfo.address}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {allorder.addressInfo.pincode}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {allorder.addressInfo.phoneNumber}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {allorder.email}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {formattedDateforadmin}
+                              </td>
+                              <td
+                                className="px-6 py-4 font-medium border"
+                                style={{
+                                  color: mode === "dark" ? "white" : "",
+                                }}
+                              >
+                                {allorder.status}
+                              </td>
+                              <td className="border">
+                                <Link to="/updateOrderStatus">
+                                  <div
+                                    className="flex items-center justify-center mx-auto text-center cursor-pointer"
+                                    onClick={() => editOrderhandle(allorder)}
+                                  >
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      fill="none"
+                                      viewBox="0 0 24 24"
+                                      strokeWidth={1.5}
+                                      stroke="currentColor"
+                                      className="w-6 h-6"
                                     >
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        className="w-6 h-6"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </Link>
-                                </td>
-                              </tr>
-                            </tbody>
+                                      <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+                                      />
+                                    </svg>
+                                  </div>
+                                </Link>
+                              </td>
+                            </tr>
                           );
                         })}
-                      </table>
-                    </div>
-                  );
-                })}
+                      </tbody>
+                    ))}
+                  </table>
+                </div>
               </div>
             </TabPanel>
           </Tabs>

@@ -12,7 +12,9 @@ function Footer() {
         <div className="container px-5 lg:py-24 mx-auto cust-footer-container">
           <div className="flex flex-wrap md:text-left text-center order-first footer-custom">
             <div className="lg:w-1/4 md:w-1/2 w-full flex items-center justify-center md:items-start md:justify-between flex-col  ">
-              <img src={logo} alt="" className="w-full" />
+              <Link to={"/"}>
+                <img src={logo} alt="" className="w-full" />
+              </Link>
               <h5 className="text-green-800 lg:text-2xl primary-font">
                 Essential Harvest
               </h5>

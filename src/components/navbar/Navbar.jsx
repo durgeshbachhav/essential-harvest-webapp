@@ -187,7 +187,7 @@ function Navbar() {
                 <Link to={"/"} className="flex">
                   <div className="flex">
                     <img src={logo} alt="" className="w-20 h-20 logo p-1" />
-                    {/* <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>E-Bharat</h1> */}
+                    {/* <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>Essential Harvest</h1> */}
                   </div>
                 </Link>
               </div>

@@ -7,7 +7,7 @@ function Contact() {
   return (
     <Layout>
       <div className="contact">
-        <section className="bg-primary-50 " id="contact">
+        <section className="bg-gray-50 " id="contact">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
             <div className="mb-4">
               <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12 custom-container">
@@ -24,7 +24,7 @@ function Contact() {
               <div className="grid md:grid-cols-2 w-full lg:px-20">
                 <div className="h-full pr-6">
                   <p className="mt-3 mb-12 text-lg text-gray-600 ">
-                    Feel free to reach out to us for any query :)
+                    Feel free to reach out to us for any query 
                   </p>
                   <ul className="mb-6 md:mb-0">
                     <li className="flex">
@@ -115,7 +115,7 @@ function Contact() {
                   </ul>
                 </div>
                 <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
-                  <h2 className="mb-4 text-xl primary-font">
+                  <h2 className="mb-4 text-xl primary-font text-heading-color">
                     Ready to Get Started?
                   </h2>
                   <form id="contactForm">

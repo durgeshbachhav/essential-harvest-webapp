@@ -6,7 +6,7 @@ import "./Other.scss";
 function Return() {
   return (
     <Layout>
-      <div className="flex items-center justify-center flex-col  py-20  bg-primary-50 ">
+      <div className="flex items-center justify-center flex-col  py-20  bg-gray-50 ">
         <div className="heading-content flex items-center justify-center flex-col gap-2">
           <h3 className="primary-font text-3xl text-black">Faq</h3>
           <h4 className="secondary-font text-2xl">Return & Cancellations</h4>

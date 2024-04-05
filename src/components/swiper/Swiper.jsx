@@ -2,8 +2,7 @@ import React, { useContext, useRef } from "react";
 import eh1 from "../../assets/home/eh1.png";
 import eh2 from "../../assets/home/eh2.png";
 import podium from "../../assets/home/podium.png";
-import arrow from "../../assets/home/up-arrow.png";
-import underline from "../../assets/home/underline.png";
+import { IoIosArrowDroprightCircle } from "react-icons/io";
 
 import "./swiper.css";
 
@@ -187,36 +186,7 @@ const Swiper = () => {
       </section>
       <section className="bg-gradient-to-tr from-primary-400 to-primary-100 border-5 border-primary-100 relative w-full swipe-section    bg-secondary flex flex-col-reverse md:px-12  snap-always   lg:flex-row lg:px-20 my-4 ">
         <div className="w-full h-full overflow-hidden relative">
-          <div className="absolute w-full h-full  z-10">
-            <img
-              src={manyLeaves}
-              className=" absolute top-0 -left-1/4 object-contain w-full h-full blur-sm"
-              style={{
-                animation: "floatingRose 22s ease-out infinite ",
-              }}
-              alt=""
-            />
-            <img
-              src={twoleaf}
-              className="absolute top-0 right-0 object-contain w-96 h-80 blur-sm"
-              style={{
-                animation: "rotatePetals 12s ease-in-out infinite ",
-              }}
-              alt=""
-            />
-            <img
-              src={leaf1}
-              className="absolute  object-contain w-20 h-20 blur-sm bottom-0 left-16"
-              style={{
-                animation: "rotatePetals 12s ease-in-out infinite ",
-              }}
-              alt=""
-            />
-          </div>
-          <div className="hidden lg:py-10 lg:px-8 lg:block">
-            <ProductCard />
-          </div>
-          <div className="block z-50 w-full h-full lg:hidden ">
+          <div className="block  w-full h-full lg:hidden ">
             <div className=" w-full mt-6 px-4">
               <h1 className="sm:text-3xl  text-2xl font-medium title-font mb-1 text-heading-color primary-font">
                 Our Products
@@ -232,7 +202,7 @@ const Swiper = () => {
                     className="p-4 w-full md:w-1/4  rounded-lg z-50   secondary-font"
                   >
                     <div
-                      className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-gray-50 to-gray-200 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110 "
+                      className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-gray-50 to-gray-200 border-opacity-20  overflow-hidden cursor-pointer  "
                       onClick={() =>
                         (window.location.href = `/#/productinfo/${id}`)
                       }
@@ -262,15 +232,44 @@ const Swiper = () => {
               })}
             </div>
             <div className="px-4 ">
-              <div
-                className="mt-4 
-                lg:mt-0 w-32  flex items-center justify-between gap-3 text-center focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
-                onClick={() => navigate("/allproducts")}
-              >
-                Shop now
-                <img src={arrow} alt="" className="w-5 h-5 rotate-90" />
-              </div>
+            <div
+            className="mt-4
+             lg:mt-0 flex items-center justify-start gap-3 text-center focus:outline-none text-black w-32  font-medium text-sm px-4 py-2  bg-white rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-600 secondary-font cursor-pointer"
+            onClick={() => navigate("/allproducts")}
+          >
+            Shop now
+            <IoIosArrowDroprightCircle className="w-5 h-5" />
+          </div>
             </div>
+          </div>
+          <div className="absolute w-full h-full  ">
+            <img
+              src={manyLeaves}
+              className=" absolute top-0 -left-1/4 object-contain w-full h-full blur-sm"
+              style={{
+                animation: "floatingRose 22s ease-out infinite ",
+              }}
+              alt=""
+            />
+            <img
+              src={twoleaf}
+              className="absolute top-0 right-0 object-contain w-96 h-80 blur-sm"
+              style={{
+                animation: "rotatePetals 12s ease-in-out infinite ",
+              }}
+              alt=""
+            />
+            <img
+              src={leaf1}
+              className="absolute  object-contain w-20 h-20 blur-sm bottom-0 left-16"
+              style={{
+                animation: "rotatePetals 12s ease-in-out infinite ",
+              }}
+              alt=""
+            />
+          </div>
+          <div className="hidden lg:py-10 lg:px-8 lg:block">
+            <ProductCard />
           </div>
         </div>
       </section>
@@ -332,7 +331,7 @@ const Swiper = () => {
             alt=""
           />
         </div>
-        <div className=" p-8">
+        <div className=" p-8 z-20">
           <div className="max-w-2xl mx-auto">
             <div className="text-center" ref={ctaRef}>
               <h2 className="primary-font text-3xl font-bold text-heading-color mb-4">
@@ -343,13 +342,13 @@ const Swiper = () => {
               </p>
               <div className="flex gap-2 justify-center">
                 <button
-                  className="focus:outline-none text-heading-color  font-medium text-sm px-4 py-2  bg-white rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
+                  className="focus:outline-none text-heading-color  font-medium text-sm px-4 py-2  bg-white rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 hover:text-white secondary-font"
                   onClick={() => navigate("/contact")}
                 >
                   Contact us
                 </button>
                 <button
-                  className="focus:outline-none text-heading-color  font-medium text-sm px-4 py-2  bg-white rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
+                  className="focus:outline-none text-heading-color  font-medium text-sm px-4 py-2  bg-white rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font hover:text-white"
                   onClick={() => navigate("/allproducts")}
                 >
                   Order Now

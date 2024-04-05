@@ -49,7 +49,7 @@ function Order() {
                 return (
                   <div
                     key={index}
-                    className="mx-auto flex-col max-w-5xl justify-center content-center px-6 md:flex md:space-x-6 xl:px-0   flex"
+                    className="mx-auto flex flex-col max-w-5xl justify-center content-center px-6 md:flex-row md:space-x-6 xl:px-0   "
                   >
                     {order?.cartItems.slice(0, 1).map((item) => (
                       <div className="md:w-2/3 " key={item.id}>

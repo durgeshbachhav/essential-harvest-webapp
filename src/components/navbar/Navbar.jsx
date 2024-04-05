@@ -119,7 +119,7 @@ function Navbar() {
                       <Link
                         to={"/order"}
                         style={{ color: mode === "dark" ? "white" : "" }}
-                        className="-m-2 block p-2 font-medium text-gray-900"
+                        className="-m-2 block p-2 text-sm font-medium text-gray-900"
                       >
                         Order
                       </Link>
@@ -132,7 +132,7 @@ function Navbar() {
                     <div className="flow-root">
                       <a
                         onClick={logout}
-                        className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
+                        className="-m-2 block p-2 text-sm font-medium text-gray-900 cursor-pointer"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Logout

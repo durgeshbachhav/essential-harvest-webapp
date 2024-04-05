@@ -49,7 +49,7 @@ function Order() {
                 return (
                   <div
                     key={index}
-                    className="mx-auto max-w-5xl justify-center content-center px-6 md:flex md:space-x-6 xl:px-0   flex"
+                    className="mx-auto flex-col max-w-5xl justify-center content-center px-6 md:flex md:space-x-6 xl:px-0   flex"
                   >
                     {order?.cartItems.slice(0, 1).map((item) => (
                       <div className="md:w-2/3 " key={item.id}>
@@ -108,7 +108,7 @@ function Order() {
                       </div>
                     ))}
 
-                    {order?.cartItems.length > 1 ? (
+                    {order?.cartItems.length > 1 && (
                       <div className="cust-image-container bg-primary-400">
                         <div
                           className="toggle-btn"
@@ -132,8 +132,6 @@ function Order() {
                           )}
                         </div>
                       </div>
-                    ):(
-                      "shop now"
                     )}
 
                     {expandedOrderId === order?.paymentId && (

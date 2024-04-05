@@ -232,14 +232,14 @@ const Swiper = () => {
               })}
             </div>
             <div className="px-4 ">
-            <div
-            className="mt-4
+              <div
+                className="mt-4
              lg:mt-0 flex items-center justify-start gap-3 text-center focus:outline-none text-black w-32  font-medium text-sm px-4 py-2  bg-white rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-600 secondary-font cursor-pointer"
-            onClick={() => navigate("/allproducts")}
-          >
-            Shop now
-            <IoIosArrowDroprightCircle className="w-5 h-5" />
-          </div>
+                onClick={() => navigate("/allproducts")}
+              >
+                Shop now
+                <IoIosArrowDroprightCircle className="w-5 h-5" />
+              </div>
             </div>
           </div>
           <div className="absolute w-full h-full  ">

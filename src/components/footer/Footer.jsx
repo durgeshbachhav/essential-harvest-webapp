@@ -18,7 +18,7 @@ function Footer() {
               </h5>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-              <h2 className="sm:mt-4 secondary-font text-heading-color font-extrabold tracking-widest  mb-3">
+              <h2 className="mt-4 md:mt-0 secondary-font text-heading-color font-extrabold tracking-widest  mb-3">
                 PAGES
               </h2>
               <nav className="list-none mb-10">
@@ -66,7 +66,7 @@ function Footer() {
               </nav>
             </div>
 
-            <div className="lg:w-1/4 md:w-1/2 w-full px-4 secondary-font">
+            <div className="lg:w-1/4 md:w-1/2 w-full px-4 ">
               <h2 className="secondary-font text-heading-color font-extrabold tracking-widest text-sm mb-3">
                 OTHERS
               </h2>

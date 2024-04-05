@@ -61,18 +61,16 @@ function Signup() {
   return (
     <div className=" flex justify-center items-center h-screen flex-col bg-primary-50">
       {loading && <Loader />}
-      <img src={logo} alt="" className="w-24 mb-5  rounded-full p-2" />
-      <div className="px-10 py-10 bg-gradient-to-tr from-gray-300 to-gray-400 border-opacity-20 rounded-lg">
-        <div className="">
-          <h1 className="text-center text-gray-900 text-xl mb-4 font-bold ">
-            Signup
-          </h1>
+      
+      <div className="px-10 py-10 bg-white border rounded-lg">
+        <div className=" flex items-center justify-center">
+        <img src={logo} alt="" className="w-24  rounded-full " />
         </div>
         <div>
           <input
             type="text"
             value={user.name}
-            // onChange={(e) => setName(e.target.value)}
+            
             onChange={(e) => {
               setUser({
                 ...user,
@@ -89,7 +87,7 @@ function Signup() {
           <input
             type="email"
             value={user.email}
-            // onChange={(e) => setEmail(e.target.value)}
+            
             onChange={(e) => {
               setUser({
                 ...user,
@@ -105,7 +103,7 @@ function Signup() {
           <input
             type="number"
             value={user.phoneNum}
-            // onChange={(e) => setEmail(e.target.value)}
+           
             onChange={(e) => {
               setUser({
                 ...user,
@@ -121,7 +119,7 @@ function Signup() {
           <input
             type="password"
             value={user.password}
-            // onChange={(e) => setPassword(e.target.value)}
+            
             onChange={(e) => {
               setUser({
                 ...user,
@@ -144,7 +142,7 @@ function Signup() {
           <h2 className="text-blue-500">
             Have an account?{" "}
             <Link
-              className=" text-white hover:underline hover:text-blue-500 font-bold"
+              className=" text-blue-500 hover:underline hover:text-blue-500 font-bold"
               to={"/login"}
             >
               Login

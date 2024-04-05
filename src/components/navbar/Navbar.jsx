@@ -29,7 +29,11 @@ function Navbar() {
   return (
     <div className="bg-white sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative block z-40 lg:hidden" onClose={setOpen}>
+        <Dialog
+          as="div"
+          className="relative block z-40 lg:hidden"
+          onClose={setOpen}
+        >
           <Transition.Child
             as={Fragment}
             enter="transition-opacity ease-linear duration-300"
@@ -120,7 +124,9 @@ function Navbar() {
                         Order
                       </Link>
                     </div>
-                  ):("")}
+                  ) : (
+                    ""
+                  )}
 
                   {user ? (
                     <div className="flow-root">

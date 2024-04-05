@@ -65,7 +65,7 @@ function Order() {
                             alt="product-image"
                             className="w-full  sm:w-40"
                           />
-                          <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+                          <div className="sm:ml-4 sm:flex sm:w-full  sm:justify-between">
                             <div className="mt-5 sm:mt-0">
                               <h2
                                 className="text-lg font-bold primary-font text-gray-900"
@@ -84,7 +84,7 @@ function Order() {
                                 {item.description}
                               </p>
                               <p
-                                className="mt-1 mb-2 text-sm secondary-font font-bold text-gray-700"
+                                className="mt-2 mb-4 text-sm secondary-font font-bold text-gray-700"
                                 style={{
                                   color: mode === "dark" ? "white" : "",
                                 }}
@@ -92,7 +92,7 @@ function Order() {
                                 ₹ {item.price}
                               </p>
                               <p
-                                className="mt-4 text-xs p-1 text-gray-700 border-2 rounded-sm inline "
+                                className="mt-8 text-xs p-2 text-gray-700 border-2 rounded-lg inline "
                                 style={{
                                   color: mode === "dark" ? "white" : "",
                                 }}
@@ -196,9 +196,9 @@ function Order() {
                       </>
                     )}
 
-                    <div className="py-8 flex flex-col items-start justify-start gap-4">
+                    <div className="border-t-2 pt-2 md:pt-0 md:border-t-0 px-8 md:py-8 flex flex-col items-start justify-start gap-4">
                       <p
-                        className="mt-1 text-xs text-heading-color "
+                        className="mt-2 md:mt-8 text-xs text-heading-color "
                         style={{
                           color: mode === "dark" ? "white" : "",
                         }}
@@ -207,9 +207,9 @@ function Order() {
                         <span
                           className="p-1 secondary-font text-sub-heading-color rounded-lg px-2"
                           style={{
-                            backgroundColor: getStatusStyles(order.status)
+                            backgroundColor: getStatusStyles(order?.status)
                               .backgroundColor,
-                            color: getStatusStyles(order.status).color,
+                            color: getStatusStyles(order?.status).color,
                           }}
                         >
                           {order.status}

@@ -223,7 +223,7 @@ function DashboardTab() {
             {/* Order History */}
             <TabPanel>
               {/* <Order order={order} setOrder={setOrder} setLoading={setLoading} /> */}
-              <div className="relative overflow-x-auto  mb-16   rounded-lg">
+              <div className="relative px-4 md:px-0 overflow-x-auto  mb-16   rounded-lg">
                 <h1 className=" text-center primary-font mb-5 text-3xl font-semibold ">
                   Order Details
                 </h1>

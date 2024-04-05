@@ -70,7 +70,6 @@ function Cart() {
       const quantity = quantityMap[itemId] || 1;
       temp += parseInt(cartItem.price) * quantity;
     });
-
     setTotalAmount(temp);
   };
 
@@ -240,7 +239,7 @@ function Cart() {
                           <div className=" flex justify-center items-center">
                             <button
                               type="button"
-                              onClick={() => decreaseQuantity(item.$id)}
+                              onClick={() => decreaseQuantity(item?.$id)}
                               className=" text-white bg-primary-800   font-medium rounded-l-lg text-sm px-4 py-2"
                             >
                               -
@@ -253,7 +252,7 @@ function Cart() {
                             </p>
                             <button
                               type="button"
-                              onClick={() => increaseQuantity(item.$id)}
+                              onClick={() => increaseQuantity(item?.$id)}
                               className=" text-white bg-primary-900  font-medium rounded-r-lg text-sm px-4 py-2"
                             >
                               +

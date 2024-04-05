@@ -51,7 +51,7 @@ function Order() {
                     key={index}
                     className="mx-auto max-w-5xl justify-center content-center px-6 md:flex md:space-x-6 xl:px-0   flex"
                   >
-                    {order.cartItems.slice(0, 1).map((item) => (
+                    {order?.cartItems.slice(0, 1).map((item) => (
                       <div className="md:w-2/3 " key={item.id}>
                         <div
                           className="justify-between my-2 mx-2  bg-white p-6 border-2 rounded-lg sm:flex sm:justify-start"
@@ -108,15 +108,7 @@ function Order() {
                       </div>
                     ))}
 
-                    {order.cartItems.length > 1 && (
-                      // <button
-                      //   className="text-blue-500 mt-2 cursor-pointer toggle-btn"
-                      //   onClick={() => handleToggle(order.paymentId)}
-                      // >
-                      //   {expandedOrderId === order.paymentId
-                      //     ? 'Hide complete order'
-                      //     : 'View complete order'}
-                      // </button>
+                    {order?.cartItems.length > 1 ? (
                       <div className="cust-image-container bg-primary-400">
                         <div
                           className="toggle-btn"
@@ -140,9 +132,11 @@ function Order() {
                           )}
                         </div>
                       </div>
+                    ):(
+                      "shop now"
                     )}
 
-                    {expandedOrderId === order.paymentId && (
+                    {expandedOrderId === order?.paymentId && (
                       <>
                         {order.cartItems.slice(1).map((item) => (
                           <div className="md:w-2/3 custom-margin" key={item.id}>

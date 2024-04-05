@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Maven+Pro:wght@400..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Mukta:wght@200;300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .primary-font {
-  font-family: "Berkshire Swash", serif;
+  font-family: "mukta", serif;
   font-weight: 700;
   font-style: normal;
 }

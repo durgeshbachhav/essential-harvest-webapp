@@ -54,7 +54,7 @@ function Order() {
                     {order?.cartItems.slice(0, 1).map((item) => (
                       <div className="md:w-2/3 " key={item.id}>
                         <div
-                          className="justify-between my-2 mx-2  bg-white p-6 border-2 rounded-lg sm:flex sm:justify-start"
+                          className="justify-between my-2 mx-2  bg-white p-6  rounded-lg sm:flex sm:justify-start"
                           style={{
                             backgroundColor: mode === "dark" ? "#282c34" : "",
                             color: mode === "dark" ? "white" : "",

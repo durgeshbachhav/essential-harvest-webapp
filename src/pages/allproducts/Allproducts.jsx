@@ -63,10 +63,10 @@ function Allproducts() {
                       (window.location.href = `/#/productinfo/${id}`)
                     }
                     key={index}
-                    className="p-4 md:w-1/4  rounded-lg   "
+                    className="p-4 w-full md:w-1/4  rounded-lg z-50   secondary-font"
                   >
                     <div
-                      className="h-full border-2 rounded-lg  duration-300 ease-in-out border-opacity-20  overflow-hidden cursor-pointer bg-gradient-to-tr from-gray-50 to-gray-200 "
+                      className="h-full  border-2 rounded-lg  duration-300 ease-in-out border-opacity-20  overflow-hidden cursor-pointer bg-gradient-to-tr from-gray-50 to-gray-200 "
                       style={{
                         backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                         color: mode === "dark" ? "white" : "",
@@ -74,7 +74,7 @@ function Allproducts() {
                     >
                       <div className="flex justify-center cursor-pointer">
                         <img
-                          className=" rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
+                          className=" rounded-2xl  h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
                           src={imageUrl}
                           alt="product"
                         />

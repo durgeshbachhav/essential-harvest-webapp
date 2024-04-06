@@ -217,19 +217,19 @@ function Cart() {
                       <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
                         <div className="mt-5 sm:mt-0">
                           <h2
-                            className="text-lg font-bold text-heading-color"
+                            className="text-xl font-semibold text-heading-color border-b-2  py-4"
                             style={{ color: mode === "dark" ? "white" : "" }}
                           >
                             {title}
                           </h2>
-                          <h2
+                          {/* <h2
                             className="text-sm  text-sub-heading-color"
                             style={{ color: mode === "dark" ? "white" : "" }}
                           >
                             {description}
-                          </h2>
+                          </h2> */}
                           <p
-                            className="mt-1 text-xl  text-heading-color font-bold"
+                            className="mt-3 text-xl  text-heading-color font-bold"
                             style={{ color: mode === "dark" ? "white" : "" }}
                           >
                             ₹{price}

@@ -215,10 +215,10 @@ const Swiper = () => {
                         />
                       </div>
                       <div className="p-4 border-t border-opacity-20  ">
-                        <h2 className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 primary-font">
+                        <h2 className="tracking-widest text-xs  font-medium text-heading-color mb-1 primary-font">
                           Essential Harvest
                         </h2>
-                        <h1 className="title-font text-lg font-medium text-sub-heading-color mb-3 rale-font">
+                        <h1 className=" text-xl font-medium text-heading-color mb-3 secondary-font truncate ">
                           {title}
                         </h1>
                         {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}

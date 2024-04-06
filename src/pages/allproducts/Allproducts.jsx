@@ -55,7 +55,7 @@ function Allproducts() {
               //     Array.isArray(obj.price) && obj.price.includes(filterPrice)
               // )
               .map((item, index) => {
-                const { title, price, description, imageUrl, id } = item;
+                const { title, price, imageUrl, id } = item;
                 console.log("item", item);
                 return (
                   <div
@@ -84,12 +84,12 @@ function Allproducts() {
                           Essential Harvest
                         </h2>
                         <h1
-                          className="title-font text-lg font-medium text-heading-color mb-3 secondary-font"
+                          className=" text-xl font-medium text-heading-color mb-3 secondary-font truncate "
                           style={{ color: mode === "dark" ? "white" : "" }}
                         >
                           {title}
                         </h1>
-                        {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
+                        
                         <div className="flex items-center justify-between">
                           <p
                             className="leading-relaxed mb-3 secondary-font"

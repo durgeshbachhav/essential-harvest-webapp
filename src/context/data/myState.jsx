@@ -38,7 +38,9 @@ function myState(props) {
       products.price == null ||
       products.imageUrl == null ||
       products.category == null ||
-      products.description == null
+      products.description == null ||
+      products.aboutTheProduct == [null] ||
+      products.benefitsOfProducts == [null]
     ) {
       console.log(products);
       return toast.error("all fields are required");
@@ -52,7 +54,7 @@ function myState(props) {
       uuid(),
       products
     );
-    // console.log("addproduct", addPromise);
+
     addPromise.then(
       function (response) {
         console.log(response);
@@ -68,6 +70,8 @@ function myState(props) {
           imageUrl: products.imageUrl,
           category: products.category,
           description: products.description,
+          about: products.aboutTheProduct,
+          benefits: products.benefitsOfProducts,
           date: products.date,
         });
       },
@@ -128,6 +132,8 @@ function myState(props) {
         imageUrl: products.imageUrl,
         category: products.category,
         description: products.description,
+        aboutTheProduct: products.aboutTheProduct,
+        benefitsOfProducts: products.benefitsOfProducts,
         date: new Date().toLocaleString("en-US", {
           month: "short",
           day: "2-digit",

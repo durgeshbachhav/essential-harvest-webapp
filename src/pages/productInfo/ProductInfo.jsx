@@ -34,7 +34,7 @@ function ProductInfo() {
         setLoading(false);
       },
       function (error) {
-        console.log(error)
+        console.log(error);
         setLoading(false);
       }
     );
@@ -76,36 +76,73 @@ function ProductInfo() {
   return (
     <Layout>
       <section className="text-gray-600 body-font overflow-hidden product bg-50-100">
-        <div className="container px-5 py-10 mx-auto lg:h-[80vh]">
+        <div className="container px-5 py-10 mx-auto ">
           {products && (
-            <div className="lg:w-4/5 mx-auto flex flex-wrap">
-              <img
-                alt="ecommerce"
-                className="lg:w-1/3 w-full lg:h-auto  object-cover object-center rounded"
-                src={products.imageUrl}
-              />
-              <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                <h2 className="text-sm primary-font text-primary-950 tracking-widest">
-                  Essential Harvest
-                </h2>
-                <h1 className="text-primary-800 text-3xl secondary-font font-medium mb-1">
-                  {products.title}
-                </h1>
-                <div className="flex mb-4">{/* ... existing code */}</div>
-                <p className="leading-relaxed border-b-2 mb-5 pb-5">
-                  {products.description}
-                </p>
+            <div>
+              <div className="lg:w-4/5 mx-auto flex flex-wrap items-center justify-center lg:py-4">
+                <img
+                  alt="ecommerce"
+                  className="lg:w-1/3 content-center h-96 lg:h-auto  object-cover object-center rounded"
+                  src={products.imageUrl}
+                />
+                <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+                  <h2 className="text-sm primary-font text-primary-950 tracking-widest">
+                    Essential Harvest
+                  </h2>
+                  <h1 className="text-primary-800 text-xl border-b py-4 secondary-font font-medium mb-1">
+                    {products.title}
+                  </h1>
+                  <div className="flex mb-4"></div>
 
-                <div className="flex">
-                  <span className="title-font font-medium text-2xl text-primary-950">
-                    ₹{products.price}
-                  </span>
-                  <button
-                    onClick={addCart}
-                    className={`flex ml-auto text-white  border-0 py-2 px-6 focus:outline-none   font-medium text-sm bg-primary-900 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-700 `}
-                  >
-                    {!isInCart ? "Add to Cart" : "Go to Cart"}
-                  </button>
+                  <div className="flex">
+                    <span className="title-font font-medium text-2xl text-primary-950">
+                      ₹{products.price}
+                    </span>
+                    <button
+                      onClick={addCart}
+                      className={`flex ml-auto text-white  border-0 py-2 px-6 focus:outline-none   font-medium text-sm bg-primary-900 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-700 `}
+                    >
+                      {!isInCart ? "Add to Cart" : "Go to Cart"}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className="border-t-2 mt-4 pt-4">
+                <div>
+                  <h4 className="font-semibold primary-font">
+                    Product Description:
+                  </h4>
+                  <p className="secondary-font">{products.description}</p>
+                </div>
+                <div className="border-t-2 mt-4 pt-4">
+                  <h4 className="font-semibold primary-font">
+                    About this item:
+                  </h4>
+                  <ul className="list-disc pl-5">
+                    {products.aboutTheProduct
+
+                      .filter((benefit) => benefit.trim() !== "")
+                      .map((benefit, index) => (
+                        <li className="secondary-font" key={index}>
+                          {benefit}
+                        </li>
+                      ))}
+                  </ul>
+                </div>
+                <div className="border-t-2 mt-4 pt-4">
+                  <h4 className="font-semibold primary-font">
+                    Benefits of Item:
+                  </h4>
+                  <ul className="list-disc pl-5">
+                    {products.benefitsOfProducts
+
+                      .filter((benefit) => benefit.trim() !== "")
+                      .map((benefit, index) => (
+                        <li className="secondary-font" key={index}>
+                          {benefit}
+                        </li>
+                      ))}
+                  </ul>
                 </div>
               </div>
             </div>

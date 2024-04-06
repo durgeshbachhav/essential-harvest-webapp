@@ -80,7 +80,7 @@ function ProductCard() {
                         Essential Harvest
                       </h2>
                       <h1
-                        className="title-font text-lg font-medium text-sub-heading-color mb-3 rale-font"
+                        className="text-xl font-medium text-heading-color mb-3 secondary-font truncate "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         {title}

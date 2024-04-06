@@ -6,7 +6,7 @@ function AddProduct() {
   const { products, setProducts, addProduct } = context;
   return (
     <div>
-      <div className="flex justify-center items-center h-screen rounded-lg bg-primary-50">
+      <div className="flex justify-center items-center  rounded-lg bg-primary-50">
         <div className=" bg-gradient-to-tr from-primary-300 to-primary-400 border-opacity-20  px-10 py-10  rounded-lg">
           <div className="">
             <h1 className="text-center text-white text-xl mb-4 font-bold">
@@ -65,13 +65,45 @@ function AddProduct() {
             <textarea
               cols="15"
               rows="3"
-              name="title"
+              name="description"
               value={products.description}
               onChange={(e) =>
                 setProducts({ ...products, description: e.target.value })
               }
               className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="Product desc"
+            ></textarea>
+          </div>
+          <div>
+            <textarea
+              cols="15"
+              rows="3"
+              name="benefitsOfProducts"
+              value={products.benefitsOfProducts}
+              onChange={(e) =>
+                setProducts({
+                  ...products,
+                  benefitsOfProducts: e.target.value.split("."),
+                })
+              }
+              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              placeholder="Product Benefits"
+            ></textarea>
+          </div>
+          <div>
+            <textarea
+              cols="15"
+              rows="3"
+              name="aboutTheProduct"
+              value={products.aboutTheProduct}
+              onChange={(e) =>
+                setProducts({
+                  ...products,
+                  aboutTheProduct: e.target.value.split("."),
+                })
+              }
+              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              placeholder="About the Product"
             ></textarea>
           </div>
           <div className=" flex justify-center mb-3">

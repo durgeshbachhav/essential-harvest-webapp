@@ -5,9 +5,9 @@ function UpdateProduct() {
   const context = useContext(myContext);
   const { products, setProducts, updateProduct } = context;
   return (
-    <div>
-      <div className=" flex justify-center items-center h-screen bg-primary-50">
-        <div className=" bg-gradient-to-tr from-primary-300 to-primary-400 border-opacity-20  px-10 py-10  rounded-lg">
+    <div className="w-full h-full">
+      <div className="flex justify-center items-center   bg-primary-50">
+        <div className="  bg-gradient-to-tr from-primary-300 to-primary-400 border-opacity-20  px-10 py-10  rounded-lg">
           <div className="">
             <h1 className="text-center text-white text-xl mb-4 font-bold">
               Update Product
@@ -72,6 +72,35 @@ function UpdateProduct() {
               }
               className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="Product desc"
+            ></textarea>
+          </div>
+          <div>
+            <textarea
+              cols="15"
+              rows="3"
+              name="title"
+              value={products.benefitsOfProducts}
+              onChange={(e) =>
+                setProducts({ ...products, benefitsOfProducts: e.target.value })
+              }
+              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              placeholder="Product benefits"
+            ></textarea>
+          </div>
+          <div>
+            <textarea
+              cols="15"
+              rows="3"
+              name="aboutTheProduct"
+              value={products.aboutTheProduct}
+              onChange={(e) =>
+                setProducts({
+                  ...products,
+                  aboutTheProduct: e.target.value.split("."),
+                })
+              }
+              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              placeholder="About the Product"
             ></textarea>
           </div>
           <div className=" flex justify-center mb-3">

@@ -57,22 +57,20 @@ function AboutSectionTwo() {
   }, []);
   return (
     <>
-      <div className="p-2 flex flex-col  items-center justify-center lg:flex-row  lg:gap-4 lg:w-full lg:h-[80vh] lg:p-0">
-        <div className="w-full p-4 lg:p-0 lg:w-1/2 flex flex-col items-start justify-start lg:gap-4  ">
-          <div className="">
-            <h3 className="primary-font text-2xl text-heading-color">
-              Essential Harvest
-            </h3>
-            <h4 className="primary-font text-sub-heading-color">
+      <div className="p-4 flex flex-col  items-center justify-center lg:flex-row  lg:gap-4 lg:w-full  lg:px-16">
+        <div className="w-full p-4 lg:p-0 lg:w-1/2 flex flex-col items-start justify-center md:justify-start lg:gap-4  ">
+          <div className="w-full flex items-center justify-center flex-col">
+            
+            <h4 className="text-center secondary-font text-sub-heading-color">
               Why Choose Us
             </h4>
-            <img src={underline} alt="" className="mt-4" />
+            <img src={underline} alt="" className="mt-4 content-center" />
           </div>
           <div
             className="secondary-font mt-4
              lg:mt-0 "
           >
-            <div className="text-sub-heading-color ">
+            <div className="text-sub-heading-color  ">
               At Essential Harvest, we meticulously craft our products with
               attention to detail. Our commitment to integrity and care ensures
               the quality of every Essential Harvest item. We prioritize
@@ -80,8 +78,8 @@ function AboutSectionTwo() {
             </div>
           </div>
           <div
-            className="mt-4
-             lg:mt-0 flex items-center justify-start gap-3 text-center focus:outline-none text-black  font-medium text-sm px-4 py-2  bg-white rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-600 secondary-font cursor-pointer"
+            className=" mt-4
+             lg:mt-0 flex items-center justify-center  gap-3 text-center focus:outline-none text-black  font-medium text-sm px-4 py-2  bg-gray-300 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-600 secondary-font cursor-pointer"
             onClick={() => navigate("/allproducts")}
           >
             Shop now

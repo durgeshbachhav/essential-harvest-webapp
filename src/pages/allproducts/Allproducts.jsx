@@ -63,7 +63,7 @@ function Allproducts() {
                       (window.location.href = `/#/productinfo/${id}`)
                     }
                     key={index}
-                    className="p-4 w-full md:w-1/4  rounded-lg z-50   secondary-font"
+                    className="p-4 w-full md:w-1/4  rounded-lg    secondary-font"
                   >
                     <div
                       className="h-full  border-2 rounded-lg  duration-300 ease-in-out border-opacity-20  overflow-hidden cursor-pointer bg-gradient-to-tr from-gray-50 to-gray-200 "

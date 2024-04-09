@@ -27,7 +27,7 @@ function Navbar() {
   const cartItems = useSelector((state) => state.cart);
 
   return (
-    <div className="bg-white sticky top-0 z-50">
+    <div className="bg-[#cea352] sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
@@ -156,10 +156,7 @@ function Navbar() {
         </Dialog>
       </Transition.Root>
       <header className="relative">
-        <nav
-          aria-label="Top"
-          className=" px-4 sm:px-6 lg:px-8 shadow-md nav-height"
-        >
+        <nav aria-label="Top" className=" px-4 sm:px-6 lg:px-8  nav-height">
           <div className="">
             <div className="flex nav-height nav-width items-center">
               <button

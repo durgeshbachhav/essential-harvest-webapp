@@ -30,16 +30,16 @@ function ProductCard() {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
   return (
-    <section className="w-full ">
-      <div className="w-full ">
-        <div className=" w-full mb-6 lg:mb-10">
-          <h1 className="sm:text-3xl  text-2xl font-medium title-font mb-1 text-heading-color primary-font">
+    <section className="w-full p-4">
+      <div className="w-full lg:px-8">
+        <div className=" w-full mb-6 lg:mb-10 ">
+          <h1 className="sm:text-3xl px-4  text-2xl font-medium title-font  text-heading-color primary-font">
             Our Products
           </h1>
           <div className="h-1 w-32  rounded"></div>
         </div>
 
-        <div className="flex flex-wrap -m-4">
+        <div className="flex flex-wrap -m-4 ">
           {product
             // .filter((obj) => obj.title.toLowerCase().includes(searchkey))
             // .filter((obj) => obj.category.toLowerCase().includes(filterType))
@@ -53,7 +53,7 @@ function ProductCard() {
               return (
                 <div
                   key={index}
-                  className="p-4 w-full md:w-1/4  rounded-lg z-50   secondary-font"
+                  className="p-8 w-full md:w-1/4  rounded-lg    secondary-font"
                 >
                   <div
                     className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-gray-50 to-gray-200 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110 "

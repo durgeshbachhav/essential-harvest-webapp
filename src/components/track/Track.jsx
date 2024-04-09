@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 function Track() {
   const context = useContext(myContext);
-  const navigate = useNavigate();
+  
 
   const { mode } = context;
   const cardContent = [
@@ -81,7 +81,7 @@ function Track() {
 
   return (
     <div>
-      <section className="">
+      <section className="lg:px-12">
         <div className="flex  flex-col items-center text-heading-color">
           <h3 className="primary-font" ref={titleRef}>
             How To
@@ -95,7 +95,7 @@ function Track() {
           <div className="flex flex-wrap  text-center">
             {cardContent.map((item, index) => (
               <div key={index} className="p-4 w-1/2 md:w-1/4  lg:w-1/4 ">
-                <div className="hover:shadow-sm hover:shadow-primary-300 flex items-center justify-center flex-col gap-3 border-5 border-primary-800 rounded-lg bg-gradient-to-tl from-gray-50 to-gray-100 px-4 py-6 md:h-56 hover:scale-105 ease-in-out duration-300 cursor-progress">
+                <div className="hover:shadow-sm w-full h-full  flex items-center justify-center flex-col  border-5 border-primary-800 rounded-lg bg-gradient-to-tl from-gray-100 to-gray-200 px-4 py-4 hover:scale-105 ease-in-out duration-300 cursor-progress">
                   <img
                     src={item.icon}
                     className="w-10 h-10 md:w-20 md:h-20 items-center"

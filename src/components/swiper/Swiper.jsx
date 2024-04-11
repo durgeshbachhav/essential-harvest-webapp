@@ -112,7 +112,7 @@ const SwiperComponent = () => {
           <img src={flowerTopRight} alt="" className="w-96 " />
         </div>
         <img src={eh1} className="w-96 h-96 z-20" />
-        <h1 className="text-6xl font-extrabold text-white z-20">
+        <h1 className="text-6xl font-extrabold text-primary-900 z-20">
           Rose Gerenium Hydrosol
         </h1>
       </SwiperSlide>
@@ -132,7 +132,7 @@ const SwiperComponent = () => {
           <img src={flowerTopRight} alt="" className="w-96 " />
         </div>
         <img src={eh2} alt="" className="w-96 h-96 " />
-        <h1 className="text-6xl font-extrabold text-white  z-20">
+        <h1 className="text-6xl font-extrabold text-primary-900  z-20">
           Rose Geranium Oil
         </h1>
       </SwiperSlide>

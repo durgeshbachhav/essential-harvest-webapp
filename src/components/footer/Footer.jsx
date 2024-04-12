@@ -11,13 +11,10 @@ function Footer() {
       <footer className=" bg-gray-200 rounded-t-3xl">
         <div className="container px-5 lg:py-24 mx-auto cust-footer-container">
           <div className="flex flex-wrap md:text-left text-center order-first footer-custom">
-            <div className="lg:w-1/4 md:w-1/2 w-full flex items-center justify-center md:items-start md:justify-between flex-col  ">
+            <div className="mt-3 lg:w-1/4 md:w-1/2 w-full px-4 flex items-center justify-center  lg:mt-0 lg:items-start lg:justify-start">
               <Link to={"/"}>
-                <img src={logo} alt="" className="w-full" />
+                <img src={logo} alt="" className=" scale-150" />
               </Link>
-              <h5 className="hidden md:block text-green-800 lg:text-2xl primary-font">
-                Essential Harvest
-              </h5>
             </div>
             <div className="lg:w-1/4 md:w-1/2 w-full px-4">
               <h2 className="mt-4 md:mt-0 primary-font text-heading-color font-extrabold tracking-widest  mb-3">
@@ -57,7 +54,7 @@ function Footer() {
                 </li>
                 <li>
                   <Link to={"/about"} className="text-sub-heading-color">
-                    About
+                    Our Story
                   </Link>
                 </li>
                 <li>
@@ -123,7 +120,7 @@ function Footer() {
                   <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
                 </svg>
               </Link>
-             
+
               <Link
                 className="ml-3 text-primary-800 rounded-lg p-2 border-2 hover:bg-primary-900 hover:text-white"
                 target="_blank"
@@ -142,7 +139,6 @@ function Footer() {
                   <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
                 </svg>
               </Link>
-              
             </span>
           </div>
         </div>

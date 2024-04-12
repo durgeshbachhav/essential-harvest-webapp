@@ -20,12 +20,12 @@ function HeroSection({ head, para }) {
         <h2 className="maven-pro-font text-xl text-white lg:text-3xl animate__animated animate__slideInUp">
           {para}
         </h2>
-        <button
+        {/* <button
           onClick={() => navigate("/allproducts")}
           className="animate__animated animate__slideInUp focus:outline-none text-white  font-medium mt-10 secondary-font px-10 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 text-2xl secondary-font"
         >
           Shop Now
-        </button>
+        </button> */}
       </div>
     </div>
   );

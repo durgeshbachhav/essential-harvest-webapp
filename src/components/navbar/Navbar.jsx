@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import "./Navbar.scss";
 import { FaShoppingCart } from "react-icons/fa";
 
-import logo from "../../assets/home/logo.svg";
+import logo from "../../assets/home/footer.svg";
 
 function Navbar() {
   const context = useContext(myContext);
@@ -101,7 +101,7 @@ function Navbar() {
                       className="text-sm font-medium text-gray-900 "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
-                      About
+                      Our Story
                     </Link>
                   </div>
                   <div className="flow-root">
@@ -220,7 +220,7 @@ function Navbar() {
                     className="text-sm font-medium  "
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
-                    About
+                    Our Story
                   </Link>
                   <Link
                     to={"/allproducts"}

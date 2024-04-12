@@ -82,11 +82,11 @@ function Track() {
     <div>
       <section className="lg:px-12">
         <div className="flex  flex-col items-center text-heading-color">
-          <h3 className="secondary-font" ref={titleRef}>
+          <h3 className="secondary-font text-xl" ref={titleRef}>
             How To
           </h3>
           <h4
-            className="text-sub-heading-color secondary-font"
+            className="text-sub-heading-color secondary-font text-xl"
             ref={subtitleRef}
           >
             Track your Order?
@@ -104,12 +104,12 @@ function Track() {
                     alt=""
                   />
                   <h2
-                    className="text-xs font-bold title-font  md:text-xl text-heading-color secondary-font"
+                    className="text-xs lg:text-xl text-heading-color secondary-font"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     {item.heading}
                   </h2>
-                  <p className="hidden lg:block text-sub-heading-color secondary-font">
+                  <p className="hidden lg:block text-sm text-sub-heading-color secondary-font">
                     {item.desc}
                   </p>
                 </div>

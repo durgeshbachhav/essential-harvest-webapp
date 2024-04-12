@@ -1,132 +1,179 @@
 import React, { useContext } from "react";
 import Layout from "../../components/layout/Layout";
 import HeroSection from "../../components/heroSection/HeroSection";
+import underline from "../../assets/home/underline.png";
+import { GiTwirlyFlower } from "react-icons/gi";
 
 function About() {
   return (
     <Layout>
-      <HeroSection head="Essential Harvest" para="ABOUT US" />
+      <HeroSection head="Essential Harvest" para="Our Story" />
       <div className="about">
         <div className=" py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-5xl lg:text-center flex flex-col justify-center items-center">
-              <h1 className="lg:text-7xl text-4xl md:text-5xl font-bold tracking-tight text-primary-400 text-center primary-font">
-                About
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 via-yellow-450 to-primary-500 primary-font">
+              <h3 className="lg:text-5xl text-4xl md:text-5xl font-bold tracking-tight text-primary-800 text-center primary-font">
+                Essential Harvest :
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-800 via-yellow-450 to-primary-900 primary-font">
                   {" "}
-                  Essential Harvest
+                  Where Nature Meets You
                 </span>
-              </h1>
+              </h3>
               <p className="secondary-font mt-6 text-md text-sub-heading-color max-w-lg text-center">
-                Essential Harvest crafts gentle and effective skincare suitable
-                for all skin types, using sustainable practices and pure,
-                steam-distilled botanical extracts to ensure the highest quality
-                and respect for the environment.
+                Welcome to Essential Harvest, your one-stop shop for harnessing
+                the power of nature's goodness for your well-being. We believe
+                that true beauty radiates from within, and health is the
+                ultimate treasure.
               </p>
             </div>
-            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-                <div className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-sub-heading-color">
-                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                        className="h-6 w-6 text-white"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z"
-                        ></path>
-                      </svg>
-                    </div>
-                    Personalized Skincare Solutions
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-sub-heading-color">
-                  Craft your ideal skincare routine with Essential Harvest's customized plans. Tailored to your unique needs, our solutions ensure you receive precisely what your skin craves.
-                  </dd>
+            <div className="w-full  mt-8 ">
+              <div className=" flex flex-col items-center justify-center gap-4">
+                <div className=" flex items-center justify-center flex-col gap-2">
+                  <img
+                    src={underline}
+                    alt=""
+                    className="content-center rotate-180"
+                  />
+                  <div className="font-bold primary-font text-2xl py-2">
+                    Our Story: From Backyard Blooms to Essential Harvest
+                  </div>
+                  <img src={underline} alt="" className="content-center" />
+                  <div className="secondary-font text-base leading-7 text-sub-heading-color">
+                    Hey there! We're Priyanka and Purvi, the faces behind
+                    Essential Harvest. Our story began in Nashik, India, a
+                    peaceful town nestled amidst rolling hills.
+                  </div>
                 </div>
-                <div className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-sub-heading-color">
-                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                        className="h-6 w-6 text-white"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
-                        ></path>
-                      </svg>
+                <div className="flex items-center justify-center flex-col gap-2 ">
+                  <div className="flex items-center justify-center gap-4">
+                    <div>
+                      <GiTwirlyFlower color="green" size={20} />
                     </div>
-                    Expert Botanical Assessment
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-sub-heading-color">
-                  Utilizing advanced botanical expertise, we offer precise insights into the benefits of each natural ingredient. Our assessments ensure that your skincare regimen perfectly aligns with your skin's individual requirements.
-                  </dd>
-                </div>
-                <div className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-sub-heading-color">
-                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center bg-gradient-to-l from-primary-900 to-primary-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                        className="h-6 w-6 text-white"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                        ></path>
-                      </svg>
+                    <div className="font-bold primary-font text-2xl py-2">
+                      Priyanka's Passion Sprouts
                     </div>
-                    Affordable Luxury
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-sub-heading-color">
-                  Experience the indulgence of premium skincare without breaking the bank. Essential Harvest offers luxurious botanical formulations at accessible prices, so you can pamper yourself guilt-free.
-                  </dd>
-                </div>
-                <div className="relative pl-16">
-                  <dt className="text-base font-semibold leading-7 text-sub-heading-color">
-                    <div className="absolute left-0 top-0 flex h-12 w-12 items-center justify-center  bg-gradient-to-l from-primary-900 to-primary-500">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke-width="1.5"
-                        stroke="currentColor"
-                        aria-hidden="true"
-                        className="h-6 w-6 text-white"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M2.25 12.76c0 1.6 1.123 2.994 2.707 3.227 1.068.157 2.148.279 3.238.364.466.037.893.281 1.153.671L12 21l2.652-3.978c.26-.39.687-.634 1.153-.67 1.09-.086 2.17-.208 3.238-.365 1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"
-                        ></path>
-                      </svg>
+                    <div>
+                      <GiTwirlyFlower color="green" size={20} />
                     </div>
-                    Around-the-Clock Support
-                  </dt>
-                  <dd className="mt-2 text-base leading-7 text-sub-heading-color">
-                  Our dedicated team is committed to providing exceptional service whenever you need it. Whether you have questions about our products or need skincare advice, Essential Harvest is here for you 24/7.
-                  </dd>
+                  </div>
+                  <div className="mt-2 secondary-font text-base leading-7 text-sub-heading-color">
+                    Priyanka, juggling the busy world of consulting, found
+                    solace in her backyard garden. There, amongst the vibrant
+                    blooms, she discovered a love for rose geranium. Its
+                    delicate fragrance and potential benefits sparked a
+                    curiosity that grew into a passion.
+                  </div>
+                  <div className="secondary-font mt-2 text-base leading-7 text-sub-heading-color">
+                    Wanting to share this newfound joy, Priyanka reached out to
+                    Purvi, her brilliant sister-in-law with a talent for tech.
+                    Purvi, instantly drawn to the idea, saw a chance to combine
+                    their skills. Priyanka's consulting background could create
+                    a strategic plan, while Purvi's engineering expertise could
+                    optimize the process.
+                  </div>
                 </div>
-              </dl>
+                <div className="flex items-center justify-center flex-col gap-2">
+                  <div className="flex items-center justify-center gap-4">
+                    <div>
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
+                    <div className="font-bold primary-font text-2xl py-2">
+                      A Dream Takes Root
+                    </div>
+                    <div>
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
+                  </div>
+
+                  <div className="secondary-font  text-base leading-7 text-sub-heading-color">
+                    Together, they envisioned a venture that celebrated nature's
+                    bounty. They dreamt of bringing the goodness of rose
+                    geranium to their community and beyond. Thus, Essential
+                    Harvest was born – a name symbolizing the essence of
+                    nature's harvest.
+                  </div>
+                </div>
+                <div className="flex items-center justify-center flex-col gap-2">
+                  <div className="flex items-center justify-center gap-4">
+                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="font-bold primary-font text-2xl py-2">
+                      From Hobby to Flourishing Business
+                    </div>
+                    <GiTwirlyFlower color="green" size={20} />
+                  </div>
+
+                  <div className="secondary-font text-base leading-7 text-sub-heading-color">
+                    What began as a simple hobby cultivating rose geranium in
+                    Priyanka's backyard soon blossomed into a thriving business.
+                    Leveraging their unique skillset, they meticulously crafted
+                    high-quality, 100% pure rose geranium essential oil and
+                    hydrosol.
+                  </div>
+                </div>
+                <div className="flex items-center justify-center flex-col gap-2">
+                  <div className="flex items-center justify-center gap-4">
+                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="font-bold primary-font text-2xl py-2">
+                      More Than Just a Business
+                    </div>
+                    <GiTwirlyFlower color="green" size={20} />
+                  </div>
+
+                  <div className="secondary-font text-base leading-7 text-sub-heading-color">
+                    Essential Harvest wasn't just about selling products; it was
+                    about cultivating a movement. They wanted to inspire people
+                    to reconnect with nature and embrace its power to enhance
+                    well-being.
+                  </div>
+                </div>
+                <div className="flex items-center justify-center flex-col gap-2">
+                  <div className="flex items-center justify-center gap-4">
+                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="font-bold primary-font text-2xl py-2">
+                      Growing Together
+                    </div>
+                    <GiTwirlyFlower color="green" size={20} />
+                  </div>
+
+                  <div className="secondary-font text-base leading-7 text-sub-heading-color">
+                    As their business flourished, Priyanka and Purvi focused on
+                    building a loyal community. They expanded their product
+                    range, offering a variety of natural skincare, haircare, and
+                    aromatherapy products. Each product is a testament to their
+                    commitment to quality and sustainability.
+                  </div>
+                </div>
+                <div className="flex items-center justify-center flex-col gap-2">
+                  <div className="flex items-center justify-center gap-4">
+                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="font-bold primary-font text-2xl py-2">
+                      The Journey Continues
+                    </div>
+                    <GiTwirlyFlower color="green" size={20} />
+                  </div>
+                  <div className="secondary-font text-base leading-7 text-sub-heading-color">
+                    Today, Essential Harvest stands as a symbol of dedication,
+                    collaboration, and a love for nature's gifts. Priyanka and
+                    Purvi remain passionate about sharing the power of essential
+                    oils and empowering people to embrace a holistic approach to
+                    well-being.
+                  </div>
+                </div>
+                <div className="flex items-center justify-center flex-col gap-2">
+                  {/* <img
+                    src={underline}
+                    alt=""
+                    className="content-center rotate-180"
+                  /> */}
+                  <div className="secondary-font">
+                    {" "}
+                    Join us on this journey! Explore our website and discover
+                    how Essential Harvest can help you cultivate your natural
+                    radiance.
+                  </div>
+                  {/* <img src={underline} alt="" className="content-center " /> */}
+                </div>
+              </div>
             </div>
           </div>
         </div>

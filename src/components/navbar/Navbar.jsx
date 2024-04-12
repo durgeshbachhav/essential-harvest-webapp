@@ -155,7 +155,7 @@ function Navbar() {
           </div>
         </Dialog>
       </Transition.Root>
-      <header className="relative">
+      <header className="relative shadow-md">
         <nav aria-label="Top" className=" px-4 sm:px-6 lg:px-8  nav-height">
           <div className="">
             <div className="flex nav-height nav-width items-center">

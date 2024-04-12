@@ -59,10 +59,10 @@ function Signup() {
   };
 
   return (
-    <div className=" flex justify-center items-center h-screen flex-col bg-primary-50">
+    <div className=" flex justify-center items-center h-screen flex-col bg-gray-50">
       {loading && <Loader />}
 
-      <div className="px-10 py-10 bg-white border rounded-lg">
+      <div className="px-10 py-10 bg-gray-200 border rounded-lg">
         <div className=" flex items-center justify-center">
           <img src={logo} alt="" className="w-24  rounded-full " />
         </div>

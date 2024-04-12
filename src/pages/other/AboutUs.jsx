@@ -46,13 +46,13 @@ function About() {
                 </div>
                 <div className="flex items-center justify-center flex-col gap-2 ">
                   <div className="flex items-center justify-center gap-4">
-                    <div>
+                    <div className="w-20 h-20">
                       <GiTwirlyFlower color="green" size={20} />
                     </div>
                     <div className="font-bold primary-font text-2xl py-2">
                       Priyanka's Passion Sprouts
                     </div>
-                    <div>
+                    <div className="w-20 h-20">
                       <GiTwirlyFlower color="green" size={20} />
                     </div>
                   </div>
@@ -74,13 +74,13 @@ function About() {
                 </div>
                 <div className="flex items-center justify-center flex-col gap-2">
                   <div className="flex items-center justify-center gap-4">
-                    <div>
+                    <div className="w-20 h-20">
                       <GiTwirlyFlower color="green" size={20} />
                     </div>
                     <div className="font-bold primary-font text-2xl py-2">
                       A Dream Takes Root
                     </div>
-                    <div>
+                    <div className="w-20 h-20">
                       <GiTwirlyFlower color="green" size={20} />
                     </div>
                   </div>
@@ -95,11 +95,15 @@ function About() {
                 </div>
                 <div className="flex items-center justify-center flex-col gap-2">
                   <div className="flex items-center justify-center gap-4">
-                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="w-20 h-20">
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
                     <div className="font-bold primary-font text-2xl py-2">
                       From Hobby to Flourishing Business
                     </div>
-                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="w-20 h-20">
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
                   </div>
 
                   <div className="secondary-font text-base leading-7 text-sub-heading-color">
@@ -112,11 +116,15 @@ function About() {
                 </div>
                 <div className="flex items-center justify-center flex-col gap-2">
                   <div className="flex items-center justify-center gap-4">
-                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="w-20 h-20">
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
                     <div className="font-bold primary-font text-2xl py-2">
                       More Than Just a Business
                     </div>
-                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="w-20 h-20">
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
                   </div>
 
                   <div className="secondary-font text-base leading-7 text-sub-heading-color">
@@ -128,11 +136,15 @@ function About() {
                 </div>
                 <div className="flex items-center justify-center flex-col gap-2">
                   <div className="flex items-center justify-center gap-4">
-                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="w-20 h-20">
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
                     <div className="font-bold primary-font text-2xl py-2">
                       Growing Together
                     </div>
-                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="w-20 h-20">
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
                   </div>
 
                   <div className="secondary-font text-base leading-7 text-sub-heading-color">
@@ -145,11 +157,15 @@ function About() {
                 </div>
                 <div className="flex items-center justify-center flex-col gap-2">
                   <div className="flex items-center justify-center gap-4">
-                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="w-20 h-20">
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
                     <div className="font-bold primary-font text-2xl py-2">
                       The Journey Continues
                     </div>
-                    <GiTwirlyFlower color="green" size={20} />
+                    <div className="w-20 h-20">
+                      <GiTwirlyFlower color="green" size={20} />
+                    </div>
                   </div>
                   <div className="secondary-font text-base leading-7 text-sub-heading-color">
                     Today, Essential Harvest stands as a symbol of dedication,

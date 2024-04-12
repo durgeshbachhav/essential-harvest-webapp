@@ -64,7 +64,6 @@ function Footer() {
                 </li>
               </nav>
             </div>
-
             <div className="lg:w-1/4 md:w-1/2 w-full px-4 ">
               <h2 className="primary-font text-heading-color font-extrabold tracking-widest text-sm mb-3">
                 OTHERS
@@ -102,7 +101,6 @@ function Footer() {
                 Essential Harvest
               </Link>
             </p>
-
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
               <Link
                 className="text-primary-800 rounded-lg p-2 border-2 hover:bg-primary-900 hover:text-white "

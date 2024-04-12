@@ -109,13 +109,13 @@ function ProductInfo() {
               </div>
               <div className="border-t-2 mt-4 pt-4">
                 <div>
-                  <h4 className="font-semibold primary-font">
+                  <h4 className="font-semibold text-xl primary-font">
                     Product Description:
                   </h4>
                   <p className="secondary-font">{products.description}</p>
                 </div>
                 <div className="border-t-2 mt-4 pt-4">
-                  <h4 className="font-semibold primary-font">
+                  <h4 className="font-semibold text-xl primary-font">
                     About this item:
                   </h4>
                   <ul className="list-disc pl-5">
@@ -130,7 +130,7 @@ function ProductInfo() {
                   </ul>
                 </div>
                 <div className="border-t-2 mt-4 pt-4">
-                  <h4 className="font-semibold primary-font">
+                  <h4 className="font-semibold text-xl primary-font">
                     Benefits of Item:
                   </h4>
                   <ul className="list-disc pl-5">

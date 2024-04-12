@@ -18,8 +18,10 @@ function About() {
                 </span>
               </h1>
               <p className="secondary-font mt-6 text-md text-sub-heading-color max-w-lg text-center">
-                Crafting products with meticulous attention to detail and
-                integrity. Experience our natural luxury at an affordable price.
+                Essential Harvest crafts gentle and effective skincare suitable
+                for all skin types, using sustainable practices and pure,
+                steam-distilled botanical extracts to ensure the highest quality
+                and respect for the environment.
               </p>
             </div>
             <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
@@ -43,11 +45,10 @@ function About() {
                         ></path>
                       </svg>
                     </div>
-                    Customized Healthcare Plans
+                    Personalized Skincare Solutions
                   </dt>
                   <dd className="mt-2 text-base leading-7 text-sub-heading-color">
-                    Tailor your coverage to your specific needs with our
-                    customizable plans. Only pay for what matters most to you.
+                  Craft your ideal skincare routine with Essential Harvest's customized plans. Tailored to your unique needs, our solutions ensure you receive precisely what your skin craves.
                   </dd>
                 </div>
                 <div className="relative pl-16">
@@ -69,12 +70,10 @@ function About() {
                         ></path>
                       </svg>
                     </div>
-                    Expert Risk Assessment
+                    Expert Botanical Assessment
                   </dt>
                   <dd className="mt-2 text-base leading-7 text-sub-heading-color">
-                    Our cutting-edge model provides accurate insights into
-                    potential risks, ensuring your coverage aligns perfectly
-                    with your risk profile.
+                  Utilizing advanced botanical expertise, we offer precise insights into the benefits of each natural ingredient. Our assessments ensure that your skincare regimen perfectly aligns with your skin's individual requirements.
                   </dd>
                 </div>
                 <div className="relative pl-16">
@@ -96,12 +95,10 @@ function About() {
                         ></path>
                       </svg>
                     </div>
-                    Affordable Premiums
+                    Affordable Luxury
                   </dt>
                   <dd className="mt-2 text-base leading-7 text-sub-heading-color">
-                    Experience cost-effective insurance solutions with
-                    competitive premiums, ensuring optimal coverage without
-                    overspending.
+                  Experience the indulgence of premium skincare without breaking the bank. Essential Harvest offers luxurious botanical formulations at accessible prices, so you can pamper yourself guilt-free.
                   </dd>
                 </div>
                 <div className="relative pl-16">
@@ -123,11 +120,10 @@ function About() {
                         ></path>
                       </svg>
                     </div>
-                    24/7 Customer Support
+                    Around-the-Clock Support
                   </dt>
                   <dd className="mt-2 text-base leading-7 text-sub-heading-color">
-                    Our dedicated team is here day and night to promptly address
-                    your insurance inquiries.
+                  Our dedicated team is committed to providing exceptional service whenever you need it. Whether you have questions about our products or need skincare advice, Essential Harvest is here for you 24/7.
                   </dd>
                 </div>
               </dl>

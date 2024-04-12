@@ -15,7 +15,9 @@ function Home() {
         </div>
         <AboutSectionOne />
         <AboutSectionTwo />
-        <ProductCard />
+        <div className="py-4">
+          <ProductCard />
+        </div>
         <Track />
       </div>
     </Layout>

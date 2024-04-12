@@ -61,16 +61,15 @@ function Signup() {
   return (
     <div className=" flex justify-center items-center h-screen flex-col bg-primary-50">
       {loading && <Loader />}
-      
+
       <div className="px-10 py-10 bg-white border rounded-lg">
         <div className=" flex items-center justify-center">
-        <img src={logo} alt="" className="w-24  rounded-full " />
+          <img src={logo} alt="" className="w-24  rounded-full " />
         </div>
         <div>
           <input
             type="text"
             value={user.name}
-            
             onChange={(e) => {
               setUser({
                 ...user,
@@ -87,7 +86,6 @@ function Signup() {
           <input
             type="email"
             value={user.email}
-            
             onChange={(e) => {
               setUser({
                 ...user,
@@ -103,7 +101,6 @@ function Signup() {
           <input
             type="number"
             value={user.phoneNum}
-           
             onChange={(e) => {
               setUser({
                 ...user,
@@ -119,7 +116,6 @@ function Signup() {
           <input
             type="password"
             value={user.password}
-            
             onChange={(e) => {
               setUser({
                 ...user,

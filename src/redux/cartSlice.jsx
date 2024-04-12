@@ -17,7 +17,6 @@ const cartSlice = createSlice({
     },
     clearCart(state) {
       console.log(state);
-      // Clear the cart
       return [];
     },
   },

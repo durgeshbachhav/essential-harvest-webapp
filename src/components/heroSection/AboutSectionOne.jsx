@@ -4,7 +4,7 @@ import arrow from "../../assets/home/up-arrow.png";
 import heroVideo from "../../assets/home/hero-video.mp4";
 import { useNavigate } from "react-router-dom";
 
-function AboutSectionOne() {
+function  AboutSectionOne() {
   const navigate = useNavigate();
   const whyContent = [
     {
@@ -78,7 +78,7 @@ function AboutSectionOne() {
     };
   }, []);
   return (
-    <>
+    <div className="md:py-4">
       <div className="about">
         <div className="about-content">
           <h3
@@ -96,9 +96,7 @@ function AboutSectionOne() {
           <img src={underline} ref={imageRef} alt="" className="py-2" />
         </div>
         <div className="flex flex-col w-full items-center justify-center">
-          <h4 className="secondary-font text-sub-heading-color">
-            Welcome to Essential Harvest Pure, holistic well-being.
-          </h4>
+         
           <p className="secondary-font text-sub-heading-color">
             Essential Harvest is Nature's wellness, crafted sustainably.
             Discover our signature Rose Geranium Hydrosol and Essential Oil,
@@ -107,7 +105,7 @@ function AboutSectionOne() {
           <img src={underline} className="py-4" alt="" />
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -57,33 +57,34 @@ function AboutSectionTwo() {
   }, []);
   return (
     <>
-      <div className="p-4 flex flex-col  items-center justify-center lg:flex-row  lg:gap-4 lg:w-full  lg:px-16">
+      <div className="bg-gray-200 rounded-3xl border border-gray-200 p-4 flex flex-col  items-center justify-center lg:flex-row  lg:gap-4 lg:w-full  lg:px-16">
         <div className="w-full p-4 lg:p-0 lg:w-1/2 flex flex-col items-start justify-center md:justify-start lg:gap-4  ">
           <div className="w-full flex items-center justify-center flex-col">
-            
-            <h4 className="text-center secondary-font text-sub-heading-color">
+            <h4 className="text-center secondary-font text-primary text-sub-heading-color md:text-start">
               Why Choose Us
             </h4>
             <img src={underline} alt="" className="mt-4 content-center" />
           </div>
           <div
             className="secondary-font mt-4
-             lg:mt-0 "
+             lg:mt-0 flex items-center justify-center w-full"
           >
-            <div className="text-sub-heading-color  ">
-              At Essential Harvest, we meticulously craft our products with
-              attention to detail. Our commitment to integrity and care ensures
-              the quality of every Essential Harvest item. We prioritize
-              excellent customer service and satisfaction with every purchase.
+            <div className="secondary-font text-sub-heading-color text-center  max-w-xl ">
+              Essential Harvest prioritizes purity and effectiveness with
+              steam-distilled botanical extracts, offering gentle care for all
+              skin types while remaining committed to sustainable practices.
             </div>
           </div>
-          <div
-            className=" mt-4
-             lg:mt-0 flex items-center justify-center  gap-3 text-center focus:outline-none text-black  font-medium text-sm px-4 py-2  bg-gray-300 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-600 secondary-font cursor-pointer"
-            onClick={() => navigate("/allproducts")}
-          >
-            Shop now
-            <IoIosArrowDroprightCircle className="w-5 h-5" />
+          <div className="w-full flex items-center justify-center flex-col">
+            <img src={underline} alt="" className="mt-4 content-center" />
+            <div
+              className=" mt-4
+              flex items-center justify-center  gap-3 text-center focus:outline-none text-black  font-medium text-sm px-4 py-2  bg-gray-400 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-600 secondary-font cursor-pointer"
+              onClick={() => navigate("/allproducts")}
+            >
+              Shop now
+              <IoIosArrowDroprightCircle className="w-5 h-5" />
+            </div>
           </div>
         </div>
         <div className="w-full p-4 lg:p-0  lg:w-1/2 rounded-lg">

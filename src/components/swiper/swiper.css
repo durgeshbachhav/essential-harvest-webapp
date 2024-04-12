@@ -1,21 +1,19 @@
 .swiper {
   width: 100%;
-  height: 80vh;
-  background:url('../../assets/home/bg.jpg');
+  height: 70vh;
+  background: url("../../assets/home/bg.jpg");
   /* background-color: #cea352; */
   background-size: cover;
   background-position: center;
 }
-
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   height: 80vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  
 }
-
 .swiper-slide {
   display: block;
   width: 100%;

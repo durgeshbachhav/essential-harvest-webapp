@@ -1,10 +1,9 @@
 import { useContext, useRef } from "react";
 import eh1 from "../../assets/home/bottle5.png";
-import eh2 from "../../assets/home/bottle6.png";
+import eh2 from "../../assets/home/newbottle.png";
 import one from "../../assets/home/greenbg.jpg";
 import two from "../../assets/home/greenbg2.jpg";
 import three from "../../assets/home/greenbg3.jpg";
-
 import AboutSectionOne from "../heroSection/AboutSectionOne";
 import AboutSectionTwo from "../heroSection/AboutSectionTwo";
 import ProductCard from "../productCard/ProductCard";
@@ -12,15 +11,11 @@ import { useNavigate } from "react-router-dom";
 import Track from "../track/Track";
 import myContext from "../../context/data/myContext";
 import "./swiper.css";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
 import "./swiper.css";
-
 // import required modules
 import {
   Mousewheel,
@@ -75,17 +70,14 @@ const SwiperComponent = () => {
       parallax={true}
       data-swiper-parallax="3%"
       grabCursor={true}
+      loop={true}
       effect={"creative"}
       creativeEffect={{
         prev: {
-          shadow: true,
-          translate: ["-125%", 1000, -800],
-          rotate: [0, 0, -90],
+          translate: ["-120%", 0, -500],
         },
         next: {
-          shadow: true,
-          translate: ["125%", 1000, -800],
-          rotate: [0, 0, 90],
+          translate: ["120%", 0, -500],
         },
       }}
       modules={[Mousewheel, Pagination, Parallax, Navigation, EffectCreative]}
@@ -112,7 +104,7 @@ const SwiperComponent = () => {
           <img src={flowerTopRight} alt="" className="w-96 " />
         </div>
         <img src={eh1} className="w-96 h-96 z-20" />
-        <h1 className="text-6xl font-extrabold text-primary-900 z-20">
+        <h1 className="text-4xl font-extrabold text-primary-900 z-20">
           Rose Gerenium Hydrosol
         </h1>
       </SwiperSlide>
@@ -132,7 +124,7 @@ const SwiperComponent = () => {
           <img src={flowerTopRight} alt="" className="w-96 " />
         </div>
         <img src={eh2} alt="" className="w-96 h-96 " />
-        <h1 className="text-6xl font-extrabold text-primary-900  z-20">
+        <h1 className="text-4xl font-extrabold text-primary-900  z-20">
           Rose Geranium Oil
         </h1>
       </SwiperSlide>

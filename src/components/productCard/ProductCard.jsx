@@ -33,10 +33,10 @@ function ProductCard() {
     <section className="w-full p-4">
       <div className="w-full lg:px-8">
         <div className=" w-full mb-6 lg:mb-10 ">
-          <h1 className="sm:text-3xl px-4  text-2xl font-medium title-font  text-heading-color primary-font">
+          <h1 className="sm:text-3xl px-4  text-2xl font-medium title-font  text-heading-color secondary-font ">
             Our Products
           </h1>
-          <div className="h-1 w-32  rounded"></div>
+          <div className="h-1 w-40 mx-5 mt-2 bg-primary-500 rounded"></div>
         </div>
 
         <div className="flex flex-wrap -m-4 ">

@@ -10,7 +10,6 @@ import { useNavigate } from "react-router-dom";
 
 function Track() {
   const context = useContext(myContext);
-  
 
   const { mode } = context;
   const cardContent = [
@@ -83,10 +82,13 @@ function Track() {
     <div>
       <section className="lg:px-12">
         <div className="flex  flex-col items-center text-heading-color">
-          <h3 className="primary-font" ref={titleRef}>
+          <h3 className="secondary-font" ref={titleRef}>
             How To
           </h3>
-          <h4 className="text-sub-heading-color primary-font" ref={subtitleRef}>
+          <h4
+            className="text-sub-heading-color secondary-font"
+            ref={subtitleRef}
+          >
             Track your Order?
           </h4>
           <img src={underline} alt="" className="mt-3" ref={imageRef} />

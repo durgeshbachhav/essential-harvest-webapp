@@ -21,7 +21,7 @@ function Track() {
     {
       icon: confirmIcon,
       heading: "Your Confirmation",
-      desc: "Once we have shipped your order you will receive a confirmation email. ",
+      desc: "Once your order has been shipped, you can track your order on website.",
     },
     {
       icon: deliveryIcon,

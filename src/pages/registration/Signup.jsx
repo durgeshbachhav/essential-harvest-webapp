@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import myContext from "../../context/data/myContext";
 import { toast } from "sonner";
 import Loader from "../../components/loader/Loader";
-
 import { v4 as uuid } from "uuid";
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/home/logo.svg";
 import "./Register.scss";
 import { account } from "../../appwrite/appwriteConfig";
+import SocialLogin from "./SocialLogin";
 
 function Signup() {
   const navigate = useNavigate();
@@ -33,27 +33,25 @@ function Signup() {
     ) {
       return toast.error("All fields are required");
     }
-    const accountPromise = account.create(
+    const result = account.create(
       uuid(),
       user.email,
       user.password,
       user.name,
       user.phoneNum
     );
-    accountPromise.then(
+
+    result.then(
       function (response) {
-        //navigate user to the login page
-        console.log(response);
+        localStorage.setItem("user", JSON.stringify(response));
+        console.log('user',response)
         navigate("/login");
         toast.success("Signup Succesfully");
         setLoading(false);
       },
-
-      //handle error
       function (error) {
-        console.log(error);
-        toast.error("Signup Failed");
-        setLoading(false);
+        console.log(error); // Failure
+        toast.error("response ffaied");
       }
     );
   };
@@ -145,6 +143,7 @@ function Signup() {
             </Link>
           </h2>
         </div>
+        <SocialLogin />
       </div>
     </div>
   );

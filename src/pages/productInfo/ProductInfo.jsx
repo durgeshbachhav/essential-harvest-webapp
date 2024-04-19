@@ -57,19 +57,15 @@ function ProductInfo() {
     setIsInCart(!!isProductInCart);
   }, [cartItems, products.$id]);
 
-  const user = JSON.parse(localStorage.getItem("user"));
+  
 
   const addCart = () => {
-    if (user) {
-      if (isInCart) {
-        navigate("/cart");
-      } else {
-        dispatch(addToCart(products));
-        navigate("/cart");
-        toast.success("Added to cart");
-      }
+    if (isInCart) {
+      navigate("/cart");
     } else {
-      toast.error("Please log in to add items to cart.");
+      dispatch(addToCart(products));
+      navigate("/cart");
+      toast.success("Added to cart");
     }
   };
 

@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import MyContext from "./myContext";
 import { toast } from "sonner";
 import { v4 as uuid } from "uuid";
-
 // appwrite
-import { databases } from "../../appwrite/appwriteConfig";
+import { account, databases } from "../../appwrite/appwriteConfig";
 
 function myState(props) {
   const [mode, setMode] = useState("light");
@@ -279,9 +278,21 @@ function myState(props) {
     );
   };
 
-  const [user, setUser] = useState([]);
+  const [userinfo, setUser] = useState([]);
   const getUserData = async () => {
-    // setLoading(true)
+    try {
+      const userdata = account.get();
+      userdata.then(
+        function (res) {
+          setUser(res);
+        },
+        function (error) {
+          console.log(error);
+        }
+      );
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -317,7 +328,7 @@ function myState(props) {
         updateOrderStatus,
         order,
         setOrder,
-        user,
+        userinfo,
         searchkey,
         setSearchkey,
         filterType,

@@ -6,11 +6,11 @@ import { account } from "../../appwrite/appwriteConfig";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/home/logo.svg";
 import "./Register.scss";
+import SocialLogin from "./SocialLogin";
 
 function Login() {
   const context = useContext(myContext);
   const { loading, setLoading } = context;
-
   const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
@@ -19,17 +19,26 @@ function Login() {
   const login = async () => {
     setLoading(true);
     try {
-      const result = await account.createEmailSession(
-        user.email,
-        user.password
+      const result = account.createEmailSession(user.email, user.password);
+      result.then(
+        function (response) {
+          console.log("rsponse", response); // Success
+          localStorage.setItem("user", JSON.stringify(response));
+          navigate("/");
+          setLoading(false);
+        },
+        function (error) {
+          console.log("error", error); // Failure
+          toast.error("response failed");
+        }
       );
-      toast.success("Login successful");
-      console.log(result);
-      localStorage.setItem("user", JSON.stringify(result));
-      navigate("/");
-      setLoading(false);
+
+      const currentAccount = account.get();
+      console.log("current account", currentAccount);
     } catch (error) {
       console.log(error);
+      toast.success("Login failed");
+    } finally {
       setLoading(loading);
     }
   };
@@ -75,7 +84,7 @@ function Login() {
         <div className=" flex justify-center mb-3">
           <button
             onClick={login}
-            className=" focus:outline-none text-white  font-medium text-xm font-bold px-4 py-2  bg-blue-400 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-blue-800 secondary-font w-full"
+            className=" focus:outline-none text-white  font-medium text-xm  px-4 py-2  bg-blue-400 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-blue-800 secondary-font w-full"
           >
             Login
           </button>
@@ -91,6 +100,7 @@ function Login() {
             </Link>
           </h2>
         </div>
+        <SocialLogin />
       </div>
     </div>
   );

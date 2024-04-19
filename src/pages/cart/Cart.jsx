@@ -7,7 +7,7 @@ import { deleteFromCart, clearCart } from "../../redux/cartSlice";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
 // appwrite
-import { databases } from "../../appwrite/appwriteConfig";
+import { account, databases } from "../../appwrite/appwriteConfig";
 import { ID } from "appwrite";
 import "./Cart.scss";
 import { TiShoppingCart } from "react-icons/ti";
@@ -16,7 +16,7 @@ import { MdRemoveShoppingCart } from "react-icons/md";
 function Cart() {
   const navigate = useNavigate();
   const context = useContext(myContext);
-  const { mode, getOrderData } = context;
+  const { mode, getOrderData, userInfo } = context;
 
   const dispatch = useDispatch();
 
@@ -77,7 +77,30 @@ function Cart() {
     updateTotalAmount();
   }, [cartItems, quantityMap]);
 
-  const shipping = parseInt(100);
+  const shipping = parseInt(50);
+
+  // check user is login or not
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleBuyNow = () => {
+    if (loggedIn) {
+      setShowModal(true);
+    } else {
+      navigate("/login");
+    }
+  };
+
+  // Function to handle login
+  const handleLogin = () => {
+    if (user || userInfo) {
+      setLoggedIn(true);
+    }
+  };
+
+  //
 
   const grandTotal = shipping + totalAmout;
   // new ends
@@ -325,17 +348,27 @@ function Cart() {
                   </div>
                 </div>
                 {/* <Modal  /> */}
-                <Modal
-                  name={name}
-                  address={address}
-                  pincode={pincode}
-                  phoneNumber={phoneNumber}
-                  setName={setName}
-                  setAddress={setAddress}
-                  setPincode={setPincode}
-                  setPhoneNumber={setPhoneNumber}
-                  buyNow={buyNow}
-                />
+                {user || userInfo ? (
+                  <Modal
+                    name={name}
+                    address={address}
+                    pincode={pincode}
+                    phoneNumber={phoneNumber}
+                    setName={setName}
+                    setAddress={setAddress}
+                    setPincode={setPincode}
+                    setPhoneNumber={setPhoneNumber}
+                    buyNow={buyNow}
+                  />
+                ) : (
+                  <button
+                    className="w-full  bg-primary-800 py-2 text-center  text-white font-bold rounded-lg"
+                    type="button"
+                    onClick={handleBuyNow}
+                  >
+                    continue
+                  </button>
+                )}
               </div>
             </div>
           </div>

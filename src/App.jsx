@@ -42,14 +42,7 @@ function App() {
               </ProtectedRoute>
             }
           />
-          <Route
-            path="/cart"
-            element={
-              <ProtectedRoute>
-                <Cart />
-              </ProtectedRoute>
-            }
-          />
+          <Route path="/cart" element={<Cart />} />
           <Route
             path="/dashboard"
             element={
@@ -90,6 +83,7 @@ function App() {
           <Route path="/contact" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="*" element={<NoPage />} />
         </Routes>
         <Toaster />
       </Router>

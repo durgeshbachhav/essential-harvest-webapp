@@ -1,11 +1,9 @@
 import React, { useContext, useState } from "react";
 import myContext from "../../context/data/myContext";
 import Layout from "../../components/layout/Layout";
-import Loader from "../../components/loader/Loader";
 import "../../pages/cart/Cart.scss";
 import more from "../../assets/order/more.png";
 import less from "../../assets/order/close.png";
-import nocart from "../../assets/home/nocart.png";
 import { useNavigate } from "react-router-dom";
 import LoaderTwo from "../../components/loader/LoaderTwo";
 import { TiShoppingCart } from "react-icons/ti";

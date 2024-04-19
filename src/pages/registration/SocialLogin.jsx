@@ -15,7 +15,7 @@ const SocialLogin = () => {
     try {
       const res = account.createOAuth2Session(
         "google",
-        "https://essential-harvest-webapp.vercel.app",
+        "https://essential-harvest-webapp.vercel.app/#/cart",
         "https://essential-harvest-webapp.vercel.app/#/nopage"
       );
       console.log(res);

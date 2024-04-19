@@ -15,8 +15,8 @@ const SocialLogin = () => {
     try {
       const res = account.createOAuth2Session(
         "google",
-        "http://localhost:5173",
-        "http://localhost:5173/fail"
+        "https://essential-harvest-webapp.vercel.app",
+        "https://essential-harvest-webapp.vercel.app/#/nopage"
       );
       console.log(res);
       const user = await account.get();

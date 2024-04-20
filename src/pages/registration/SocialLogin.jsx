@@ -38,13 +38,10 @@ const SocialLogin = () => {
         onClick={handleLoginWithGoogle}
         className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg"
       >
-        <FaGoogle />
+        <FaGoogle color="red" />
         Google
       </button>
-      <button className="flex items-center gap-2 bg-blue-800 text-white px-4 py-2 rounded-lg">
-        <FaFacebook />
-        Facebook
-      </button>
+      
     </div>
   );
 };

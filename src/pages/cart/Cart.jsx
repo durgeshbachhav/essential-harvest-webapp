@@ -194,7 +194,7 @@ function Cart() {
             console.log("response", response);
             clearAllCart();
             getOrderData();
-            navigate("/order");
+            navigate("#/order");
           },
           function (error) {
             console.log("error", error);
@@ -224,7 +224,7 @@ function Cart() {
           )
           .then((response) => {
             console.log("response", response);
-            toast.success('')
+            toast.success("");
             console.log("Webhook called successfully");
           })
           .catch((error) => {

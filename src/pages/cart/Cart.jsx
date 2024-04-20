@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteFromCart, clearCart } from "../../redux/cartSlice";
 import { toast } from "sonner";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 // appwrite
 import { account, databases } from "../../appwrite/appwriteConfig";
 import { ID } from "appwrite";
@@ -17,7 +19,7 @@ function Cart() {
   const navigate = useNavigate();
   const context = useContext(myContext);
   const { mode, getOrderData, userInfo } = context;
-
+  // console.log("order details", getOrderData);
   const dispatch = useDispatch();
 
   const cartItems = useSelector((state) => state.cart);
@@ -82,6 +84,7 @@ function Cart() {
   // check user is login or not
 
   const user = JSON.parse(localStorage.getItem("user"));
+
   const [loggedIn, setLoggedIn] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -126,6 +129,9 @@ function Cart() {
       phoneNumber,
       date: new Date(),
     };
+
+    let orderInfo;
+
     // razorpay
     var options = {
       key: import.meta.env.VITE_PAYMENT_GATEWAY_KEY,
@@ -139,7 +145,9 @@ function Cart() {
       handler: function (response) {
         toast.success("Payment Successful");
         console.log(response);
+        console.log(orderInfo);
         const paymentId = response.razorpay_payment_id;
+
         // const cartItemsJsonString = JSON.stringify(cartItems);
         const addressInfoJsonString = JSON.stringify(addressInfo);
         // Transform the array into the desired format
@@ -158,13 +166,13 @@ function Cart() {
           return acc;
         }, {});
         const cartItemsJsonString = JSON.stringify(cartItemsJsonString1);
-        // console.log("cart item json string", cartItemsJsonString);
+        console.log("cart item json string", cartItemsJsonString);
         // console.log("address json string", addressInfoJsonString);
         // console.log("cart item json string", cartItemsJsonString);
         // console.log("cart item json string", cartItemsJsonString);
         // console.log("cart item json string", cartItemsJsonString);
 
-        const orderInfo = {
+        orderInfo = {
           cartItemsJsonString,
           addressInfoJsonString,
           date: new Date(),
@@ -192,6 +200,36 @@ function Cart() {
             console.log("error", error);
           }
         );
+
+        /**========================================================================
+         *!                           pabbly webhook integration
+         *========================================================================**/
+
+        axios
+          .post(
+            "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTZhMDYzNjA0MzQ1MjZhNTUzNDUxMzMi_pc",
+            {
+              paymentId: paymentId,
+              name,
+              address,
+              pincode,
+              phoneNumber,
+              orderInfo: orderInfo,
+            },
+            {
+              headers: {
+                "Content-Type": "application/json",
+              },
+            }
+          )
+          .then((response) => {
+            console.log("response", response);
+            toast.success('')
+            console.log("Webhook called successfully");
+          })
+          .catch((error) => {
+            console.error("Error calling webhook:", error);
+          });
       },
 
       theme: {
@@ -201,6 +239,7 @@ function Cart() {
 
     var pay = new window.Razorpay(options);
     pay.open();
+    console.log("payment", pay);
   };
   return (
     <div>

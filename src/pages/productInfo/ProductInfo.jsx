@@ -51,7 +51,7 @@ function ProductInfo() {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
 
-  console.log("products id", products);
+  // console.log("products id", products);
   useEffect(() => {
     const isProductInCart = cartItems.find((item) => item.$id === products.$id);
     setIsInCart(!!isProductInCart);

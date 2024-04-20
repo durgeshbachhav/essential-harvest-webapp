@@ -30,7 +30,7 @@ function myState(props) {
     date: new Date(),
   });
 
-  console.log("id", productId);
+  // console.log("id", productId);
   const addProduct = async () => {
     if (
       products.title == null ||
@@ -184,7 +184,7 @@ function myState(props) {
   const editOrderhandle = (item) => {
     setOrder(item);
   };
-  console.log("orderid", order);
+  // console.log("orderid", order);
   const updateOrderStatus = async () => {
     setLoading(true);
     const updateStatusPromise = databases.updateDocument(
@@ -221,7 +221,7 @@ function myState(props) {
     );
     orderDataPromise.then(
       function (response) {
-        console.log("order response", response);
+        // console.log("order response", response);
         seTotalOrder(response.total);
         // Extract data from the documents
         const originalOrdersArray = response.documents.map((doc) => ({
@@ -278,7 +278,7 @@ function myState(props) {
     );
   };
 
-  const [userinfo, setUser] = useState([]);
+  const [user, setUser] = useState([]);
   const getUserData = async () => {
     try {
       const userdata = account.get();
@@ -291,14 +291,14 @@ function myState(props) {
         }
       );
     } catch (error) {
-      console.log(error);
+      console.log("error", error);
     }
   };
 
   useEffect(() => {
     getOrderData();
     getUserData();
-  }, []);
+  }, [user]);
 
   const [searchkey, setSearchkey] = useState("");
   const [filterType, setFilterType] = useState("");
@@ -328,7 +328,6 @@ function myState(props) {
         updateOrderStatus,
         order,
         setOrder,
-        userinfo,
         searchkey,
         setSearchkey,
         filterType,
@@ -339,6 +338,8 @@ function myState(props) {
         totalOrder,
         totalProduct,
         getOrderData,
+        user,
+        setUser,
       }}
     >
       {props.children}

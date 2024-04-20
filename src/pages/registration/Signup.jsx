@@ -24,7 +24,7 @@ function Signup() {
 
   const signup = async (e) => {
     e.preventDefault();
-    setLoading(true);
+
     if (
       user.name === "" ||
       user.phoneNum === "" ||
@@ -44,7 +44,7 @@ function Signup() {
     result.then(
       function (response) {
         localStorage.setItem("user", JSON.stringify(response));
-        console.log('user',response)
+        console.log("user", response);
         navigate("/login");
         toast.success("Signup Succesfully");
         setLoading(false);

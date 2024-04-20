@@ -17,15 +17,16 @@ function Login() {
     password: "",
   });
   const login = async () => {
-    setLoading(true);
+    
     try {
+      
       const result = account.createEmailSession(user.email, user.password);
       result.then(
         function (response) {
           console.log("rsponse", response); // Success
           localStorage.setItem("user", JSON.stringify(response));
           navigate("/");
-          setLoading(false);
+          
         },
         function (error) {
           console.log("error", error); // Failure
@@ -39,7 +40,7 @@ function Login() {
       console.log(error);
       toast.success("Login failed");
     } finally {
-      setLoading(loading);
+      setLoading(false);
     }
   };
 

@@ -5,7 +5,10 @@ const ProtectedRouteForAdmin = ({ children }) => {
 
   console.log("admin", admin);
 
-  if (admin && admin.providerUid === import.meta.env.VITE_APP_ADMIN_EMAIL) {
+  if (
+    admin &&
+    (admin.providerUid || admin.email) === import.meta.env.VITE_APP_ADMIN_EMAIL
+  ) {
     return children;
   } else {
     return <Navigate to={"/login"} />;

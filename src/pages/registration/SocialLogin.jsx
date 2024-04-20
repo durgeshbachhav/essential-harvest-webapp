@@ -13,16 +13,18 @@ const SocialLogin = () => {
 
   const handleLoginWithGoogle = async () => {
     try {
-      const res = account.createOAuth2Session(
+      account.createOAuth2Session(
         "google",
         "https://essential-harvest-webapp.vercel.app/#/cart",
         "https://essential-harvest-webapp.vercel.app/#/nopage"
       );
-      console.log(res);
+
+      // "http://localhost:5173/#/cart", "http://localhost:5173/#/nopage";
+
       const user = await account.get();
-
-      localStorage.setItem("user", JSON.stringify(user));
-
+      console.log("user", user);
+      const userinfo = localStorage.setItem("user", JSON.stringify(user));
+      console.log("google user", userinfo);
       setLoggedInUser(user);
       console.log("user", loggedInUser);
     } catch (error) {

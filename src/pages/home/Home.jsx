@@ -8,6 +8,7 @@ import Track from "../../components/track/Track";
 import myContext from "../../context/data/myContext";
 import { useContext } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import underline from "../../assets/home/underline.png";
 
 function Home() {
   const context = useContext(myContext);
@@ -18,9 +19,11 @@ function Home() {
         <div className="z-30">
           <SwiperComponent />
         </div>
-        <AboutSectionOne />
+        <div className="bg-link-water">
+          <AboutSectionOne />
+        </div>
         <AboutSectionTwo />
-        <div className="py-10">
+        <div className="py-10 bg-cavern-pink">
           {/* <ProductCard /> */}
           {/* for design purpose directly fetching the items */}
           <div className="w-full lg:px-8 flex flex-col items-center justify-center">
@@ -28,7 +31,9 @@ function Home() {
               <h1 className=" px-4  text-2xl   text-heading-color secondary-font ">
                 Our Products
               </h1>
-              <div className="h-1 w-40 mx-5 mt-2 bg-primary-500 rounded"></div>
+              <div className="">
+                <img src={underline} alt="" className="mt-4 content-center" />
+              </div>
             </div>
 
             <div className="flex flex-wrap items-center justify-center py-4 w-full">
@@ -45,15 +50,10 @@ function Home() {
                   return (
                     <div
                       key={index}
-                      className="p-8 w-full md:w-1/4  rounded-lg    secondary-font"
+                      className="p-8 w-full md:w-1/4    secondary-font"
                     >
                       <div
-                        className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-gray-50 to-gray-200 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110 "
-                        style={{
-                          backgroundColor:
-                            mode === "dark" ? "rgb(46 49 55)" : "",
-                          color: mode === "dark" ? "white" : "",
-                        }}
+                        className="h-full bottom-5  duration-300 ease-in-out     bg-mist border-4 hover:border-pearl shadow-md  overflow-hidden cursor-pointer "
                         onClick={() =>
                           (window.location.href = `/#/productinfo/${id}`)
                         }
@@ -65,7 +65,7 @@ function Home() {
                             alt="blog"
                           />
                         </div>
-                        <div className="p-4 border-t border-opacity-20  ">
+                        <div className="p-4  ">
                           <h2
                             className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 primary-font"
                             style={{ color: mode === "dark" ? "white" : "" }}
@@ -79,10 +79,7 @@ function Home() {
                             {title}
                           </h1>
                           {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
-                          <p
-                            className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
-                            style={{ color: mode === "dark" ? "white" : "" }}
-                          >
+                          <p className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font">
                             order now
                             <FaAngleDoubleRight />
                           </p>

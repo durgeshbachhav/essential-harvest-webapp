@@ -8,7 +8,7 @@ import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
 import "./Navbar.scss";
 import { FaShoppingCart } from "react-icons/fa";
-
+import { BsFillHandbagFill } from "react-icons/bs";
 import logo from "../../assets/home/footer.svg";
 
 function Navbar() {
@@ -19,7 +19,6 @@ function Navbar() {
 
   const user = JSON.parse(localStorage.getItem("user"));
   // console.log("user ", user);
-
 
   const logout = () => {
     localStorage.clear("user");
@@ -68,15 +67,14 @@ function Navbar() {
                 <div className="flex px-4 pb-2 pt-20">
                   <button
                     type="button"
-                    className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                    className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-black"
                     onClick={() => setOpen(false)}
                   >
-                    <span className="sr-only">Close menu</span>
                     <RxCross2 />
                   </button>
                 </div>
-                <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-                  <div className="flow-root">
+                <div className=" border-t border-black ">
+                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
                       to={"/"}
                       className="text-sm font-medium text-gray-900 "
@@ -87,7 +85,7 @@ function Navbar() {
                   </div>
                   {user?.providerUid ===
                     import.meta.env.VITE_APP_ADMIN_EMAIL && (
-                    <div className="flow-root">
+                    <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                       <Link
                         to={"/dashboard"}
                         className="text-sm font-medium text-gray-900 "
@@ -97,7 +95,7 @@ function Navbar() {
                       </Link>
                     </div>
                   )}
-                  <div className="flow-root">
+                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
                       to={"/about"}
                       className="text-sm font-medium text-gray-900 "
@@ -106,7 +104,7 @@ function Navbar() {
                       Our Story
                     </Link>
                   </div>
-                  <div className="flow-root">
+                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
                       to={"/allproducts"}
                       className="text-sm font-medium text-gray-900 "
@@ -117,7 +115,7 @@ function Navbar() {
                   </div>
 
                   {user ? (
-                    <div className="flow-root">
+                    <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                       <Link
                         to={"/order"}
                         style={{ color: mode === "dark" ? "white" : "" }}
@@ -131,7 +129,7 @@ function Navbar() {
                   )}
 
                   {user ? (
-                    <div className="flow-root">
+                    <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
                       <a
                         onClick={logout}
                         className="-m-2 block p-2 text-sm font-medium text-gray-900 cursor-pointer"
@@ -141,7 +139,7 @@ function Navbar() {
                       </a>
                     </div>
                   ) : (
-                    <div className="flow-root">
+                    <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
                       <Link
                         to={"/signup"}
                         className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
@@ -157,7 +155,7 @@ function Navbar() {
           </div>
         </Dialog>
       </Transition.Root>
-      <header className="relative shadow-md">
+      <header className="relative shadow">
         <nav aria-label="Top" className=" px-4 sm:px-6 lg:px-8  nav-height">
           <div className="">
             <div className="flex nav-height nav-width items-center">
@@ -170,7 +168,6 @@ function Navbar() {
                   color: mode === "dark" ? "white" : "",
                 }}
               >
-                <span className="sr-only">Open menu</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -198,10 +195,10 @@ function Navbar() {
               </div>
 
               <div className="ml-auto flex items-center">
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-2">
                   <Link
                     to={"/"}
-                    className="text-sm font-medium  "
+                    className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     Home
@@ -211,7 +208,7 @@ function Navbar() {
                     import.meta.env.VITE_APP_ADMIN_EMAIL && (
                     <Link
                       to={"/dashboard"}
-                      className="text-sm font-medium  "
+                      className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Dashboard
@@ -219,14 +216,14 @@ function Navbar() {
                   )}
                   <Link
                     to={"/About"}
-                    className="text-sm font-medium  "
+                    className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white "
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     Our Story
                   </Link>
                   <Link
                     to={"/allproducts"}
-                    className="text-sm font-medium  "
+                    className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     All Products
@@ -234,7 +231,7 @@ function Navbar() {
                   {user ? (
                     <Link
                       to={"/order"}
-                      className="text-sm font-medium  "
+                      className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Order
@@ -242,7 +239,7 @@ function Navbar() {
                   ) : (
                     <Link
                       to={"/signup"}
-                      className="text-sm font-medium  "
+                      className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Signup
@@ -252,7 +249,7 @@ function Navbar() {
                   {user ? (
                     <Link
                       onClick={logout}
-                      className="text-sm font-medium  cursor-pointer  "
+                      className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Logout
@@ -269,19 +266,18 @@ function Navbar() {
                     className="group  flex items-center p-2 "
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
-                    <FaShoppingCart
-                      color="black"
+                    <BsFillHandbagFill
+                      color="#019f16"
                       className="w-5 h-5 lg:w-8 lg:h-8"
                     />
 
                     <div className="custom-count">
                       <span
                         className="ml-2 text-sm font-medium   "
-                        style={{ color: mode === "dark" ? "white" : "" }}
+                        style={{ color: mode === "#019f16" ? "#019f16" : "" }}
                       >
                         {cartItems.length}
                       </span>
-                      <span className="sr-only">items in cart, view bag</span>
                     </div>
                   </Link>
                 </div>

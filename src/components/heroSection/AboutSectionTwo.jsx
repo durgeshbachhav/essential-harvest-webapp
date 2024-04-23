@@ -57,7 +57,7 @@ function AboutSectionTwo() {
   }, []);
   return (
     <>
-      <div className="bg-gray-200 rounded-3xl border border-gray-200 p-4 flex flex-col  items-center justify-center lg:flex-row  lg:gap-4 lg:w-full  lg:px-16">
+      <div className="bg-leaf    p-4 flex flex-col  items-center justify-center lg:flex-row  lg:gap-4  lg:mx-auto  lg:px-16">
         <div className="w-full p-4 lg:p-0 lg:w-1/2 flex flex-col items-start justify-center md:justify-start lg:gap-4  ">
           <div className="w-full flex items-center justify-center flex-col">
             <h4 className="text-center secondary-font  text-sub-heading-color md:text-start text-2xl">
@@ -119,8 +119,7 @@ function AboutSectionTwo() {
           <div className="w-full flex items-center justify-center flex-col">
             <img src={underline} alt="" className="mt-4 content-center" />
             <div
-              className=" mt-4
-              flex items-center justify-center  gap-3 text-center focus:outline-none text-black  font-medium text-sm px-4 py-2  bg-gray-400 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-600 secondary-font cursor-pointer"
+              className="mt-4 focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-everglade  hover:bg-everglade ease-in duration-300  secondary-font"
               onClick={() => navigate("/allproducts")}
             >
               Shop now

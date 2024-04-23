@@ -36,12 +36,11 @@ const SocialLogin = () => {
     <div className="flex flex-col gap-3">
       <button
         onClick={handleLoginWithGoogle}
-        className="flex items-center gap-2 bg-blue-500 text-white px-4 py-2 rounded-lg"
+        className="flex items-center justify-center gap-4 bg-blue-600  text-white font-bold px-4 py-2 rounded-lg"
       >
-        <FaGoogle color="red" />
+        <FaGoogle  size={20}/>
         Google
       </button>
-      
     </div>
   );
 };

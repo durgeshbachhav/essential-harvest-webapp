@@ -79,7 +79,7 @@ function Track() {
   }, []);
 
   return (
-    <div>
+    <div className="bg-link-water py-12">
       <section className="lg:px-12">
         <div className="flex  flex-col items-center text-heading-color">
           <h3 className="secondary-font text-xl" ref={titleRef}>
@@ -94,10 +94,10 @@ function Track() {
           <img src={underline} alt="" className="mt-3" ref={imageRef} />
         </div>
         <div className="mt-3">
-          <div className="flex flex-wrap  text-center">
+          <div className="flex flex-wrap  text-center px-4">
             {cardContent.map((item, index) => (
               <div key={index} className="p-4 w-1/2 md:w-1/4  lg:w-1/4 ">
-                <div className="hover:shadow-sm w-full h-full  flex items-center justify-center flex-col  border-5 border-primary-800 rounded-lg bg-gradient-to-tl from-gray-100 to-gray-200 px-4 py-4 hover:scale-105 ease-in-out duration-300 cursor-progress">
+                <div className="hover:shadow-sm w-full h-full  flex items-center justify-center flex-col  border-4  hover:border-primary-100  bg-pearl p-4  ease-in-out duration-300 ">
                   <img
                     src={item.icon}
                     className="w-10 h-10 md:w-20 md:h-20 items-center"

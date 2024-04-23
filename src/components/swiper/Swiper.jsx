@@ -1,9 +1,7 @@
 import { useContext, useRef } from "react";
 import eh1 from "../../assets/home/bottle5.png";
 import eh2 from "../../assets/home/newbottle.png";
-import one from "../../assets/home/greenbg.jpg";
-import two from "../../assets/home/greenbg2.jpg";
-import three from "../../assets/home/greenbg3.jpg";
+
 import AboutSectionOne from "../heroSection/AboutSectionOne";
 import AboutSectionTwo from "../heroSection/AboutSectionTwo";
 import ProductCard from "../productCard/ProductCard";
@@ -74,14 +72,16 @@ const SwiperComponent = () => {
       effect={"creative"}
       creativeEffect={{
         prev: {
-          translate: ["-120%", 0, -500],
+          translate: ["-125%", 400, -800],
+          rotate: [0, 100, -90],
         },
         next: {
-          translate: ["120%", 0, -500],
+          translate: ["125%", 0, -800],
+          rotate: [0, 0, 90],
         },
       }}
       modules={[Mousewheel, Pagination, Parallax, Navigation, EffectCreative]}
-      className="mySwiper rounded-b-3xl"
+      className="mySwiper  swiperr"
     >
       <div className=" absolute  -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
         <img src={flowerBottomLeft} alt="" className="w-96 " />
@@ -104,7 +104,7 @@ const SwiperComponent = () => {
           <img src={flowerTopRight} alt="" className="w-96 " />
         </div>
         <img src={eh1} className="w-96 h-96 z-20" />
-        <h1 className="text-4xl font-extrabold text-primary-900 z-20">
+        <h1 className="text-4xl font-extrabold text-gray-700 z-20">
           Rose Gerenium Hydrosol
         </h1>
       </SwiperSlide>
@@ -124,7 +124,7 @@ const SwiperComponent = () => {
           <img src={flowerTopRight} alt="" className="w-96 " />
         </div>
         <img src={eh2} alt="" className="w-96 h-96 " />
-        <h1 className="text-4xl font-extrabold text-primary-900  z-20">
+        <h1 className="text-4xl font-extrabold text-gray-700 z-20">
           Rose Geranium Oil
         </h1>
       </SwiperSlide>

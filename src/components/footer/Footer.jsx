@@ -8,7 +8,7 @@ function Footer() {
   const { mode } = context;
   return (
     <div>
-      <footer className=" bg-gray-200 rounded-t-3xl">
+      <footer className=" bg-gray-200 ">
         <div className="container px-5 lg:py-24 mx-auto cust-footer-container">
           <div className="flex flex-wrap md:text-left text-center order-first footer-custom">
             <div className="mt-3 lg:w-1/4 md:w-1/2 w-full px-4 flex items-center justify-center  lg:mt-0 lg:items-start lg:justify-start">

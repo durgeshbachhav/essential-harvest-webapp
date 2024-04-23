@@ -78,9 +78,9 @@ function  AboutSectionOne() {
     };
   }, []);
   return (
-    <div className="md:py-4">
-      <div className="about">
-        <div className="about-content">
+
+      <div className="py-8 md:py-16">
+        <div className="flex flex-col w-full items-center justify-center">
           <h3
             className="  animate__animated animate__slideInUp text-center secondary-font  text-sub-heading-color text-2xl"
             ref={titleRef}
@@ -92,7 +92,7 @@ function  AboutSectionOne() {
         </div>
         <div className="flex flex-col w-full items-center justify-center">
          
-          <p className="secondary-font text-sub-heading-color"  ref={titleRef}>
+          <p className="secondary-font text-sub-heading-color max-w-2xl text-center px-4"  ref={titleRef}>
             Essential Harvest is Nature's wellness, crafted sustainably.
             Discover our signature Rose Geranium Hydrosol and Essential Oil,
             offering pure, effective solutions for holistic self-care.
@@ -100,7 +100,7 @@ function  AboutSectionOne() {
           <img src={underline} className="py-4" ref={imageRef} alt="" />
         </div>
       </div>
-    </div>
+    
   );
 }
 

@@ -7,38 +7,20 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': {
-          '50': '#e9fff7',
-          '100': '#cbffe9',
-          '200': '#7affcc',
-          '300': '#5bfac7',
-          '400': '#1becb0',
-          '500': '#00d49a',
-          '600': '#00ad7f',
-          '700': '#008a6a',
-          '800': '#006d54',
-          '900': '#005947',
-          '950': '#003329',
-
-          // '50': '#fff0f3',
-          // '100': '#ffe2e9',
-          // '200': '#ffcad8',
-          // '300': '#ff9fb7',
-          // '400': '#ff6992',
-          // '500': '#ff1a5e',
-          // '600': '#ed115d',
-          // '700': '#c8084f',
-          // '800': '#a80949',
-          // '900': '#8f0c44',
-          // '950': '#500121',
-        },
         'heading': {
           'color': '#2B3A55'
         },
         'sub-heading': {
           'color': "#1B4242"
         },
-
+        "chestnut": "#bb4747",
+        "cloud": "#cbc9c2",
+        "leaf": "#baceb7",
+        "link-water": "#cdd7e4",
+        "cavern-pink": "#d9b5b3",
+        "everglade": "#204e3c",
+        "pearl": "#fffcf3",
+        "mist": "#b2cad2"
       },
 
     },

@@ -56,9 +56,9 @@ const SwiperComponent = () => {
       slidesPerView={1}
       // spaceBetween={30}
       mousewheelControl={true}
-      pagination={{
-        clickable: true,
-      }}
+      // pagination={{
+      //   clickable: true,
+      // }}
       watchSlidesProgress={true}
       mousewheel={{
         releaseOnEdges: true,
@@ -72,11 +72,11 @@ const SwiperComponent = () => {
       effect={"creative"}
       creativeEffect={{
         prev: {
-          translate: ["-125%", 400, -800],
+          translate: ["-125%", 0, -200],
           rotate: [0, 100, -90],
         },
         next: {
-          translate: ["125%", 0, -800],
+          translate: ["125%", 0, -200],
           rotate: [0, 0, 90],
         },
       }}

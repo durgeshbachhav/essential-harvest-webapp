@@ -278,29 +278,11 @@ function myState(props) {
     );
   };
 
-  // const [user, setUser] = useState([]);
- 
-  // const getUserData = async () => {
-  //   try {
-  //     const userdata = account.get();
-  //     console.log('userdata',userdata)
-  //     userdata.then(
-  //       function (res) {
-  //         setUser(res);
-  //       },
-  //       function (error) {
-  //         console.log(error);
-  //       }
-  //     );
-  //   } catch (error) {
-  //     console.log("error", error);
-  //   }
-  // };
-  // console.log('user',user);
-  // useEffect(() => {
-  //   // getOrderData();
-  //   getUserData();
-  // }, [user]);
+  /
+  useEffect(() => {
+    getOrderData();
+    
+  }, []);
 
   const [searchkey, setSearchkey] = useState("");
   const [filterType, setFilterType] = useState("");

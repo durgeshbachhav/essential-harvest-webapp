@@ -278,10 +278,8 @@ function myState(props) {
     );
   };
 
-  /
   useEffect(() => {
     getOrderData();
-    
   }, []);
 
   const [searchkey, setSearchkey] = useState("");

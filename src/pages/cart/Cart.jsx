@@ -319,7 +319,7 @@ function Cart() {
 
                           <div
                             onClick={() => deleteCart(item)}
-                            className="cursor-pointer bg-chestnut p-2 rounded-lg"
+                            className="cursor-pointer bg-chestnut p-2 rounded-lg w-12"
                           >
                             <MdRemoveShoppingCart color="white" size={30} />
                           </div>

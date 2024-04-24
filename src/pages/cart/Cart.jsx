@@ -266,7 +266,7 @@ function Cart() {
                   return (
                     <div
                       key={index}
-                      className="w-full justify-between mb-6  border-3 border-gray-500 rounded-lg  drop-shadow-sm bg-white  p-6  sm:flex  sm:justify-start"
+                      className="w-full justify-between mb-6    shadow-xl  bg-mist  p-6  sm:flex  sm:justify-start"
                       style={{
                         backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "",
                         color: mode === "dark" ? "white" : "",
@@ -275,7 +275,7 @@ function Cart() {
                       <img
                         src={imageUrl}
                         alt="product-image"
-                        className="w-full  sm:w-40 rounded-lg"
+                        className="w-full  sm:w-40 "
                       />
                       <div className=" sm:flex sm:w-full sm:justify-between">
                         <div className="mt-5 sm:mt-0">
@@ -285,7 +285,7 @@ function Cart() {
                           >
                             {title}
                           </h2>
-                         
+
                           <p
                             className="mt-3 text-xl  text-heading-color font-bold"
                             style={{ color: mode === "dark" ? "white" : "" }}
@@ -319,7 +319,7 @@ function Cart() {
 
                           <div
                             onClick={() => deleteCart(item)}
-                            className="cursor-pointer bg-chestnut p-2 rounded-lg w-12"
+                            className="cursor-pointer bg-chestnut p-2 shadow-lg w-12"
                           >
                             <MdRemoveShoppingCart color="white" size={30} />
                           </div>
@@ -331,7 +331,7 @@ function Cart() {
               </div>
 
               <div
-                className="mt-6 h-full  border-1 bg-white rounded-lg  p-6 shadow-md md:mt-0 md:w-1/3"
+                className="mt-6 h-full  border-4 bg-link-water shadow-lg  p-6  md:mt-0 md:w-1/3"
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "",
                   color: mode === "dark" ? "white" : "",
@@ -397,11 +397,12 @@ function Cart() {
                   />
                 ) : (
                   <button
-                    className="w-full  bg-everglade py-2 text-center  text-white font-bold rounded-lg"
+                    className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font"
                     type="button"
                     onClick={handleBuyNow}
                   >
                     continue
+                    <FaAngleDoubleRight />
                   </button>
                 )}
               </div>

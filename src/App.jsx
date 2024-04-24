@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   HashRouter as Router,
   Route,
@@ -28,6 +28,7 @@ import Allproducts from "./pages/allproducts/Allproducts";
 import ProtectedRouteForAdmin from "./pages/admin/ProtectedRouteForAdmin/ProtectedRouteForAdmin";
 
 function App() {
+  
   return (
     <MyState>
       <Router>

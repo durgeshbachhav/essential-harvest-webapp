@@ -113,6 +113,7 @@ function myState(props) {
 
   useEffect(() => {
     getProductData();
+    
   }, [products]);
 
   // update product

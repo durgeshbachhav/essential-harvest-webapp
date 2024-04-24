@@ -12,40 +12,32 @@ const SocialLogin = () => {
   const [loggedInUser, setLoggedInUser] = useState(null);
 
   const handleLoginWithGoogle = async () => {
+    setLoading(true);
     try {
       // Create OAuth2 session with Google
-      await account.createOAuth2Session(
+      account.createOAuth2Session(
         "google",
         "https://essential-harvest-webapp.vercel.app/#/cart",
         "https://essential-harvest-webapp.vercel.app/#/login"
       );
-
-      // Fetch user's session information
-      const session = await account.getSession("current");
+      const session = account.getSession("current");
       console.log("session", session);
-      // Extract provider UID (which often contains user's email) from the session
       const providerUid = session.providerAccessToken;
       const userId = session.userId;
-
-      // Fetch user profile information using the provider UID
       const profileInfo = await fetchUserProfile(providerUid);
-
-      // Extract user's email from the profile information
-
-      // Do whatever you need with the user's email, such as storing it in local storage or state
-      // localStorage.setItem("user", );
       console.log("profileInfo", profileInfo);
       const userInfo = {
         userId,
         profileInfo,
       };
       localStorage.setItem("user", JSON.stringify(userInfo));
-
-      // Log the session and profile information
       console.log("Session:", session);
       console.log("User Profile:", profileInfo);
+      setLoading(false);
     } catch (error) {
       console.error("Error logging in with Google:", error);
+      setLoading(false);
+      toast.error("Failed to log in with Google");
     }
   };
 

@@ -29,7 +29,7 @@ export default function Modal({
         <button
           type="button"
           onClick={openModal}
-          className="w-full  bg-primary-800 py-2 text-center  text-white font-bold rounded-lg"
+          className="w-full  bg-everglade py-2 text-center  text-white font-bold rounded-lg"
         >
           Place Order
         </button>

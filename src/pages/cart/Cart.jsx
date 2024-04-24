@@ -247,7 +247,7 @@ function Cart() {
       {cartItems.length > 0 ? (
         <Layout className="cart">
           <div
-            className=" bg-gray-50 pt-5 mb-[0%]"
+            className="  pt-5 mb-[0%]"
             style={{
               backgroundColor: mode === "dark" ? "#282c34" : "",
               color: mode === "dark" ? "white" : "",
@@ -266,7 +266,7 @@ function Cart() {
                   return (
                     <div
                       key={index}
-                      className="justify-between mb-6  border-3 border-gray-500 rounded-lg  drop-shadow-sm bg-white  p-6  sm:flex  sm:justify-start"
+                      className="w-full justify-between mb-6  border-3 border-gray-500 rounded-lg  drop-shadow-sm bg-white  p-6  sm:flex  sm:justify-start"
                       style={{
                         backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "",
                         color: mode === "dark" ? "white" : "",
@@ -277,7 +277,7 @@ function Cart() {
                         alt="product-image"
                         className="w-full  sm:w-40 rounded-lg"
                       />
-                      <div className="sm:ml-4 sm:flex sm:w-full sm:justify-between">
+                      <div className=" sm:flex sm:w-full sm:justify-between">
                         <div className="mt-5 sm:mt-0">
                           <h2
                             className="text-xl font-semibold text-heading-color border-b-2  py-4"
@@ -285,12 +285,7 @@ function Cart() {
                           >
                             {title}
                           </h2>
-                          {/* <h2
-                            className="text-sm  text-sub-heading-color"
-                            style={{ color: mode === "dark" ? "white" : "" }}
-                          >
-                            {description}
-                          </h2> */}
+                         
                           <p
                             className="mt-3 text-xl  text-heading-color font-bold"
                             style={{ color: mode === "dark" ? "white" : "" }}
@@ -303,7 +298,7 @@ function Cart() {
                             <button
                               type="button"
                               onClick={() => decreaseQuantity(item?.$id)}
-                              className=" text-white bg-primary-800   font-medium rounded-l-lg text-sm px-4 py-2"
+                              className=" text-white bg-chestnut   font-medium rounded-l-lg text-sm px-4 py-2"
                             >
                               -
                             </button>
@@ -316,7 +311,7 @@ function Cart() {
                             <button
                               type="button"
                               onClick={() => increaseQuantity(item?.$id)}
-                              className=" text-white bg-primary-900  font-medium rounded-r-lg text-sm px-4 py-2"
+                              className=" text-white bg-chestnut  font-medium rounded-r-lg text-sm px-4 py-2"
                             >
                               +
                             </button>
@@ -324,9 +319,9 @@ function Cart() {
 
                           <div
                             onClick={() => deleteCart(item)}
-                            className="cursor-pointer"
+                            className="cursor-pointer bg-chestnut p-2 rounded-lg"
                           >
-                            <MdRemoveShoppingCart size={30} />
+                            <MdRemoveShoppingCart color="white" size={30} />
                           </div>
                         </div>
                       </div>
@@ -402,7 +397,7 @@ function Cart() {
                   />
                 ) : (
                   <button
-                    className="w-full  bg-primary-800 py-2 text-center  text-white font-bold rounded-lg"
+                    className="w-full  bg-everglade py-2 text-center  text-white font-bold rounded-lg"
                     type="button"
                     onClick={handleBuyNow}
                   >

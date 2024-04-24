@@ -19,7 +19,7 @@ import { FaAngleDoubleRight } from "react-icons/fa";
 function Cart() {
   const navigate = useNavigate();
   const context = useContext(myContext);
-  const { mode, getOrderData, userInfo } = context;
+  const { mode, getOrderData } = context;
   // console.log("order details", getOrderData);
   const dispatch = useDispatch();
 
@@ -385,7 +385,7 @@ function Cart() {
                   </div>
                 </div>
                 {/* <Modal  /> */}
-                {user || userInfo ? (
+                {user ? (
                   <Modal
                     name={name}
                     address={address}

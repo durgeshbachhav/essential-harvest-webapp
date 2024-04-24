@@ -1,16 +1,16 @@
 import { useContext } from "react";
 import myContext from "../../../context/data/myContext";
-
+import { FaAngleDoubleRight } from "react-icons/fa";
 function AddProduct() {
   const context = useContext(myContext);
   const { products, setProducts, addProduct } = context;
   return (
     <div>
-      <div className="flex justify-center items-center  rounded-lg bg-primary-50">
-        <div className=" bg-gradient-to-tr from-primary-300 to-primary-400 border-opacity-20  px-10 py-10  rounded-lg">
+      <div className="flex justify-center items-center   bg-primary-50">
+        <div className=" bg-leaf border-opacity-20  px-10 py-10  ">
           <div className="">
-            <h1 className="text-center text-white text-xl mb-4 font-bold">
-              Add Product
+            <h1 className="text-center text-black text-xl mb-4 font-bold">
+              Add New Product
             </h1>
           </div>
           <div>
@@ -21,7 +21,7 @@ function AddProduct() {
                 setProducts({ ...products, title: e.target.value })
               }
               name="title"
-              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              className=" bg-gray-600  mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="Product title"
             />
           </div>
@@ -33,7 +33,7 @@ function AddProduct() {
                 setProducts({ ...products, price: e.target.value })
               }
               name="price"
-              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              className=" bg-gray-600  mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="Product price"
             />
           </div>
@@ -45,7 +45,7 @@ function AddProduct() {
                 setProducts({ ...products, imageUrl: e.target.value })
               }
               name="imageurl"
-              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              className=" bg-gray-600  mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="Product imageUrl"
             />
           </div>
@@ -57,7 +57,7 @@ function AddProduct() {
                 setProducts({ ...products, category: e.target.value })
               }
               name="category"
-              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              className=" bg-gray-600  mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="Product category"
             />
           </div>
@@ -70,7 +70,7 @@ function AddProduct() {
               onChange={(e) =>
                 setProducts({ ...products, description: e.target.value })
               }
-              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              className=" bg-gray-600  mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="Product desc"
             ></textarea>
           </div>
@@ -86,7 +86,7 @@ function AddProduct() {
                   benefitsOfProducts: e.target.value.split("."),
                 })
               }
-              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              className=" bg-gray-600  mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="Product Benefits"
             ></textarea>
           </div>
@@ -102,16 +102,17 @@ function AddProduct() {
                   aboutTheProduct: e.target.value.split("."),
                 })
               }
-              className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+              className=" bg-gray-600  mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
               placeholder="About the Product"
             ></textarea>
           </div>
           <div className=" flex justify-center mb-3">
             <button
               onClick={addProduct}
-              className="  focus:outline-none text-white  font-medium text-xl w-full px-4 py-2  bg-blue-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-blue-800  "
+              className=" focus:outline-none flex items-center justify-between text-white  text-center text-sm px-4 py-4 w-full font-bold bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font  "
             >
               Add Product
+              <FaAngleDoubleRight />
             </button>
           </div>
         </div>

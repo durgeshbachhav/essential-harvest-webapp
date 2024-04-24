@@ -12,7 +12,7 @@ function Return() {
           <h4 className="secondary-font text-2xl">Return & Cancellations</h4>
           <img src={underline} alt="" />
         </div>
-        <ul className="max-w-2xl mx-auto mt-20 divide-y gap-2  ">
+        <ul className="max-w-2xl mx-4 mt-20 divide-y gap-2  ">
           <li className="">
             <details className="group">
               <summary className="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer bg-leaf mb-2">

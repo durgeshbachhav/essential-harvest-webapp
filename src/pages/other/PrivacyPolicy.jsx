@@ -12,7 +12,7 @@ function Privacy() {
           <h4 className="secondary-font text-2xl">Privacy Policy</h4>
           <img src={underline} alt="" />
         </div>
-        <ul className="max-w-2xl mx-auto mt-20 divide-y gap-2  rounded-xl">
+        <ul className="max-w-2xl mx-4 mt-20 divide-y gap-2  rounded-xl">
           <li className="w-full">
             <details className="group  max-w-sm">
               <summary className="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer bg-leaf mb-2">

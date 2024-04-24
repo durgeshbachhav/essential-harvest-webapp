@@ -4,12 +4,12 @@ import underline from "../../assets/home/underline.png";
 import "./Other.scss";
 import { FaLocationArrow } from "react-icons/fa";
 import { PiContactlessPaymentFill } from "react-icons/pi";
-
+import { FaAngleDoubleRight } from "react-icons/fa";
 function Contact() {
   return (
     <Layout>
       <div className="contact">
-        <section className="bg-gray-50 " id="contact">
+        <section className="" id="contact">
           <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
             <div className="mb-4">
               <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12 custom-container">
@@ -22,10 +22,10 @@ function Contact() {
             <div className="flex items-stretch justify-center secondary-font">
               <div className="grid md:grid-cols-2 w-full lg:px-20">
                 <div className="h-full pr-6">
-                  <p className="mt-3 mb-12 secondary-font text-lg text-gray-600 ">
+                  <p className="mt-3 mb-12 secondary-font text-lg text-gray-600 text-center md:text-start">
                     Feel free to reach out to us for any query
                   </p>
-                  <ul className="mb-6 md:mb-0">
+                  <ul className="mb-6 md:mb-0 px-4">
                     <li className="flex">
                       <div className="flex h-10 w-10 items-center justify-center   ">
                         <FaLocationArrow  size={30} color="green"/>
@@ -101,8 +101,8 @@ function Contact() {
                         <textarea
                           id="textarea"
                           name="textarea"
-                          cols="30"
-                          rows="5"
+                          cols="5"
+                          rows="2"
                           placeholder="Write your message..."
                           className="bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
                         ></textarea>
@@ -111,9 +111,10 @@ function Contact() {
                     <div className="text-center">
                       <button
                         type="submit"
-                        className="w-full focus:outline-none text-white  font-medium text-xl  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font  px-6 py-3 font-xl  sm:mb-0"
+                        className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-40 bg-everglade   ease-in duration-300  secondary-font"
                       >
                         Send Message
+                        <FaAngleDoubleRight />
                       </button>
                     </div>
                   </form>

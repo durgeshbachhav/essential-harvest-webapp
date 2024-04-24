@@ -24,7 +24,7 @@ function Filter() {
     <div>
       <div className=" container mx-auto px-4 mt-5 filter">
         <div
-          className="p-5 bg-primary-200 rounded-lg"
+          className="p-5 bg-cavern-pink shadow-2xl"
           style={{
             backgroundColor: mode === "dark" ? "#282c34" : "",
             color: mode === "dark" ? "white" : "",

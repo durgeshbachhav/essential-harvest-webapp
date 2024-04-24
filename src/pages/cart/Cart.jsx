@@ -14,6 +14,7 @@ import { ID } from "appwrite";
 import "./Cart.scss";
 import { TiShoppingCart } from "react-icons/ti";
 import { MdRemoveShoppingCart } from "react-icons/md";
+import { FaAngleDoubleRight } from "react-icons/fa";
 
 function Cart() {
   const navigate = useNavigate();
@@ -419,9 +420,10 @@ function Cart() {
             <p className=" text-sm secondary-font"> Cart is Empty</p>
             <button
               onClick={() => navigate("/allproducts")}
-              className=" focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
+              className=" focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font"
             >
               Shop Now
+              <FaAngleDoubleRight />
             </button>
           </div>
         </Layout>

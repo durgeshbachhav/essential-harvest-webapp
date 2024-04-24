@@ -28,7 +28,7 @@ function Navbar() {
   const cartItems = useSelector((state) => state.cart);
 
   return (
-    <div className="bg-white sticky top-0 z-50">
+    <div className="bg-leaf sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
@@ -58,7 +58,7 @@ function Navbar() {
               leaveTo="-translate-x-full"
             >
               <Dialog.Panel
-                className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-white pb-12 shadow-xl"
+                className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-cavern-pink pb-12 shadow-xl"
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(40, 44, 52)" : "",
                   color: mode === "dark" ? "white" : "",
@@ -158,7 +158,7 @@ function Navbar() {
       <header className="relative shadow">
         <nav aria-label="Top" className=" px-4 sm:px-6 lg:px-8  nav-height">
           <div className="">
-            <div className="flex nav-height nav-width items-center">
+            <div className="flex nav-height nav-width items-center justify-center">
               <button
                 type="button"
                 className=" p-2  lg:hidden"
@@ -185,9 +185,9 @@ function Navbar() {
               </button>
 
               {/* Logo */}
-              <div className="ml-4 flex lg:ml-0">
+              <div className="flex ">
                 <Link to={"/"} className="flex">
-                  <div className="flex">
+                  <div className="flex items-center justify-center">
                     <img src={logo} alt="" className="w-32 h-32 logo p-2" />
                     {/* <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>Essential Harvest</h1> */}
                   </div>

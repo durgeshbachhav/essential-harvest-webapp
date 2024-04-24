@@ -6,6 +6,8 @@ import myContext from "../../context/data/myContext";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/cartSlice";
 import "../../components/productCard/ProductCard.scss";
+import { FaStar } from "react-icons/fa";
+import { FaAngleDoubleRight } from "react-icons/fa";
 function Allproducts() {
   const context = useContext(myContext);
   const {
@@ -34,6 +36,11 @@ function Allproducts() {
     window.scrollTo(0, 0);
   }, []);
   console.log("product", product);
+ 
+const stars = [];
+  for (let index = 0; index < 5; index++) {
+    stars.push(<FaStar color="yellow" key={index} />);
+  }
   return (
     <Layout>
       <Filter />
@@ -43,7 +50,7 @@ function Allproducts() {
             <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-primary-500 primary-font">
               Our Products
             </h1>
-            <div className="h-1 w-40 bg-primary-500 rounded"></div>
+            <div className="h-1 w-40 bg-leaf rounded"></div>
           </div>
 
           <div className="flex flex-wrap -m-4">
@@ -59,56 +66,46 @@ function Allproducts() {
                 console.log("item", item);
                 return (
                   <div
+                  key={index}
+                  className="p-4 w-full md:w-1/3    secondary-font"
+                >
+                  <div
+                    className="h-full bottom-5  duration-300 ease-in-out     bg-mist border-4 hover:border-pearl shadow-md  overflow-hidden cursor-pointer "
                     onClick={() =>
                       (window.location.href = `/#/productinfo/${id}`)
                     }
-                    key={index}
-                    className="p-4 w-full md:w-1/4  rounded-lg    secondary-font"
                   >
-                    <div
-                      className="h-full  border-2 rounded-lg  duration-300 ease-in-out border-opacity-20  overflow-hidden cursor-pointer bg-gradient-to-tr from-gray-50 to-gray-200 "
-                      style={{
-                        backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
-                        color: mode === "dark" ? "white" : "",
-                      }}
-                    >
-                      <div className="flex justify-center cursor-pointer">
-                        <img
-                          className=" rounded-2xl  h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
-                          src={imageUrl}
-                          alt="product"
-                        />
-                      </div>
-                      <div className="p-5 border-t-2">
-                        <h2 className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 primary-font">
-                          Essential Harvest
-                        </h2>
-                        <h1
-                          className=" text-xl font-medium text-heading-color mb-3 secondary-font truncate "
-                          style={{ color: mode === "dark" ? "white" : "" }}
-                        >
-                          {title}
-                        </h1>
-                        
-                        <div className="flex items-center justify-between">
-                          <p
-                            className="leading-relaxed mb-3 secondary-font"
-                            style={{ color: mode === "dark" ? "white" : "" }}
-                          >
-                            ₹{price}
-                          </p>
-                          <div className=" flex justify-center">
-                            <button
-                              type="button"
-                              className="focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
-                            >
-                              Order Now
-                            </button>
-                          </div>
-                        </div>
+                    <div className="flex justify-center">
+                      <img
+                        className=" h-80 w-full p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
+                        src={imageUrl}
+                        alt="blog"
+                      />
+                    </div>
+                    <div className="p-4  ">
+                      <h2
+                        className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 primary-font"
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        Essential Harvest
+                      </h2>
+                      <div className="flex mb-4">{stars}</div>
+                      <h1
+                        className="text-xl font-medium text-heading-color mb-3 secondary-font truncate "
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        {title}
+                      </h1>
+                      <div className="flex items-center justify-between">
+                      <p className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-20 bg-everglade   ease-in duration-300  secondary-font">Rs.{item.price}</p>
+                      <p className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font">
+                        order now
+                        <FaAngleDoubleRight />
+                      </p>
                       </div>
                     </div>
                   </div>
+                </div>
                 );
               })}
           </div>

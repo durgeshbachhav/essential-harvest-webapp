@@ -8,8 +8,8 @@ function Footer() {
   const { mode } = context;
   return (
     <div>
-      <footer className=" bg-gray-200 ">
-        <div className="container px-5 lg:py-24 mx-auto cust-footer-container">
+      <footer className=" bg-leaf ">
+        <div className="container px-5 lg:pt-14 mx-auto cust-footer-container">
           <div className="flex flex-wrap md:text-left text-center order-first footer-custom">
             <div className="mt-3 lg:w-1/4 md:w-1/2 w-full px-4 flex items-center justify-center  lg:mt-0 lg:items-start lg:justify-start">
               <Link to={"/"}>
@@ -83,7 +83,7 @@ function Footer() {
         </div>
 
         <div
-          className="bg-gradient-to-tl from-primary-50 to-primary-100"
+          className="bg-leaf border-t border-pearl"
           style={{
             backgroundColor: mode === "dark" ? "rgb(55 57 61)" : "",
             color: mode === "dark" ? "white" : "",
@@ -103,7 +103,7 @@ function Footer() {
             </p>
             <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
               <Link
-                className="text-primary-800 rounded-lg p-2 border-2 hover:bg-primary-900 hover:text-white "
+                className="text-primary-800 rounded-lg p-2 border-2 hover:bg-chestnut hover:text-white "
                 target="_blank"
                 to="https://www.instagram.com/essential_harvest_india"
               >
@@ -120,7 +120,7 @@ function Footer() {
               </Link>
 
               <Link
-                className="ml-3 text-primary-800 rounded-lg p-2 border-2 hover:bg-primary-900 hover:text-white"
+                className="ml-3 text-primary-800 rounded-lg p-2 border-2 hover:bg-chestnut hover:text-white"
                 target="_blank"
                 to="https://www.instagram.com/essential_harvest_india"
               >

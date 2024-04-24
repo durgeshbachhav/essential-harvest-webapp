@@ -11,11 +11,11 @@ function Dashboard() {
   return (
     <Layout>
       <section className=" body-font pt-10 pb-10 ">
-        <div className="container px-5 mx-auto mb-10">
-          <div className="flex flex-wrap -m-4 text-center">
-            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+        <div className="container px-4  mb-10 md:px-11">
+          <div className="flex flex-wrap gap-2 text-center">
+            <div className=" md:w-1/4 sm:w-1/2 w-full">
               <div
-                className=" border-2   bg-white rounded-lg    px-4 py-3 "
+                className=" border-2   bg-link-water     px-4 py-3 "
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                   color: mode === "dark" ? "white" : "",
@@ -41,9 +41,9 @@ function Dashboard() {
                 </p>
               </div>
             </div>
-            <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
+            <div className=" md:w-1/4 sm:w-1/2 w-full">
               <div
-                className=" border-2  bg-white rounded-lg    px-4 py-3  "
+                className=" border-2  bg-link-water     px-4 py-3  "
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                   color: mode === "dark" ? "white" : "",

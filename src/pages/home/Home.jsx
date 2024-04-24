@@ -3,16 +3,23 @@ import SwiperComponent from "../../components/swiper/Swiper";
 
 import AboutSectionOne from "../../components/heroSection/AboutSectionOne";
 import AboutSectionTwo from "../../components/heroSection/AboutSectionTwo";
-import ProductCard from "../../components/productCard/ProductCard";
+
 import Track from "../../components/track/Track";
 import myContext from "../../context/data/myContext";
 import { useContext } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import underline from "../../assets/home/underline.png";
 
+import { FaStar } from "react-icons/fa";
+
 function Home() {
   const context = useContext(myContext);
   const { mode, product } = context;
+  const stars = [];
+  for (let index = 0; index < 5; index++) {
+    stars.push(<FaStar color="yellow" key={index} />);
+  }
+
   return (
     <Layout>
       <div className="relative">
@@ -72,6 +79,7 @@ function Home() {
                           >
                             Essential Harvest
                           </h2>
+                          <div className="flex mb-4">{stars}</div>
                           <h1
                             className="text-xl font-medium text-heading-color mb-3 secondary-font truncate "
                             style={{ color: mode === "dark" ? "white" : "" }}

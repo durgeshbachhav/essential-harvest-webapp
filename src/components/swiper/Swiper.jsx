@@ -128,26 +128,6 @@ const SwiperComponent = () => {
           Rose Geranium Oil
         </h1>
       </SwiperSlide>
-      {/* <SwiperSlide
-        style={{
-          backgroundColor: ``,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        className=""
-      >
-        <AboutSectionOne />
-      </SwiperSlide>
-      <SwiperSlide
-      style={{backgroundColor: ``,}}>
-        <AboutSectionTwo />
-      </SwiperSlide>
-      <SwiperSlide style={{backgroundColor: ``,}}>
-        <ProductCard />
-      </SwiperSlide>
-      <SwiperSlide style={{backgroundColor: ``,}}>
-        <Track />
-      </SwiperSlide> */}
     </Swiper>
   );
 };

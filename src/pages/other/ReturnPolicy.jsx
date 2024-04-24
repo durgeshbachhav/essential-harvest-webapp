@@ -6,16 +6,16 @@ import "./Other.scss";
 function Return() {
   return (
     <Layout>
-      <div className="flex items-center justify-center flex-col  py-20  bg-gray-50 ">
+      <div className="flex items-center justify-center flex-col  py-20   ">
         <div className="heading-content flex items-center justify-center flex-col gap-2">
           <h3 className="primary-font text-3xl text-black">Faq</h3>
           <h4 className="secondary-font text-2xl">Return & Cancellations</h4>
           <img src={underline} alt="" />
         </div>
-        <ul className="max-w-2xl mx-auto mt-20 divide-y gap-2  rounded-xl">
+        <ul className="max-w-2xl mx-auto mt-20 divide-y gap-2  ">
           <li className="">
             <details className="group">
-              <summary className="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer bg-gradient-to-r from-primary-200 to-primary-500 rounded-lg border-1 mb-2">
+              <summary className="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer bg-leaf mb-2">
                 <svg
                   className="w-5 h-5 text-heading-color transition group-open:rotate-90"
                   xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,7 @@ function Return() {
           </li>
           <li>
             <details className="group">
-              <summary className="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer bg-gradient-to-r from-primary-200 to-primary-500 rounded-lg border-1">
+              <summary className="flex items-center gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer bg-leaf">
                 <svg
                   className="w-5 h-5 text-heading-color transition group-open:rotate-90"
                   xmlns="http://www.w3.org/2000/svg"

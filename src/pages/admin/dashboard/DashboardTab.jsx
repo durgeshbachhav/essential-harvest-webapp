@@ -48,11 +48,11 @@ function DashboardTab() {
       <div className="container mx-auto">
         <div className="tab container mx-auto ">
           <Tabs defaultIndex={0} className=" ">
-            <TabList className="md:flex md:space-x-8 bg-  grid grid-cols-2 text-center gap-4   md:justify-center mb-10 ">
+            <TabList className="px-4 pb-4 flex mx-auto items-start justify-start gap-4 md:px-0">
               <Tab>
                 <button
                   type="button"
-                  className="focus:outline-none text-white  font-bold text-xl px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
+                  className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-everglade  hover:bg-chestnut ease-in duration-300  secondary-font"
                 >
                   <div className="flex gap-2 items-center ">
                     <MdOutlineProductionQuantityLimits color="white" />
@@ -63,7 +63,7 @@ function DashboardTab() {
               <Tab>
                 <button
                   type="button"
-                  className="focus:outline-none text-white  font-medium text-xl px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
+                  className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font"
                 >
                   <div className="flex gap-2 items-center">
                     <AiFillShopping /> Order
@@ -81,11 +81,11 @@ function DashboardTab() {
                   Product Details
                 </h1>
 
-                <div className=" flex justify-end">
+                <div className=" flex justify-start">
                   <button
                     onClick={add}
                     type="button"
-                    className="focus:outline-none text-white  font-medium text-xl px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font mb-8"
+                    className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2  bg-everglade  hover:bg-everglade ease-in duration-300  secondary-font mb-4"
                     style={{
                       backgroundColor: mode === "dark" ? "rgb(46 49 55)" : "",
                       color: mode === "dark" ? "white" : "",
@@ -97,9 +97,9 @@ function DashboardTab() {
                     </div>
                   </button>
                 </div>
-                <div className="relative  overflow-x-auto rounded-lg">
-                  <table className="w-full border-2 text-sm text-left rounded-lg  bg-primary-300  ">
-                    <thead className="text-bold     uppercase rounded-lg ">
+                <div className="relative  overflow-x-auto ">
+                  <table className="w-full border-2 text-sm text-left   bg-primary-300  ">
+                    <thead className="text-bold     uppercase bg-link-water ">
                       <tr className="">
                         <th scope="col" className="px-6 py-3">
                           S.No
@@ -265,15 +265,15 @@ function DashboardTab() {
             {/* Order History */}
             <TabPanel>
               {/* <Order order={order} setOrder={setOrder} setLoading={setLoading} /> */}
-              <div className="relative px-4 md:px-0 overflow-x-auto  mb-16   rounded-lg">
+              <div className="relative px-4 md:px-0 overflow-x-auto  mb-16   ">
                 <h1 className=" text-center primary-font mb-5 text-3xl font-semibold ">
                   Order Details
                 </h1>
 
-                <div className="relative overflow-x-auto rounded-lg">
-                  <table className="w-full border-2 text-sm text-left font-bold rounded-lg">
-                    <thead className="border bg-primary-300 secondary-font text-heading-color uppercase rounded-lg">
-                      <tr className="rounded-lg">
+                <div className="relative overflow-x-auto ">
+                  <table className="w-full border-2 text-sm text-left font-bold ">
+                    <thead className="border bg-primary-300 secondary-font text-heading-color uppercase bg-link-water">
+                      <tr className="">
                         <th scope="col" className="px-6 py-3">
                           Payment Id
                         </th>
@@ -340,7 +340,7 @@ function DashboardTab() {
                                   msUserSelect: "all",
                                 }}
                               >
-                                <div className="w-full px-5 py-1 bg-primary-200 rounded-lg">
+                                <div className="w-full px-5 py-1 bg-everglade text-white ">
                                   {rowIndex === 0 ? allorder.paymentId : ""}
                                 </div>
                               </td>

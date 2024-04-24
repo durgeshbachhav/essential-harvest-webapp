@@ -8,7 +8,6 @@ import { Toaster, toast } from "sonner";
 import { addToCart } from "../../redux/cartSlice";
 import { Query } from "appwrite";
 import { databases } from "../../appwrite/appwriteConfig";
-import "./ProductInfo.scss";
 import { FaStar } from "react-icons/fa";
 import { MdCrueltyFree } from "react-icons/md";
 import { FaHandsBound } from "react-icons/fa6";
@@ -82,7 +81,7 @@ function ProductInfo() {
 
   const stars = [];
   for (let index = 0; index < 5; index++) {
-    stars.push(<FaStar key={index} />);
+    stars.push(<FaStar color="yellow" key={index} />);
   }
 
   // image and title  why we’re the real deal.
@@ -125,17 +124,17 @@ function ProductInfo() {
 
   return (
     <Layout>
-      <section className=" body-font overflow-hidden product bg-50-100">
+      <section className=" overflow-hidden  ">
         <div className="">
           {products && (
             <div>
-              <div className="container px-4 py-10 lg:w-4/5 mx-auto flex flex-wrap items-center justify-center lg:py-4">
+              <div className="mx-4  py-10  flex flex-wrap items-center justify-center ">
                 <img
                   alt="ecommerce"
-                  className="lg:w-1/3 content-center h-96 lg:h-auto  object-cover object-center rounded"
+                  className="lg:w-1/3 content-center h-96 lg:h-auto   object-cover object-center rounded"
                   src={products.imageUrl}
                 />
-                <div className="p-3 lg:w-1/2 w-full lg:px-10 lg:py-6 mt-6 lg:mt-0 bg-link-water ">
+                <div className="p-4 lg:w-1/2 w-full lg:px-10 lg:py-6 mt-6 lg:mt-0 bg-link-water shadow-2xl ">
                   <h2 className="text-sm primary-font text-primary-950 tracking-widest">
                     Essential Harvest
                   </h2>
@@ -166,7 +165,7 @@ function ProductInfo() {
                 </div>
               </div>
               {/* product desciption */}
-              <div className="py-8  bg-leaf px-4 md:px-16 md:py-16">
+              <div className="py-8  bg-cavern-pink px-4 md:px-16 md:py-16">
                 <div>
                   <h4 className="font-semibold text-xl primary-font">
                     Product Description
@@ -209,7 +208,7 @@ function ProductInfo() {
         </div>
 
         {/* info section */}
-        <div className="bg-[#f7cfc1] w-full h-full py-12">
+        <div className="bg-pearl w-full h-full py-12">
           {/* how to use it  */}
           <div className="text-2xl text-center font-bold mb-10">
             How do I use it?
@@ -270,8 +269,8 @@ function ProductInfo() {
           </div>
         </div>
         {/* why we’re the real deal section */}
-        <div className="">
-          <div className="bg-[#f4eee6] px-4 mx-auto py-6 md:py-12 md:px-16">
+        <div className="bg-mist">
+          <div className=" px-4 mx-auto py-6 md:py-12 md:px-16">
             <div className="text-center text-2xl font-bold  mb-16">
               Here’s why we’re the real deal.
             </div>
@@ -302,18 +301,18 @@ function ProductInfo() {
               More info
             </h2>
             <div>
-              <Accordion data={accordionData} />
+              <Accordion data={accordionData}  style={"border-t"}/>
             </div>
           </div>
           {/* ask us why */}
-          <div className="w-full md:w-1/2 lg:w-1/2 bg-leaf py-4 px-4 md:px-16">
+          <div className="w-full md:w-1/2 lg:w-1/2 bg-pearl py-4 px-4 md:px-16">
             <h2 className="text-2xl font-bold py-2 mb-5 text-center">
               Ask us why
             </h2>
             <div>
               <Accordion
                 data={accordionDatawhy}
-                style={"border border-gray-700"}
+                style={"border border-green-900"}
               />
             </div>
           </div>

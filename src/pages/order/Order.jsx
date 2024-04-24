@@ -5,13 +5,13 @@ import "../../pages/cart/Cart.scss";
 import more from "../../assets/order/more.png";
 import less from "../../assets/order/close.png";
 import { useNavigate } from "react-router-dom";
-import LoaderTwo from "../../components/loader/LoaderTwo";
+
 import { TiShoppingCart } from "react-icons/ti";
 
 function Order() {
   const userid = JSON.parse(localStorage.getItem("user")).userId;
   const context = useContext(myContext);
-  const { mode, loading, order } = context;
+  const { mode, order } = context;
   const [expandedOrderId, setExpandedOrderId] = useState(null);
   const navigate = useNavigate();
 
@@ -34,11 +34,10 @@ function Order() {
     setExpandedOrderId(orderId === expandedOrderId ? null : orderId);
   };
   const [showMessage, setShowMessage] = useState(false);
-  // console.log('order detail from order page ',order)
+  console.log('order detail from order page ',order)
   return (
     <Layout>
-      {loading && <LoaderTwo />}
-      {order?.length > 0 ? (
+      {order.length > 0 ? (
         <>
           <div className="h-full py-10 ">
             {order
@@ -239,7 +238,7 @@ function Order() {
           <p className=" text-sm secondary-font"> no order</p>
           <button
             onClick={() => navigate("/allproducts")}
-            className=" focus:outline-none text-white  font-medium text-sm px-4 py-2  bg-primary-500 rounded-lg hover:scale-105 ease-in duration-300 hover:bg-primary-800 secondary-font"
+            className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font"
           >
             Shop Now
           </button>

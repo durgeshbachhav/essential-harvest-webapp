@@ -12,9 +12,9 @@ function About() {
         <div className=" py-12">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-5xl lg:text-center flex flex-col justify-center items-center">
-              <h3 className="lg:text-5xl text-4xl md:text-5xl font-bold tracking-tight text-primary-800 text-center primary-font">
+              <h3 className=" text-3xl md:text-4xl font-bold  text-primary-800 text-center primary-font">
                 Essential Harvest :
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-800 via-yellow-450 to-primary-900 primary-font">
+                <span className="text-transparent bg-clip-text bg-black  to-chestnut primary-font">
                   {" "}
                   Where Nature Meets You
                 </span>

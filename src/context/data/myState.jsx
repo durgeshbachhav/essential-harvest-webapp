@@ -113,7 +113,7 @@ function myState(props) {
 
   useEffect(() => {
     getProductData();
-  }, []);
+  }, [products]);
 
   // update product
   const edithandle = (item) => {
@@ -221,7 +221,7 @@ function myState(props) {
     );
     orderDataPromise.then(
       function (response) {
-        // console.log("order response", response);
+        console.log("order response", response);
         seTotalOrder(response.total);
         // Extract data from the documents
         const originalOrdersArray = response.documents.map((doc) => ({
@@ -278,27 +278,29 @@ function myState(props) {
     );
   };
 
-  const [user, setUser] = useState([]);
-  const getUserData = async () => {
-    try {
-      const userdata = account.get();
-      userdata.then(
-        function (res) {
-          setUser(res);
-        },
-        function (error) {
-          console.log(error);
-        }
-      );
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
-
-  useEffect(() => {
-    getOrderData();
-    getUserData();
-  }, [user]);
+  // const [user, setUser] = useState([]);
+ 
+  // const getUserData = async () => {
+  //   try {
+  //     const userdata = account.get();
+  //     console.log('userdata',userdata)
+  //     userdata.then(
+  //       function (res) {
+  //         setUser(res);
+  //       },
+  //       function (error) {
+  //         console.log(error);
+  //       }
+  //     );
+  //   } catch (error) {
+  //     console.log("error", error);
+  //   }
+  // };
+  // console.log('user',user);
+  // useEffect(() => {
+  //   // getOrderData();
+  //   getUserData();
+  // }, [user]);
 
   const [searchkey, setSearchkey] = useState("");
   const [filterType, setFilterType] = useState("");
@@ -338,8 +340,8 @@ function myState(props) {
         totalOrder,
         totalProduct,
         getOrderData,
-        user,
-        setUser,
+        // user,
+        // setUser,
       }}
     >
       {props.children}

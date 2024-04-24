@@ -26,7 +26,8 @@ function Navbar() {
   };
 
   const cartItems = useSelector((state) => state.cart);
-
+  var useremail = JSON.parse(localStorage.getItem("user"));
+  console.log("useremail", useremail);
   return (
     <div className="bg-leaf sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>

@@ -177,7 +177,9 @@ function Cart() {
           cartItemsJsonString,
           addressInfoJsonString,
           date: new Date(),
-          email: JSON.parse(localStorage.getItem("user")).providerUid,
+          email:
+            JSON.parse(localStorage.getItem("user")).providerUid ||
+            JSON.parse(localStorage.getItem("user")).profileInfo.email,
           userid: JSON.parse(localStorage.getItem("user")).userId,
           grand: String(grandTotal),
           paymentId,

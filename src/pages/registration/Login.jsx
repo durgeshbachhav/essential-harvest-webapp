@@ -31,7 +31,6 @@ function Login() {
           toast.error("response failed");
         }
       );
-
       const currentAccount = account.get();
       console.log("current account", currentAccount);
     } catch (error) {
@@ -79,7 +78,10 @@ function Login() {
         <div>
           <h2 className="text-blue-500 font-medium text-xm mb-2">
             Don't have an account?{" "}
-            <Link className="text-blue-500 hover:underline font-bold" to={"/signup"}>
+            <Link
+              className="text-blue-500 hover:underline font-bold"
+              to={"/signup"}
+            >
               Sign up
             </Link>
           </h2>

@@ -1,7 +1,7 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, useState } from "react";
 import "../../pages/productInfo/ProductInfo.scss";
-import { FaAngleDoubleRight } from 'react-icons/fa'
+import { FaAngleDoubleRight } from "react-icons/fa";
 export default function Modal({
   name,
   address,
@@ -144,9 +144,10 @@ export default function Modal({
                               closeModal();
                             }}
                             type="button"
-                            className="focus:outline-none w-full text-white      outline-0   text-sm px-5 py-2.5 bg-primary-800  text-center   font-bold rounded-lg "
+                            className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font"
                           >
                             Order Now
+                            <FaAngleDoubleRight />
                           </button>
                         </div>
                       </div>

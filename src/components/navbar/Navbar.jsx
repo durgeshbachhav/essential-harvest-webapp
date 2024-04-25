@@ -136,7 +136,7 @@ function Navbar() {
                         className="-m-2 block p-2 text-sm font-medium text-gray-900 cursor-pointer"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
-                        Logout
+                        Logout {user.profileInfo.email}
                       </a>
                     </div>
                   ) : (
@@ -150,6 +150,23 @@ function Navbar() {
                       </Link>
                     </div>
                   )}
+                  {/* {user ? (
+                    <div to="/order" text="Your Orders" mode={mode} >order</div>
+                  ) : (
+                    <div to="/signup" text="Signup" mode={mode} >signup</div>
+                  )}
+                  {user ? (
+                    <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
+                      <span
+                        className="-m-2 block p-2 text-sm font-medium text-gray-900 cursor-pointer"
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        My Account: {user.profileInfo.email}
+                      </span>
+                    </div>
+                  ) : (
+                    ""
+                  )} */}
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -253,7 +270,7 @@ function Navbar() {
                       className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
-                      Logout
+                      Logout {user.profileInfo.email}
                     </Link>
                   ) : (
                     ""

@@ -14,7 +14,6 @@ import Dashboard from "./pages/admin/dashboard/Dashboard";
 import NoPage from "./pages/nopage/NoPage";
 import ReturnPolicy from "./pages/other/ReturnPolicy";
 import PrivacyPolicy from "./pages/other/PrivacyPolicy";
-import AboutUs from "./pages/other/AboutUs";
 import ContactUs from "./pages/other/ContactUs";
 import MyState from "./context/data/myState";
 import Login from "./pages/registration/Login";
@@ -26,6 +25,8 @@ import UpdateOrderStatus from "./pages/admin/page/UpdateOrderStatus";
 import { Toaster } from "sonner";
 import Allproducts from "./pages/allproducts/Allproducts";
 import ProtectedRouteForAdmin from "./pages/admin/ProtectedRouteForAdmin/ProtectedRouteForAdmin";
+import OurStory from "./pages/other/OurStory";
+import  About  from "./pages/other/About";
 
 function App() {
   return (
@@ -81,7 +82,8 @@ function App() {
           <Route path="/*" element={<NoPage />} />
           <Route path="/return-policy" element={<ReturnPolicy />} />
           <Route path="/contact" element={<ContactUs />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/ourstory" element={<OurStory />} />
+          <Route path="/about" element={<About />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="*" element={<NoPage />} />
         </Routes>

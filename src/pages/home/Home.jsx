@@ -17,7 +17,7 @@ function Home() {
   const { mode, product } = context;
   const stars = [];
   for (let index = 0; index < 5; index++) {
-    stars.push(<FaStar color="yellow" key={index} />);
+    stars.push(<FaStar color="green" key={index} />);
   }
 
   return (
@@ -57,7 +57,7 @@ function Home() {
                   return (
                     <div
                       key={index}
-                      className="p-8 w-full md:w-1/4    secondary-font"
+                      className="p-8 w-full md:w-1/3    secondary-font"
                     >
                       <div
                         className="h-full bottom-5  duration-300 ease-in-out     bg-mist border-4 hover:border-pearl shadow-md  overflow-hidden cursor-pointer "
@@ -65,9 +65,9 @@ function Home() {
                           (window.location.href = `/#/productinfo/${id}`)
                         }
                       >
-                        <div className="flex justify-center">
+                        <div className="flex w-full h-full justify-center">
                           <img
-                            className=" h-40 w-40 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
+                            className=" h-60 w-40 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
                             src={imageUrl}
                             alt="blog"
                           />

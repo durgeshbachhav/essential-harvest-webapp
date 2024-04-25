@@ -7,17 +7,15 @@ import myContext from "../../context/data/myContext";
 
 const SocialLogin = () => {
   const context = useContext(myContext);
-  const { setLoading } = context;
 
   const redirectUrl = import.meta.env.VITE_APP_OAUTH_REDIRECT_URL;
   const callbackUrl = import.meta.env.VITE_APP_OAUTH_CALLBACK_URL;
 
   const handleLoginWithGoogle = async () => {
-    setLoading(true);
     try {
       // Create OAuth2 session with Google
       account.createOAuth2Session("google", redirectUrl, callbackUrl);
-      const session =  account.getSession("current");
+      const session = await account.getSession("current");
       console.log("session", session);
       const providerUid = session.providerAccessToken;
       const userId = session.userId;
@@ -30,17 +28,18 @@ const SocialLogin = () => {
       localStorage.setItem("user", JSON.stringify(userInfo));
       console.log("Session:", session);
       console.log("User Profile:", profileInfo);
-      setLoading(false);
     } catch (error) {
       console.error("Error logging in with Google:", error);
-      setLoading(false);
+
       toast.error("Failed to log in with Google");
     }
   };
 
   // Function to fetch user profile information using provider UID
   const fetchUserProfile = async (providerUid) => {
-    const profileEndpoint = `https://www.googleapis.com/oauth2/v3/userinfo?alt=json&access_token=${providerUid}`;
+    const profileEndpoint = `${
+      import.meta.env.VITE_APP_GOOGLE_PROFILE_URL
+    }${providerUid}`;
 
     try {
       const response = await fetch(profileEndpoint);

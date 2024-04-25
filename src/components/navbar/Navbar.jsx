@@ -16,7 +16,11 @@ function Navbar() {
   const { mode } = context;
 
   const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
+  };
   const user = JSON.parse(localStorage.getItem("user"));
   // console.log("user ", user);
 
@@ -27,7 +31,7 @@ function Navbar() {
 
   const cartItems = useSelector((state) => state.cart);
   var useremail = JSON.parse(localStorage.getItem("user"));
-  console.log("useremail", useremail);
+  console.log("useremail", useremail.providerUid);
   return (
     <div className="bg-leaf sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
@@ -78,10 +82,19 @@ function Navbar() {
                   <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
                       to={"/"}
-                      className="text-sm font-medium text-gray-900 "
+                      className="text-sm font-medium text-white "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Home
+                    </Link>
+                  </div>
+                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
+                    <Link
+                      to={"/about"}
+                      className="text-sm font-medium text-white "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      About
                     </Link>
                   </div>
                   {user?.providerUid ===
@@ -89,7 +102,7 @@ function Navbar() {
                     <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                       <Link
                         to={"/dashboard"}
-                        className="text-sm font-medium text-gray-900 "
+                        className="text-sm font-medium text-white "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Dashboard
@@ -98,8 +111,8 @@ function Navbar() {
                   )}
                   <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
-                      to={"/about"}
-                      className="text-sm font-medium text-gray-900 "
+                      to={"/ourstory"}
+                      className="text-sm font-medium text-white "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       Our Story
@@ -108,7 +121,7 @@ function Navbar() {
                   <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
                       to={"/allproducts"}
-                      className="text-sm font-medium text-gray-900 "
+                      className="text-sm font-medium text-white "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
                       All Products
@@ -116,28 +129,41 @@ function Navbar() {
                   </div>
 
                   {user ? (
-                    <div className=" hover:bg-leaf px-4 py-2 border-b-2">
-                      <Link
-                        to={"/order"}
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                        className="-m-2 block p-2 text-sm font-medium text-gray-900"
-                      >
-                        Order
-                      </Link>
-                    </div>
-                  ) : (
-                    ""
-                  )}
-
-                  {user ? (
-                    <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
-                      <a
-                        onClick={logout}
-                        className="-m-2 block p-2 text-sm font-medium text-gray-900 cursor-pointer"
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        Logout {user.profileInfo.email}
-                      </a>
+                    <div>
+                      <div className="hover:bg-leaf px-4 py-2">
+                        <Link
+                          onClick={toggleDropdown}
+                          style={{ color: mode === "dark" ? "white" : "" }}
+                          className="-m-2 block p-2 text-sm font-medium text-white"
+                        >
+                          My Account
+                        </Link>
+                      </div>
+                      {isOpen && (
+                        <div>
+                          <div className="block font-bold px-4 py-2 text-sm text-everglade bg-leaf hover:bg-gray-100">
+                            Hi, {user?.profileInfo?.name || user.providerUid}
+                          </div>
+                          <div className="bg-chestnut text-white hover:bg-leaf px-4 py-2 border-b-2">
+                            <a
+                              to={"/order"}
+                              className="-m-2 block p-2 text-sm font-medium text-white cursor-pointer"
+                              style={{ color: mode === "dark" ? "white" : "" }}
+                            >
+                              Orders
+                            </a>
+                          </div>
+                          <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
+                            <a
+                              onClick={logout}
+                              className="-m-2 block p-2 text-sm font-medium text-white cursor-pointer"
+                              style={{ color: mode === "dark" ? "white" : "" }}
+                            >
+                              Logout
+                            </a>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ) : (
                     <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
@@ -150,23 +176,6 @@ function Navbar() {
                       </Link>
                     </div>
                   )}
-                  {/* {user ? (
-                    <div to="/order" text="Your Orders" mode={mode} >order</div>
-                  ) : (
-                    <div to="/signup" text="Signup" mode={mode} >signup</div>
-                  )}
-                  {user ? (
-                    <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
-                      <span
-                        className="-m-2 block p-2 text-sm font-medium text-gray-900 cursor-pointer"
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        My Account: {user.profileInfo.email}
-                      </span>
-                    </div>
-                  ) : (
-                    ""
-                  )} */}
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -221,6 +230,13 @@ function Navbar() {
                   >
                     Home
                   </Link>
+                  <Link
+                    to={"/about"}
+                    className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
+                    style={{ color: mode === "dark" ? "white" : "" }}
+                  >
+                    About
+                  </Link>
 
                   {user?.providerUid ===
                     import.meta.env.VITE_APP_ADMIN_EMAIL && (
@@ -233,7 +249,7 @@ function Navbar() {
                     </Link>
                   )}
                   <Link
-                    to={"/About"}
+                    to={"/ourstory"}
                     className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white "
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
@@ -247,13 +263,36 @@ function Navbar() {
                     All Products
                   </Link>
                   {user ? (
-                    <Link
-                      to={"/order"}
-                      className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      Order
-                    </Link>
+                    <div className="relative ">
+                      <button
+                        onClick={toggleDropdown}
+                        className="text-sm p-2 font-medium transition  duration-300 hover:bg-chestnut hover:text-white"
+                        style={{ color: mode === "dark" ? "white" : "" }}
+                      >
+                        My Account
+                      </button>
+                      {isOpen && (
+                        <div className="absolute top-full -left-10 mt-1 border rounded-xl bg-mist shadow-lg">
+                          <div className="block font-bold px-4 py-2 text-sm  rounded-t-xl text-chestnut bg-white ">
+                            Hi, {user?.profileInfo?.name || user.providerUid}
+                          </div>
+                          <Link
+                            to={"/order"}
+                            className="block text-sm p-2 font-medium transition duration-300 hover:bg-chestnut hover:text-white w-full"
+                            style={{ width: "100%" }}
+                          >
+                            Orders
+                          </Link>
+                          <button
+                            onClick={logout}
+                            className="block text-sm p-2 font-medium transition rounded-b-xl  duration-300 hover:bg-chestnut hover:text-white w-full text-start"
+                            style={{ width: "100%" }}
+                          >
+                            Logout
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   ) : (
                     <Link
                       to={"/signup"}
@@ -262,18 +301,6 @@ function Navbar() {
                     >
                       Signup
                     </Link>
-                  )}
-
-                  {user ? (
-                    <Link
-                      onClick={logout}
-                      className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      Logout {user.profileInfo.email}
-                    </Link>
-                  ) : (
-                    ""
                   )}
                 </div>
 

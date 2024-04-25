@@ -19,6 +19,9 @@ import Accordion from "../../components/accordion/Accordion";
 import { accordionData } from "../../customData/accordion";
 import { accordionDatawhy } from "../../customData/accordionWhy";
 import SwiperCard from "../../components/swiperCard/SwiperCard";
+import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { IoBagAdd } from "react-icons/io5";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 function ProductInfo() {
   const navigate = useNavigate();
@@ -81,41 +84,41 @@ function ProductInfo() {
 
   const stars = [];
   for (let index = 0; index < 5; index++) {
-    stars.push(<FaStar color="yellow" key={index} />);
+    stars.push(<FaStar color="green" key={index} />);
   }
 
   // image and title  why we’re the real deal.
   const data = [
     {
-      image: <MdCrueltyFree size={80} />,
+      image: <MdCrueltyFree color="green" size={80} />,
       title: "Cruelty Free and Vegan",
     },
     {
-      image: <FaHandsBound size={80} />,
+      image: <FaHandsBound color="green" size={80} />,
       title: "Handmade Products",
     },
     {
-      image: <RiHandHeartFill size={80} />,
+      image: <RiHandHeartFill color="green" size={80} />,
       title: "Clean Ingredients",
     },
     {
-      image: <FaAirFreshener size={80} />,
+      image: <FaAirFreshener color="green" size={80} />,
       title: "Freshly Made",
     },
     {
-      image: <PiDnaFill size={80} />,
+      image: <PiDnaFill color="green" size={80} />,
       title: "GMO free",
     },
     {
-      image: <GiRoundBottomFlask size={80} />,
+      image: <GiRoundBottomFlask color="green" size={80} />,
       title: "No Synthetic Fragrances",
     },
     {
-      image: <MdCrueltyFree size={80} />,
+      image: <MdCrueltyFree color="green" size={80} />,
       title: "Zero Dyes",
     },
     {
-      image: <MdCrueltyFree size={80} />,
+      image: <MdCrueltyFree color="green" size={80} />,
       title: "Zero Sulphates",
     },
   ];
@@ -128,75 +131,107 @@ function ProductInfo() {
         <div className="">
           {products && (
             <div>
-              <div className="mx-4  py-10  flex flex-wrap items-center justify-center ">
+              <div className=" px-4 py-10  flex flex-wrap items-center justify-center md:px-16">
                 <img
                   alt="ecommerce"
-                  className="lg:w-1/3 content-center h-96 lg:h-auto   object-cover object-center rounded"
+                  className="lg:w-1/3 content-center h-96 lg:h-auto   object-cover object-center rounded hover:scale-105 cursor-pointer "
                   src={products.imageUrl}
                 />
-                <div className="p-4 lg:w-1/2 w-full lg:px-10 lg:py-6 mt-6 lg:mt-0 bg-link-water shadow-2xl ">
+                <div className="p-4 lg:w-1/2 w-full lg:px-10 lg:py-6 mt-6 lg:mt-0  ">
                   <h2 className="text-sm primary-font text-primary-950 tracking-widest">
                     Essential Harvest
                   </h2>
                   <div className="flex mb-4">{stars}</div>
-                  <h1 className="text-primary-800 text-xl  py-4 secondary-font font-medium mb-1">
+                  <h1 className="text-primary-800 text-3xl  py-4 secondary-font font-medium mb-1">
                     {products.title}
                   </h1>
 
                   <div className="flex flex-row justify-between">
-                    <span className="border-2 bg-everglade text-white font-medium text-2xl px-4 flex items-center justify-center">
-                      ₹{products.price}
-                    </span>
+                    <div className="flex items-center justify-center">
+                      <div className="font-mono">₹</div>
+                      <span className="font-bold text-3xl">
+                        {products.price}
+                      </span>
+                      <span className="text-xs flex justify-end">
+                        MRP INCLUSIVE OF ALL TAXES
+                      </span>
+                    </div>
 
                     <button
                       onClick={addCart}
-                      className={`focus:outline-none border flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font`}
+                      className={`focus:outline-none border flex items-center justify-between text-white  font-medium text-sm px-4 py-4 w-40 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font`}
                     >
-                      {!isInCart ? "ADD TO CART" : "GO TO CART"}
-                    </button>
-                    <button
-                      // onClick={addCart}
-                      className={`flex  border  bg-primary-900   hover:bg-primary-700 focus:outline-none  items-center justify-between text-white  font-medium text-sm px-4   bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font`}
-                    >
-                      {/* {!isInCart ? "Add to Cart" : "Go to Cart"} */}
-                      BUY IT NOW
+                      {!isInCart ? (
+                        <>
+                          <span>ADD TO CART</span>
+                          <IoBagAdd size={20} />
+                        </>
+                      ) : (
+                        <>
+                          <span>GO TO CART</span>
+                          <MdKeyboardDoubleArrowRight size={20} />
+                        </>
+                      )}
                     </button>
                   </div>
                 </div>
               </div>
               {/* product desciption */}
-              <div className="py-8  bg-cavern-pink px-4 md:px-16 md:py-16">
+              <div className="py-8  bg-everglade px-4 md:px-16 md:py-16 text-white">
                 <div>
-                  <h4 className="font-semibold text-xl primary-font">
+                  <h4 className="font-semibold text-xl primary-font mb-4">
                     Product Description
                   </h4>
-                  <p className="secondary-font">{products.description}</p>
+                  <p className="secondary-font flex items-start justify-start gap-3">
+                    <div className="w-4 h-4">
+                      <IoIosCheckmarkCircleOutline color="yellow" size={20} />
+                    </div>
+                    {products.description}
+                  </p>
                 </div>
                 <div className="border-t-2 mt-4 pt-4">
-                  <h4 className="font-semibold text-xl primary-font">
+                  <h4 className="font-semibold text-xl primary-font mb-4">
                     About this item
                   </h4>
-                  <ul className="list-disc pl-5">
+                  <ul className="">
                     {products.aboutTheProduct
 
                       .filter((benefit) => benefit.trim() !== "")
                       .map((benefit, index) => (
-                        <li className="secondary-font" key={index}>
+                        <li
+                          className="secondary-font flex items-start justify-start gap-3"
+                          key={index}
+                        >
+                          <div className="w-4 h-4">
+                            <IoIosCheckmarkCircleOutline
+                              color="yellow"
+                              size={20}
+                            />
+                          </div>
                           {benefit}
                         </li>
                       ))}
                   </ul>
                 </div>
                 <div className="border-t-2 mt-4 pt-4">
-                  <h4 className="font-semibold text-xl primary-font">
+                  <h4 className="font-semibold text-xl primary-font mb-4">
                     Benefits of Item
                   </h4>
-                  <ul className="list-disc pl-5">
+                  <ul className=" ">
                     {products.benefitsOfProducts
 
                       .filter((benefit) => benefit.trim() !== "")
                       .map((benefit, index) => (
-                        <li className="secondary-font" key={index}>
+                        <li
+                          className="secondary-font flex items-start justify-start gap-3"
+                          key={index}
+                        >
+                          <div className="w-4 h-4">
+                            <IoIosCheckmarkCircleOutline
+                              color="yellow"
+                              size={20}
+                            />
+                          </div>
                           {benefit}
                         </li>
                       ))}
@@ -220,9 +255,7 @@ function ProductInfo() {
                 className="w-full h-full"
                 src="https://www.youtube.com/embed/2BIWJw-HMS8?si=q3rZ0D5iSEmSEUp0"
                 title="YouTube video player"
-                className="w-full h-60 md:h-80"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
               ></iframe>
             </div>
             {/* how to use description */}
@@ -301,11 +334,11 @@ function ProductInfo() {
               More info
             </h2>
             <div>
-              <Accordion data={accordionData}  style={"border-t"}/>
+              <Accordion data={accordionData} style={"border-t"} />
             </div>
           </div>
           {/* ask us why */}
-          <div className="w-full md:w-1/2 lg:w-1/2 bg-pearl py-4 px-4 md:px-16">
+          <div className="w-full md:w-1/2 lg:w-1/2 bg-cavern-pink py-4 px-4 md:px-16">
             <h2 className="text-2xl font-bold py-2 mb-5 text-center">
               Ask us why
             </h2>

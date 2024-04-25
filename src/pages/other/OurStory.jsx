@@ -4,7 +4,7 @@ import HeroSection from "../../components/heroSection/HeroSection";
 import underline from "../../assets/home/underline.png";
 import { GiTwirlyFlower } from "react-icons/gi";
 
-function About() {
+function OurStory() {
   return (
     <Layout>
       <HeroSection head="Essential Harvest" para="Our Story" />
@@ -198,4 +198,4 @@ function About() {
   );
 }
 
-export default About;
+export default OurStory;

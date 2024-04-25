@@ -36,10 +36,10 @@ function Allproducts() {
     window.scrollTo(0, 0);
   }, []);
   console.log("product", product);
- 
-const stars = [];
+
+  const stars = [];
   for (let index = 0; index < 5; index++) {
-    stars.push(<FaStar color="yellow" key={index} />);
+    stars.push(<FaStar color="green" key={index} />);
   }
   return (
     <Layout>
@@ -66,46 +66,54 @@ const stars = [];
                 console.log("item", item);
                 return (
                   <div
-                  key={index}
-                  className="p-4 w-full md:w-1/3    secondary-font"
-                >
-                  <div
-                    className="h-full bottom-5  duration-300 ease-in-out     bg-mist border-4 hover:border-pearl shadow-md  overflow-hidden cursor-pointer "
-                    onClick={() =>
-                      (window.location.href = `/#/productinfo/${id}`)
-                    }
+                    key={index}
+                    className="p-4 w-full md:w-1/2 lg:w-1/3    secondary-font"
                   >
-                    <div className="flex justify-center">
-                      <img
-                        className=" h-80 w-full p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
-                        src={imageUrl}
-                        alt="blog"
-                      />
-                    </div>
-                    <div className="p-4  ">
-                      <h2
-                        className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 primary-font"
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        Essential Harvest
-                      </h2>
-                      <div className="flex mb-4">{stars}</div>
-                      <h1
-                        className="text-xl font-medium text-heading-color mb-3 secondary-font truncate "
-                        style={{ color: mode === "dark" ? "white" : "" }}
-                      >
-                        {title}
-                      </h1>
-                      <div className="flex items-center justify-between">
-                      <p className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-20 bg-everglade   ease-in duration-300  secondary-font">Rs.{item.price}</p>
-                      <p className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font">
-                        order now
-                        <FaAngleDoubleRight />
-                      </p>
+                    <div
+                      className="h-full bottom-5  duration-300 ease-in-out     bg-mist border-4 hover:border-pearl shadow-md  overflow-hidden cursor-pointer "
+                      onClick={() =>
+                        (window.location.href = `/#/productinfo/${id}`)
+                      }
+                    >
+                      <div className="flex justify-center">
+                        <img
+                          className=" h-60 w-40 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
+                          src={imageUrl}
+                          alt="blog"
+                        />
+                      </div>
+                      <div className="p-4  ">
+                        <h2
+                          className="tracking-widest text-xs title-font font-medium text-heading-color mb-1 primary-font"
+                          style={{ color: mode === "dark" ? "white" : "" }}
+                        >
+                          Essential Harvest
+                        </h2>
+                        <div className="flex mb-4">{stars}</div>
+                        <h1
+                          className="text-xl font-medium text-heading-color mb-3 secondary-font truncate "
+                          style={{ color: mode === "dark" ? "white" : "" }}
+                        >
+                          {title}
+                        </h1>
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center justify-center">
+                            <div className="font-mono">₹</div>
+                            <span className="font-bold text-3xl">
+                              {item.price}
+                            </span>
+                            <span className="text-[10px] flex justify-end">
+                              MRP INCLUSIVE OF ALL TAXES
+                            </span>
+                          </div>
+                          <p className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font">
+                            order now
+                            <FaAngleDoubleRight />
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
                 );
               })}
           </div>

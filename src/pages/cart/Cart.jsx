@@ -288,12 +288,15 @@ function Cart() {
                             {title}
                           </h2>
 
-                          <p
-                            className="mt-3 text-xl  text-heading-color font-bold"
-                            style={{ color: mode === "dark" ? "white" : "" }}
-                          >
-                            ₹{price}
-                          </p>
+                          <div className="flex items-start justify-start mt-3">
+                            <div className="font-mono">₹</div>
+                            <span className="font-bold text-3xl">
+                              {price}
+                            </span>
+                            <span className="text-[10px] flex justify-end">
+                              MRP INCLUSIVE OF ALL TAXES
+                            </span>
+                          </div>
                         </div>
                         <div className="mt-4 flex  justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                           <div className=" flex justify-center items-center">

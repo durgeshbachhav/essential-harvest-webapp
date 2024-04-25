@@ -36,16 +36,20 @@ function Navbar() {
     const promise = account.deleteSessions();
 
     // Handle the promise resolution
-    promise.then(function (response) {
+    promise.then(
+      function (response) {
         console.log(response); // Success
-    }, function (error) {
+      },
+      function (error) {
         console.log(error); // Failure
-    });
-};
-
+      }
+    );
+  };
 
   const cartItems = useSelector((state) => state.cart);
   var useremail = JSON.parse(localStorage.getItem("user"));
+  var getuser = JSON.parse(localStorage.getItem("getuser"));
+  console.log("getuser", getuser);
   console.log("useremail", useremail);
   return (
     <div className="bg-leaf sticky top-0 z-50">

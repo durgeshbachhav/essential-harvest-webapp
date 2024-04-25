@@ -7,7 +7,7 @@ import myContext from "../../context/data/myContext";
 
 const SocialLogin = () => {
   const context = useContext(myContext);
-
+  const navigate = useNavigate();
   const redirectUrl = import.meta.env.VITE_APP_OAUTH_REDIRECT_URL;
   const callbackUrl = import.meta.env.VITE_APP_OAUTH_CALLBACK_URL;
 
@@ -15,17 +15,19 @@ const SocialLogin = () => {
     e.preventDefault();
     // Create OAuth2 session with Google
     try {
-      let data = account.createOAuth2Session(
+      account.createOAuth2Session(
         "google",
-        // "http://localhost:5173/#/cart",
-        // "http://localhost:5173/#/login"
         "https://essential-harvest-webapp.vercel.app/#/cart",
         "https://essential-harvest-webapp.vercel.app/#/login"
       );
-      console.log("data", data);
-      // "https://essential-harvest-webapp.vercel.app/#/cart",
-      //   "https://essential-harvest-webapp.vercel.app/#/login"
+
+      // "http://localhost:5173/#/cart",
+      // "http://localhost:5173/#/login"
+
       const session = await account.getSession("current");
+      const getUser = await account.get();
+      localStorage.setItem("getuser", JSON.stringify(getUser));
+      console.log("getuser", getUser);
       console.log("session", session);
       const providerUid = session.providerAccessToken;
       const userId = session.userId;
@@ -36,12 +38,16 @@ const SocialLogin = () => {
         profileInfo,
       };
       localStorage.setItem("user", JSON.stringify(userInfo));
+      navigate("/cart");
+      const data = localStorage.getItem("user", JSON.stringify(userInfo));
+      console.log("data after oauth", data);
       console.log("Session:", session);
       console.log("User Profile:", profileInfo);
     } catch (error) {
       console.log("error while google auth", error);
     }
   };
+
   // Function to fetch user profile information using provider UID
   const fetchUserProfile = async (providerUid) => {
     const profileEndpoint = `${

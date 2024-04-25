@@ -12,27 +12,21 @@ const SocialLogin = () => {
   const callbackUrl = import.meta.env.VITE_APP_OAUTH_CALLBACK_URL;
 
   const handleLoginWithGoogle = async () => {
-    try {
-      // Create OAuth2 session with Google
-      account.createOAuth2Session("google", redirectUrl, callbackUrl);
-      const session = await account.getSession("current");
-      console.log("session", session);
-      const providerUid = session.providerAccessToken;
-      const userId = session.userId;
-      const profileInfo = await fetchUserProfile(providerUid);
-      console.log("profileInfo", profileInfo);
-      const userInfo = {
-        userId,
-        profileInfo,
-      };
-      localStorage.setItem("user", JSON.stringify(userInfo));
-      console.log("Session:", session);
-      console.log("User Profile:", profileInfo);
-    } catch (error) {
-      console.error("Error logging in with Google:", error);
-
-      toast.error("Failed to log in with Google");
-    }
+    // Create OAuth2 session with Google
+    account.createOAuth2Session("google", redirectUrl, callbackUrl);
+    const session = await account.getSession("current");
+    console.log("session", session);
+    const providerUid = session.providerAccessToken;
+    const userId = session.userId;
+    const profileInfo = await fetchUserProfile(providerUid);
+    console.log("profileInfo", profileInfo);
+    const userInfo = {
+      userId,
+      profileInfo,
+    };
+    localStorage.setItem("user", JSON.stringify(userInfo));
+    console.log("Session:", session);
+    console.log("User Profile:", profileInfo);
   };
 
   // Function to fetch user profile information using provider UID

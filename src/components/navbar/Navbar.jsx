@@ -142,7 +142,7 @@ function Navbar() {
                       {isOpen && (
                         <div>
                           <div className="block font-bold px-4 py-2 text-sm text-everglade bg-leaf hover:bg-gray-100">
-                            Hi, {user?.profileInfo?.name || user.providerUid}
+                            Hi, {user?.profileInfo?.name || user?.providerUid}
                           </div>
                           <div className="bg-chestnut text-white hover:bg-leaf px-4 py-2 border-b-2">
                             <a
@@ -216,7 +216,7 @@ function Navbar() {
                 <Link to={"/"} className="flex">
                   <div className="flex items-center justify-center">
                     <img src={logo} alt="" className="w-32 h-32 logo p-2" />
-                    {/* <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>Essential Harvest</h1> */}
+                    
                   </div>
                 </Link>
               </div>
@@ -274,7 +274,7 @@ function Navbar() {
                       {isOpen && (
                         <div className="absolute top-full -left-10 mt-1 border rounded-xl bg-mist shadow-lg">
                           <div className="block font-bold px-4 py-2 text-sm  rounded-t-xl text-chestnut bg-white ">
-                            Hi, {user?.profileInfo?.name || user.providerUid}
+                            Hi, {user?.profileInfo?.name || user?.providerUid}
                           </div>
                           <Link
                             to={"/order"}

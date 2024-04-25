@@ -10,6 +10,7 @@ import "./Navbar.scss";
 import { FaShoppingCart } from "react-icons/fa";
 import { BsFillHandbagFill } from "react-icons/bs";
 import logo from "../../assets/home/footer.svg";
+import { account } from "../../appwrite/appwriteConfig";
 
 function Navbar() {
   const context = useContext(myContext);
@@ -25,9 +26,23 @@ function Navbar() {
   // console.log("user ", user);
 
   const logout = () => {
+    // Clear user data from local storage
     localStorage.clear("user");
+
+    // Redirect the user to the login page
     window.location.href = "/login";
-  };
+
+    // Delete sessions associated with the user's account
+    const promise = account.deleteSessions();
+
+    // Handle the promise resolution
+    promise.then(function (response) {
+        console.log(response); // Success
+    }, function (error) {
+        console.log(error); // Failure
+    });
+};
+
 
   const cartItems = useSelector((state) => state.cart);
   var useremail = JSON.parse(localStorage.getItem("user"));

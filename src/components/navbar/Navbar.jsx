@@ -31,7 +31,7 @@ function Navbar() {
 
   const cartItems = useSelector((state) => state.cart);
   var useremail = JSON.parse(localStorage.getItem("user"));
-  console.log("useremail", useremail.providerUid);
+  console.log("useremail", useremail);
   return (
     <div className="bg-leaf sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
@@ -216,7 +216,6 @@ function Navbar() {
                 <Link to={"/"} className="flex">
                   <div className="flex items-center justify-center">
                     <img src={logo} alt="" className="w-32 h-32 logo p-2" />
-                    
                   </div>
                 </Link>
               </div>

@@ -6,20 +6,17 @@ import { useNavigate } from "react-router-dom";
 import myContext from "../../context/data/myContext";
 
 const SocialLogin = () => {
-  const navigate = useNavigate();
   const context = useContext(myContext);
-  const { loading, setLoading } = context;
-  const [loggedInUser, setLoggedInUser] = useState(null);
+  const { setLoading } = context;
+
+  const redirectUrl = import.meta.env.VITE_APP_OAUTH_REDIRECT_URL;
+  const callbackUrl = import.meta.env.VITE_APP_OAUTH_CALLBACK_URL;
 
   const handleLoginWithGoogle = async () => {
     setLoading(true);
     try {
       // Create OAuth2 session with Google
-      await account.createOAuth2Session(
-        "google",
-        "https://essential-harvest-webapp.vercel.app/#/cart",
-        "https://essential-harvest-webapp.vercel.app/#/login"
-      );
+      await account.createOAuth2Session("google", redirectUrl, callbackUrl);
       const session = await account.getSession("current");
       console.log("session", session);
       const providerUid = session.providerAccessToken;

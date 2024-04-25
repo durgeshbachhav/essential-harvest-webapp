@@ -16,8 +16,8 @@ const SocialLogin = () => {
     setLoading(true);
     try {
       // Create OAuth2 session with Google
-      await account.createOAuth2Session("google", redirectUrl, callbackUrl);
-      const session = await account.getSession("current");
+      account.createOAuth2Session("google", redirectUrl, callbackUrl);
+      const session =  account.getSession("current");
       console.log("session", session);
       const providerUid = session.providerAccessToken;
       const userId = session.userId;

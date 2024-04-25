@@ -33,11 +33,10 @@ const SocialLogin = () => {
       localStorage.setItem("user", JSON.stringify(userInfo));
       console.log("Session:", session);
       console.log("User Profile:", profileInfo);
-    };
     } catch (error) {
-      console.log('error while google auth',error)
+      console.log("error while google auth", error);
     }
-
+  };
   // Function to fetch user profile information using provider UID
   const fetchUserProfile = async (providerUid) => {
     const profileEndpoint = `${
@@ -54,6 +53,7 @@ const SocialLogin = () => {
       console.log("profileData", profileData);
       return profileData;
     } catch (error) {
+      console.error("Error fetching user profile:", error);
       throw new Error("Error fetching user profile:", error);
     }
   };

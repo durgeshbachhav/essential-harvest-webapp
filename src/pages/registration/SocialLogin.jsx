@@ -15,11 +15,16 @@ const SocialLogin = () => {
     e.preventDefault();
     // Create OAuth2 session with Google
     try {
-      account.createOAuth2Session(
+      let data = account.createOAuth2Session(
         "google",
+        // "http://localhost:5173/#/cart",
+        // "http://localhost:5173/#/login"
         "https://essential-harvest-webapp.vercel.app/#/cart",
         "https://essential-harvest-webapp.vercel.app/#/login"
       );
+      console.log("data", data);
+      // "https://essential-harvest-webapp.vercel.app/#/cart",
+      //   "https://essential-harvest-webapp.vercel.app/#/login"
       const session = await account.getSession("current");
       console.log("session", session);
       const providerUid = session.providerAccessToken;

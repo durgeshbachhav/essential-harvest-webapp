@@ -85,6 +85,7 @@ function Cart() {
   // check user is login or not
 
   const user = JSON.parse(localStorage.getItem("user"));
+  console.log("user", user);
 
   const [loggedIn, setLoggedIn] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -290,9 +291,7 @@ function Cart() {
 
                           <div className="flex items-start justify-start mt-3">
                             <div className="font-mono">₹</div>
-                            <span className="font-bold text-3xl">
-                              {price}
-                            </span>
+                            <span className="font-bold text-3xl">{price}</span>
                             <span className="text-[10px] flex justify-end">
                               MRP INCLUSIVE OF ALL TAXES
                             </span>

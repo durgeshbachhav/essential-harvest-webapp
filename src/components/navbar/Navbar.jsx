@@ -100,7 +100,7 @@ function Navbar() {
                 <div className=" border-t border-black ">
                   <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
-                      to={"/"}
+                      to="/"
                       className="text-sm font-medium text-white "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
@@ -109,7 +109,7 @@ function Navbar() {
                   </div>
                   <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
-                      to={"/about"}
+                      to="/about"
                       className="text-sm font-medium text-white "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
@@ -120,7 +120,7 @@ function Navbar() {
                     import.meta.env.VITE_APP_ADMIN_EMAIL && (
                     <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                       <Link
-                        to={"/dashboard"}
+                        to="/dashboard"
                         className="text-sm font-medium text-white "
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
@@ -130,7 +130,7 @@ function Navbar() {
                   )}
                   <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
-                      to={"/ourstory"}
+                      to="/ourstory"
                       className="text-sm font-medium text-white "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
@@ -139,7 +139,7 @@ function Navbar() {
                   </div>
                   <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
-                      to={"/allproducts"}
+                      to="/allproducts"
                       className="text-sm font-medium text-white "
                       style={{ color: mode === "dark" ? "white" : "" }}
                     >
@@ -164,22 +164,22 @@ function Navbar() {
                             Hi, {user?.profileInfo?.name || user?.providerUid}
                           </div>
                           <div className="bg-chestnut text-white hover:bg-leaf px-4 py-2 border-b-2">
-                            <a
-                              to={"/order"}
+                            <Link
+                              to="/order"
                               className="-m-2 block p-2 text-sm font-medium text-white cursor-pointer"
                               style={{ color: mode === "dark" ? "white" : "" }}
                             >
                               Orders
-                            </a>
+                            </Link>
                           </div>
                           <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
-                            <a
+                            <Link
                               onClick={logout}
                               className="-m-2 block p-2 text-sm font-medium text-white cursor-pointer"
                               style={{ color: mode === "dark" ? "white" : "" }}
                             >
                               Logout
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       )}

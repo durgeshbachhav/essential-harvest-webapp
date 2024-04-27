@@ -7,64 +7,21 @@ import myContext from "../../context/data/myContext";
 
 const SocialLogin = () => {
   const context = useContext(myContext);
-  const navigate = useNavigate();
-  const redirectUrl = import.meta.env.VITE_APP_OAUTH_REDIRECT_URL;
-  const callbackUrl = import.meta.env.VITE_APP_OAUTH_CALLBACK_URL;
+  const { setLoggedIn } = context;
+  const redirectUrl = `${import.meta.env.VITE_APP_OAUTH_REDIRECT_URL}#/cart`;
+  const callbackUrl = `${import.meta.env.VITE_APP_OAUTH_REDIRECT_URL}#/login`;
 
-  const handleLoginWithGoogle = async (e) => {
+  const handleLoginWithGoogle = (e) => {
     e.preventDefault();
-    // Create OAuth2 session with Google
     try {
-      account.createOAuth2Session(
-        "google",
-        "https://essential-harvest-webapp.vercel.app/#/cart",
-        "https://essential-harvest-webapp.vercel.app/#/login"
-      );
-
-      // "http://localhost:5173/#/cart",
-      // "http://localhost:5173/#/login"
-
-      const session = await account.getSession("current");
-      const getUser = await account.get();
-      localStorage.setItem("getuser", JSON.stringify(getUser));
-      console.log("getuser", getUser);
-      console.log("session", session);
-      const providerUid = session.providerAccessToken;
-      const userId = session.userId;
-      const profileInfo = await fetchUserProfile(providerUid);
-      console.log("profileInfo", profileInfo);
-      const userInfo = {
-        userId,
-        profileInfo,
-      };
-      localStorage.setItem("user", JSON.stringify(userInfo));
-      navigate("/cart");
-      const data = localStorage.getItem("user", JSON.stringify(userInfo));
-      console.log("data after oauth", data);
-      console.log("Session:", session);
-      console.log("User Profile:", profileInfo);
+      account.createOAuth2Session("google", redirectUrl, callbackUrl);
+      setLoggedIn(true);
+      // "http://localhost:5173/#/cart", //navigate to success
+      // "http://localhost:5173/#/login" //navigate to failed
+      // "https://essential-harvest-webapp.vercel.app/#/cart",
+      // "https://essential-harvest-webapp.vercel.app/#/login"
     } catch (error) {
-      console.log("error while google auth", error);
-    }
-  };
-
-  // Function to fetch user profile information using provider UID
-  const fetchUserProfile = async (providerUid) => {
-    const profileEndpoint = `${
-      import.meta.env.VITE_APP_GOOGLE_PROFILE_URL
-    }${providerUid}`;
-
-    try {
-      const response = await fetch(profileEndpoint);
-      if (!response.ok) {
-        throw new Error("Failed to fetch user profile information");
-      }
-      console.log("response", response);
-      const profileData = await response.json();
-      console.log("profileData", profileData);
-      return profileData;
-    } catch (error) {
-      console.error("Error fetching user profile:", error);
+      console.log("error while login with google: ", error);
       throw new Error("Error fetching user profile:", error);
     }
   };

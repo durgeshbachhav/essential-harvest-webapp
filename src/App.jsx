@@ -26,7 +26,8 @@ import { Toaster } from "sonner";
 import Allproducts from "./pages/allproducts/Allproducts";
 import ProtectedRouteForAdmin from "./pages/admin/ProtectedRouteForAdmin/ProtectedRouteForAdmin";
 import OurStory from "./pages/other/OurStory";
-import  About  from "./pages/other/About";
+import About from "./pages/other/About";
+import Verify from "./pages/other/Verify";
 
 function App() {
   return (
@@ -54,6 +55,8 @@ function App() {
           />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/verify" element={<Verify />} />
+
           <Route path="/productinfo/:id" element={<ProductInfo />} />
           <Route
             path="/addproduct"

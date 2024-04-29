@@ -161,7 +161,7 @@ function Navbar() {
                       {isOpen && (
                         <div>
                           <div className="block font-bold px-4 py-2 text-sm text-everglade bg-leaf hover:bg-gray-100">
-                            Hi, {user?.profileInfo?.name || user?.providerUid}
+                            Hi, {user?.profileInfo?.name || user?.providerUid || user?.name}
                           </div>
                           <div className="bg-chestnut text-white hover:bg-leaf px-4 py-2 border-b-2">
                             <Link
@@ -292,7 +292,7 @@ function Navbar() {
                       {isOpen && (
                         <div className="absolute top-full -left-10 mt-1 border rounded-xl bg-mist shadow-lg">
                           <div className="block font-bold px-4 py-2 text-sm  rounded-t-xl text-chestnut bg-white ">
-                            Hi, {user?.profileInfo?.name || user?.providerUid}
+                            Hi,  {user?.profileInfo?.name || user?.providerUid || user?.name}
                           </div>
                           <Link
                             to={"/order"}

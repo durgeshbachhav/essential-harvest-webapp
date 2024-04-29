@@ -295,55 +295,7 @@ function myState(props) {
   // set google login user
   const [loggedIn, setLoggedIn] = useState(false);
 
-  useEffect(() => {
-    (async () => {
-      const fetchUserData = async () => {
-        if (loggedIn) {
-          try {
-            const session = await account.getSession("current");
-            localStorage.setItem("user", JSON.stringify(session));
-            console.log("session", session);
-            const providerUid = session.providerAccessToken;
-            const userId = session.userId;
-            const profileInfo = await fetchUserProfile(providerUid);
-            console.log("profileInfo", profileInfo);
-            const userInfo = {
-              userId,
-              profileInfo,
-            };
-            localStorage.setItem("user", JSON.stringify(userInfo));
-            console.log("data after oauth", userInfo);
-            // You might want to navigate here, or handle the navigation externally
-          } catch (error) {
-            console.log("Error fetching user data:", error);
-            // Handle error appropriately
-          }
-        }
-      };
-
-      await fetchUserData();
-    })();
-  }, [loggedIn, setLoggedIn]);
-
-  const fetchUserProfile = async (providerUid) => {
-    const profileEndpoint = `${
-      import.meta.env.VITE_APP_GOOGLE_PROFILE_URL
-    }${providerUid}`;
-
-    try {
-      const response = await fetch(profileEndpoint);
-      if (!response.ok) {
-        throw new Error("Failed to fetch user profile information");
-      }
-      console.log("response", response);
-      const profileData = await response.json();
-      console.log("profileData", profileData);
-      return profileData;
-    } catch (error) {
-      console.error("Error fetching user profile:", error);
-      throw new Error("Error fetching user profile:", error);
-    }
-  };
+  
 
   return (
     <MyContext.Provider

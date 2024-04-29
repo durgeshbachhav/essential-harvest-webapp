@@ -198,7 +198,7 @@ function Cart() {
             console.log("response", response);
             clearAllCart();
             getOrderData();
-            navigate("#/order");
+            window.location.href = "#/order";
           },
           function (error) {
             console.log("error", error);

@@ -228,7 +228,7 @@ function Cart() {
           )
           .then((response) => {
             console.log("response", response);
-            toast.success("");
+            toast.success("Your Order is confirmed");
             console.log("Webhook called successfully");
           })
           .catch((error) => {

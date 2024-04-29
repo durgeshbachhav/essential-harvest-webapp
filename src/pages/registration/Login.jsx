@@ -24,18 +24,18 @@ function Login() {
         function (response) {
           console.log("rsponse", response); // Success
           localStorage.setItem("user", JSON.stringify(response));
-          navigate("/");
+          window.location.href = "#/allproducts";
+          toast.success("Login Succesfully");
         },
         function (error) {
           console.log("error", error); // Failure
-          toast.error("response failed");
         }
       );
       const currentAccount = account.get();
       console.log("current account", currentAccount);
     } catch (error) {
       console.log(error);
-      toast.success("Login failed");
+      toast.error("Failed to Login...!");
     }
   };
 

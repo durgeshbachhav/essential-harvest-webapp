@@ -30,7 +30,7 @@ function Navbar() {
     localStorage.clear("user");
 
     // Redirect the user to the login page
-    window.location.href = "/login";
+   
 
     // Delete sessions associated with the user's account
     const promise = account.deleteSessions();
@@ -44,6 +44,7 @@ function Navbar() {
         console.log(error); // Failure
       }
     );
+    window.location.href = "/login";
   };
 
   const cartItems = useSelector((state) => state.cart);

@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import myContext from "../../context/data/myContext";
 import Layout from "../../components/layout/Layout";
 import "./loading.css";
+import { toast } from "sonner";
 
 const Verify = () => {
   //   const redirectUrl = `${import.meta.env.VITE_APP_OAUTH_REDIRECT_URL}#/cart`;
@@ -27,11 +28,13 @@ const Verify = () => {
         };
         localStorage.setItem("user", JSON.stringify(userInfo));
         navigate("/cart");
+        toast.success("Login Successfully");
 
         console.log("data after oauth", userInfo);
         // You might want to navigate here, or handle the navigation externally
       } catch (error) {
         console.log("Error fetching user data:", error);
+        toast.error("failed to login....!");
         // Handle error appropriately
       }
     };

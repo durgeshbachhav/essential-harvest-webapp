@@ -125,7 +125,7 @@ const SwiperComponent = () => {
         </div>
         <img src={eh2} alt="" className="w-96 h-96 " />
         <h1 className="text-4xl font-extrabold text-gray-700 z-20">
-          Rose Geranium Oil
+          Rose Geranium Essential Oil
         </h1>
       </SwiperSlide>
     </Swiper>

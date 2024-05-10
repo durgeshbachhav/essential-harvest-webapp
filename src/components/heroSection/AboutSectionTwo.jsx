@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import underline from "../../assets/home/underline.png";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import heroVideo from "../../assets/videos/Video-796.mp4";
+import heroVideo1 from "../../assets/videos/Video-366.mp4";
 import { useNavigate } from "react-router-dom";
 import { GiTwirlyFlower } from "react-icons/gi";
 import "./aboutsection.css";
@@ -211,10 +212,11 @@ function AboutSectionTwo() {
             controls={false}
             autoPlay
             loop
+            muted
             className="rounded-lg w-64"
           >
             <source
-              src={heroVideo}
+              src={heroVideo1}
               className="w-40 rounded-lg"
               type="video/mp4"
             />
@@ -227,6 +229,7 @@ function AboutSectionTwo() {
             controls={false}
             autoPlay
             loop
+            muted
             className="rounded-lg hidden w-64 md:block"
           >
             <source

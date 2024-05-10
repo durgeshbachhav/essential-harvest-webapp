@@ -153,8 +153,17 @@ function ProductInfo() {
                         Essential Harvest
                       </h2>
                       <div className="flex mb-4">{stars}</div>
-                      <h1 className="text-primary-800 text-3xl  py-4 secondary-font font-medium mb-1">
+                      {/* <h1 className="text-primary-800 text-3xl  py-4 secondary-font font-medium mb-1">
                         {products.title}
+                      </h1> */}
+                      <h1 className="text-primary-800 text-3xl py-4 secondary-font font-medium mb-1">
+                        {products.title.split("-").map((item, index) => (
+                          <React.Fragment key={index}>
+                            {item.trim()}{" "}
+                            {/* Trim removes leading/trailing spaces */}
+                            <br />
+                          </React.Fragment>
+                        ))}
                       </h1>
 
                       <div className="flex flex-row justify-between">

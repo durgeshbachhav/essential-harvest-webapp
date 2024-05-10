@@ -40,13 +40,11 @@ export const cardData = [
                , {
                     "Clinical Research": "While traditional usage provides anecdotal evidence of its efficacy, modern research is also shedding light on the therapeutic benefits of rose geranium hydrosol. Studies have demonstrated its anti-inflammatory, antibacterial, and antioxidant properties, supporting its use in skincare and wellness products."
                }
-
-
           ]
      },
      {
           img: three,
-          heading: ' Why trust this works?',
+          heading: 'Current Facts and Figures',
           desc: [
                {
                     "Market Growth": "The global market for hydrosols, including rose geranium hydrosol, has been steadily growing in recent years, driven by increasing consumer awareness of natural skincare ingredients and rising demand for aromatherapy products.",
@@ -59,6 +57,6 @@ export const cardData = [
                }
           ]
      },
-     
+
 
 ]

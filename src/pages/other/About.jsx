@@ -195,7 +195,7 @@ const About = () => {
         <p className="mb-4">
           We deliver our products nationwide across India, ensuring that
           customers from all corners of the country can enjoy the benefits of
-          our organic skincare offerings
+          our natural skincare offerings
         </p>
         {/* Feel free to add more sections or customize the content further */}
       </div>

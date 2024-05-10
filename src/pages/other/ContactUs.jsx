@@ -28,7 +28,7 @@ function Contact() {
                   <ul className="mb-6 md:mb-0 px-4">
                     <li className="flex">
                       <div className="flex h-10 w-10 items-center justify-center   ">
-                        <FaLocationArrow  size={30} color="green"/>
+                        <FaLocationArrow size={30} color="green" />
                       </div>
                       <div className="ml-4 mb-4">
                         <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 secondary-font">
@@ -40,21 +40,20 @@ function Contact() {
                     </li>
                     <li className="flex">
                       <div className="flex h-10 w-10 items-center justify-center   ">
-                        <PiContactlessPaymentFill size={30} color="green"/>
+                        <PiContactlessPaymentFill size={30} color="green" />
                       </div>
                       <div className="ml-4 mb-4">
                         <h3 className="mb-2 text-lg font-medium leading-6 text-gray-900 secondary-font">
                           Contact
                         </h3>
                         <p className="text-gray-600 secondary-font">
-                          Mobile: +91 96175854557
+                          Mobile: +91 9881900022
                         </p>
                         <p className="text-gray-600 secondary-font">
-                          Mail: essential.harvest@gmail.com
+                          Mail: care@essentialharvest.in
                         </p>
                       </div>
                     </li>
-                    
                   </ul>
                 </div>
                 <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">

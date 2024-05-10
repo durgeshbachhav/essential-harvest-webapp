@@ -25,6 +25,8 @@ import SwiperCard from "../../components/swiperCard/SwiperCard";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { IoBagAdd } from "react-icons/io5";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { MdGrass } from "react-icons/md";
+
 import LoaderTwo from "../../components/loader/LoaderTwo";
 import oilVideo from "../../assets/videos/Video-928.mp4";
 import hydrosolVideo from "../../assets/videos/Video-366.mp4";
@@ -124,7 +126,7 @@ function ProductInfo() {
       title: "Zero Dyes",
     },
     {
-      image: <MdCrueltyFree color="green" size={80} />,
+      image: <MdGrass color="green" size={80} />,
       title: "Zero Sulphates",
     },
   ];

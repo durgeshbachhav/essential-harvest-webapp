@@ -1,8 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import underline from "../../assets/home/underline.png";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
-import heroVideo from "../../assets/videos/Video-796.mp4";
-import heroVideo1 from "../../assets/videos/Video-366.mp4";
+import heroVideo from "../../assets/videos/VID-20240510-WA0003.mp4";
 import { useNavigate } from "react-router-dom";
 import { GiTwirlyFlower } from "react-icons/gi";
 import "./aboutsection.css";
@@ -209,20 +208,20 @@ function AboutSectionTwo() {
             ref={videoRef}
             // width="320"
             // height="240"
-            controls={false}
+            controls={true}
             autoPlay
             loop
             muted
             className="rounded-lg w-64"
           >
             <source
-              src={heroVideo1}
+              src={heroVideo}
               className="w-40 rounded-lg"
               type="video/mp4"
             />
             Your browser does not support the video tag.
           </video>
-          <video
+          {/* <video
             ref={videoRef}
             // width="320"
             // height="240"
@@ -238,7 +237,7 @@ function AboutSectionTwo() {
               type="video/mp4"
             />
             Your browser does not support the video tag.
-          </video>
+          </video> */}
         </div>
       </div>
     </>

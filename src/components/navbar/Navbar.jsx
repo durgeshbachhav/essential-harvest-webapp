@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import "./Navbar.scss";
 import { FaShoppingCart } from "react-icons/fa";
 import { BsFillHandbagFill } from "react-icons/bs";
-import logo from "../../assets/home/footer.svg";
+import logo from "../../assets/logo1.png";
 import { account } from "../../appwrite/appwriteConfig";
 
 function Navbar() {
@@ -30,7 +30,6 @@ function Navbar() {
     localStorage.clear("user");
 
     // Redirect the user to the login page
-   
 
     // Delete sessions associated with the user's account
     const promise = account.deleteSessions();
@@ -148,7 +147,7 @@ function Navbar() {
                     </Link>
                   </div>
 
-                  {user ? (
+                  {/* {user ? (
                     <div>
                       <div className="hover:bg-leaf px-4 py-2">
                         <Link
@@ -162,7 +161,10 @@ function Navbar() {
                       {isOpen && (
                         <div>
                           <div className="block font-bold px-4 py-2 text-sm text-everglade bg-leaf hover:bg-gray-100">
-                            Hi, {user?.profileInfo?.name || user?.providerUid || user?.name}
+                            Hi,{" "}
+                            {user?.profileInfo?.name ||
+                              user?.providerUid ||
+                              user?.name}
                           </div>
                           <div className="bg-chestnut text-white hover:bg-leaf px-4 py-2 border-b-2">
                             <Link
@@ -195,7 +197,7 @@ function Navbar() {
                         Signup
                       </Link>
                     </div>
-                  )}
+                  )} */}
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -235,7 +237,7 @@ function Navbar() {
               <div className="flex ">
                 <Link to={"/"} className="flex">
                   <div className="flex items-center justify-center">
-                    <img src={logo} alt="" className="w-32 h-32 logo p-2" />
+                    <img src={logo} alt="" className="w-20 h-20 md:w-32 md:h-32 logo p-2" />
                   </div>
                 </Link>
               </div>
@@ -281,7 +283,7 @@ function Navbar() {
                   >
                     All Products
                   </Link>
-                  {user ? (
+                  {/* {user ? (
                     <div className="relative ">
                       <button
                         onClick={toggleDropdown}
@@ -293,7 +295,10 @@ function Navbar() {
                       {isOpen && (
                         <div className="absolute top-full -left-10 mt-1 border rounded-xl bg-mist shadow-lg">
                           <div className="block font-bold px-4 py-2 text-sm  rounded-t-xl text-chestnut bg-white ">
-                            Hi,  {user?.profileInfo?.name || user?.providerUid || user?.name}
+                            Hi,{" "}
+                            {user?.profileInfo?.name ||
+                              user?.providerUid ||
+                              user?.name}
                           </div>
                           <Link
                             to={"/order"}
@@ -320,7 +325,7 @@ function Navbar() {
                     >
                       Signup
                     </Link>
-                  )}
+                  )} */}
                 </div>
 
                 {/* Cart */}

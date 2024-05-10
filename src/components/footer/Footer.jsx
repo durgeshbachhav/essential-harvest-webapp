@@ -1,6 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import myContext from "../../context/data/myContext";
-import logo from "../../assets/home/footer.svg";
+// import logo from "../../assets/home/footer.svg";
+import logo from "../../assets/logo1.png";
 import { Link } from "react-router-dom";
 import "./Footer.scss";
 function Footer() {

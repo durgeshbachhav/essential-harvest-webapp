@@ -28,6 +28,7 @@ import ProtectedRouteForAdmin from "./pages/admin/ProtectedRouteForAdmin/Protect
 import OurStory from "./pages/other/OurStory";
 import About from "./pages/other/About";
 import Verify from "./pages/other/Verify";
+import UpiPayment from "./pages/upiPayment/UpiPayment";
 
 function App() {
   return (
@@ -88,6 +89,7 @@ function App() {
           <Route path="/ourstory" element={<OurStory />} />
           <Route path="/about" element={<About />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/payment" element={<UpiPayment />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
         <Toaster />

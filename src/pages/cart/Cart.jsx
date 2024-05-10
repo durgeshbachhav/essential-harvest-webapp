@@ -5,7 +5,7 @@ import Modal from "../../components/modal/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteFromCart, clearCart } from "../../redux/cartSlice";
 import { toast } from "sonner";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 // appwrite
@@ -387,7 +387,7 @@ function Cart() {
                   </div>
                 </div>
                 {/* <Modal  /> */}
-                {user ? (
+                {/* {user ? (
                   <Modal
                     name={name}
                     address={address}
@@ -408,7 +408,16 @@ function Cart() {
                     continue
                     <FaAngleDoubleRight />
                   </button>
-                )}
+                )} */}
+                <Link
+                    to={'/payment'}
+                    className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font"
+                    // type="button"
+                    // onClick={handleBuyNow}
+                  >
+                    continue
+                    <FaAngleDoubleRight />
+                  </Link>
               </div>
             </div>
           </div>

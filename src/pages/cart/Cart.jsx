@@ -20,7 +20,7 @@ import { FaWhatsapp } from "react-icons/fa";
 function Cart() {
   // whatsapp integration
   const sendMessage = () => {
-    const phoneNumber = "9923436176";
+    const phoneNumber = "9881900022";
 
     // Construct the WhatsApp message URL
     const whatsappUrl = `https://wa.me/${phoneNumber}`;

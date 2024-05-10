@@ -26,6 +26,8 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { IoBagAdd } from "react-icons/io5";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import LoaderTwo from "../../components/loader/LoaderTwo";
+import oilVideo from "../../assets/videos/Video-928.mp4";
+import hydrosolVideo from "../../assets/videos/Video-366.mp4";
 
 function ProductInfo() {
   const navigate = useNavigate();
@@ -267,12 +269,20 @@ function ProductInfo() {
               <div className="w-full px-4 mx-auto  flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between md:px-16 md:py-4 md:gap-12">
                 {/* image container */}
                 <div className="w-full h-full md:w-1/2  flex items-center justify-center">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/2BIWJw-HMS8?si=q3rZ0D5iSEmSEUp0"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  ></iframe>
+                  <video
+                    controls={true}
+                    autoPlay
+                    loop
+                    muted
+                    className="rounded-lg w-64"
+                  >
+                    <source
+                      src={oilVideo}
+                      className="w-40 rounded-lg"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 {/* how to use description */}
                 <div className="w-full md:w-1/2 ">
@@ -408,12 +418,20 @@ function ProductInfo() {
               <div className="w-full px-4 mx-auto  flex flex-col items-center justify-center gap-4 md:flex-row md:justify-between md:px-16 md:py-4 md:gap-12">
                 {/* image container */}
                 <div className="w-full h-full md:w-1/2  flex items-center justify-center">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/2BIWJw-HMS8?si=q3rZ0D5iSEmSEUp0"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  ></iframe>
+                  <video
+                    controls={true}
+                    autoPlay
+                    loop
+                    muted
+                    className="rounded-lg w-64"
+                  >
+                    <source
+                      src={hydrosolVideo}
+                      className="w-40 rounded-lg"
+                      type="video/mp4"
+                    />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
                 {/* how to use description */}
                 <div className="w-full md:w-1/2 ">

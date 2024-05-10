@@ -15,8 +15,21 @@ import "./Cart.scss";
 import { TiShoppingCart } from "react-icons/ti";
 import { MdRemoveShoppingCart } from "react-icons/md";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 function Cart() {
+  // whatsapp integration
+  const sendMessage = () => {
+    const phoneNumber = "9923436176";
+
+    // Construct the WhatsApp message URL
+    const whatsappUrl = `https://wa.me/${phoneNumber}`;
+
+    // Open the WhatsApp conversation in a new tab
+    window.open(whatsappUrl, "_blank");
+  };
+
+  //
   const navigate = useNavigate();
   const context = useContext(myContext);
   const { mode, getOrderData } = context;
@@ -355,7 +368,12 @@ function Cart() {
                     ₹{totalAmout}
                   </p>
                 </div>
-                <div className="flex justify-between">
+                <div className="py-2">
+                  <p className="text-green-900">
+                    *To confirm your order, please send a message.
+                  </p>
+                </div>
+                {/* <div className="flex justify-between">
                   <p
                     className="text-sub-heading-color"
                     style={{ color: mode === "dark" ? "white" : "" }}
@@ -385,7 +403,7 @@ function Cart() {
                       ₹{grandTotal}
                     </p>
                   </div>
-                </div>
+                </div> */}
                 {/* <Modal  /> */}
                 {/* {user ? (
                   <Modal
@@ -410,14 +428,15 @@ function Cart() {
                   </button>
                 )} */}
                 <Link
-                    to={'/payment'}
-                    className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font"
-                    // type="button"
-                    // onClick={handleBuyNow}
-                  >
-                    continue
-                    <FaAngleDoubleRight />
-                  </Link>
+                  to={"/"}
+                  className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-60 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font"
+                  // type="button"
+                  // onClick={handleBuyNow}
+                  onClick={sendMessage}
+                >
+                  Send Message
+                  <FaWhatsapp />
+                </Link>
               </div>
             </div>
           </div>

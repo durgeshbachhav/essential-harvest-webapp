@@ -52,11 +52,11 @@ function Navbar() {
   console.log("getuser", getuser);
   console.log("useremail", useremail);
   return (
-    <div className="bg-[#FFCBCB] sticky top-0 z-50">
+    <div className="bg-[#FEFFAC] sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"
-          className="relative block z-40 lg:hidden"
+          className="relative block z-40 bg-chestnut lg:hidden"
           onClose={setOpen}
         >
           <Transition.Child
@@ -82,7 +82,7 @@ function Navbar() {
               leaveTo="-translate-x-full"
             >
               <Dialog.Panel
-                className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-cavern-pink pb-12 shadow-xl"
+                className="relative flex w-full max-w-xs flex-col overflow-y-auto bg-chestnut pb-12 shadow-xl"
                 style={{
                   backgroundColor: mode === "dark" ? "rgb(40, 44, 52)" : "",
                   color: mode === "dark" ? "white" : "",
@@ -237,7 +237,11 @@ function Navbar() {
               <div className="flex ">
                 <Link to={"/"} className="flex">
                   <div className="flex items-center justify-center">
-                    <img src={logo} alt="" className="w-20 h-20 md:w-32 md:h-32 logo p-2" />
+                    <img
+                      src={logo}
+                      alt=""
+                      className="w-20 h-20 md:w-32 md:h-32 logo p-2"
+                    />
                   </div>
                 </Link>
               </div>

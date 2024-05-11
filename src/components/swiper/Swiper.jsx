@@ -2,6 +2,7 @@ import { useContext, useRef } from "react";
 import eh1 from "../../assets/home/bottle5.png";
 import eh2 from "../../assets/home/newbottle.png";
 
+
 import AboutSectionOne from "../heroSection/AboutSectionOne";
 import AboutSectionTwo from "../heroSection/AboutSectionTwo";
 import ProductCard from "../productCard/ProductCard";
@@ -42,7 +43,7 @@ const SwiperComponent = () => {
       link: "",
     },
     {
-      image: eh2,
+      image:eh2,
       title: "Rose Generium Oil",
       description:
         "From cleansers and moisturizers to serums and masks, our skincare range offers a comprehensive regimen for all skin types.",

@@ -26,6 +26,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { IoBagAdd } from "react-icons/io5";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { MdGrass } from "react-icons/md";
+import { LuVegan } from "react-icons/lu";
 
 import LoaderTwo from "../../components/loader/LoaderTwo";
 import oilVideo from "../../assets/videos/Video-928.mp4";
@@ -98,7 +99,7 @@ function ProductInfo() {
   // image and title  why we’re the real deal.
   const data = [
     {
-      image: <MdCrueltyFree color="green" size={80} />,
+      image: <LuVegan color="green" size={80} />,
       title: "Cruelty Free and Vegan",
     },
     {
@@ -402,17 +403,6 @@ function ProductInfo() {
 
             {/* carousel section */}
             <div className="bg-chestnut">
-              <h2 className="text-center text-2xl font-bold text-white pt-12 px-4">
-                Our go-to starting point? Asking Why.
-              </h2>
-              <p className="text-center font-medium text-white text-[15px] px-4  md:px-36 py-5 md:py-8">
-                We're extremely curious people. We can only assume you too are
-                curious when it comes to the world of personal care, and
-                rightfully so. That’s why we insist on addressing the ‘Whys’
-                you'd need to know before you buy.
-              </p>
-            </div>
-            <div className="">
               <SwiperCard />
             </div>
           </div>
@@ -535,17 +525,6 @@ function ProductInfo() {
 
             {/* carousel section */}
             <div className="bg-chestnut">
-              <h2 className="text-center text-2xl font-bold text-white pt-12 px-4">
-                Our go-to starting point? Asking Why.
-              </h2>
-              <p className="text-center font-medium text-white text-[15px] px-4  md:px-36 py-5 md:py-8">
-                We're extremely curious people. We can only assume you too are
-                curious when it comes to the world of personal care, and
-                rightfully so. That’s why we insist on addressing the ‘Whys’
-                you'd need to know before you buy.
-              </p>
-            </div>
-            <div className="">
               <SwiperCard />
             </div>
           </div>

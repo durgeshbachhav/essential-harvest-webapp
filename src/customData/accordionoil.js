@@ -6,13 +6,13 @@ export const accordionDataOil = [
                'We highly recommend a patch test for any new addition of cosmetics for your skin or hair.',
                'A patch test is advisable before adding a new product to your routine. Apply the product on your inner elbow/jawline and observe for the next 24 hours. If there’s no reaction, you can apply the product to your skin. If the skin is sensitive, continue the test for 7 days. This helps ensure you are not allergic to any ingredient. If irritation occurs, please discontinue the product and consult a dermatologist.'
           ]
-   
+
      },
      {
           'title': 'Disclaimer',
           'desc': [
                "Storing Essential Oils in a cool dry place is a must to increase their shelf life and maintain its fragrance."
-               ,"If you have switched to an all-natural/organic product for the first time, your skin may go under a detox before you start observing results. ",
+               , "If you have switched to an all-natural/organic product for the first time, your skin may go under a detox before you start observing results. ",
                "Referred to as Skin Purge, it may result in a temporary acne flare-up. It may vary from individual to individual and can last up to 4 to 6 weeks."
           ]
      },
@@ -21,7 +21,7 @@ export const accordionDataOil = [
           'desc': [
                'Yes, you can continue to use the product during the detox period. Eventually, your skin would be better between the 4th-6th week.',
                'We would recommend consulting a dermatologist to check if you are not allergic to any ingredient.'
-               
+
           ],
      }
      ,
@@ -33,16 +33,16 @@ export const accordionDataOil = [
                'Pour the essential oils only on dry and clean palms/utensils. Secure the cap tightly after each use',
                'Use these oils within 4-5 months of opening.',
                'You may refrigerate these oils, but DO NOT put them in the FREEZER. Oils might turn cloudy due to refrigeration, but not to worry their quality will remain unaffected. Just place the bottle in a bowl of warm water to regain consistency.'
-               
+
           ],
      }
      ,
-   
+
      {
           'title': 'Ingredients',
           'desc': [
-               'Rose Geranium Hydrosol',
-               
+               'Rose Geranium Oil',
+
           ]
      },
      // {
@@ -63,5 +63,4 @@ export const accordionDataOil = [
      //           'We take utmost care in sourcing the best ingredients from across the world. Click here to know more about them.'
      //      ]
      // }
-   ]
-   
+]

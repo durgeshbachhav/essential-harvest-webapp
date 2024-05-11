@@ -52,7 +52,7 @@ function Navbar() {
   console.log("getuser", getuser);
   console.log("useremail", useremail);
   return (
-    <div className="bg-leaf sticky top-0 z-50">
+    <div className="bg-[#FFCBCB] sticky top-0 z-50">
       <Transition.Root show={open} as={Fragment}>
         <Dialog
           as="div"

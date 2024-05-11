@@ -172,7 +172,7 @@ function ProductInfo() {
                       <div className="flex flex-row justify-between">
                         <div className="flex items-center justify-center">
                           <div className="font-mono">₹</div>
-                          <span className="font-bold text-3xl">
+                          <span className="font-bold text-2xl">
                             {products.price}
                           </span>
                           <span className="text-xs flex justify-end">

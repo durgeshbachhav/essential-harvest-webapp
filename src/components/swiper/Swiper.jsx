@@ -27,6 +27,8 @@ import flowerTopLeft from "../../assets/home/flowerstopleft.png";
 import flowerTopRight from "../../assets/home/flowerstopright.png";
 import flowerBottomLeft from "../../assets/home/flowersbottomleft.png";
 import flowerBottomRight from "../../assets/home/flowersbottomright.png";
+// import TextureOne from '../../assets/textures/Freebie-GradientTextures-01'
+// import TextureTwo from '../../assets/textures/Freebie-GradientTextures-01'
 
 const SwiperComponent = () => {
   const ctaRef = useRef();

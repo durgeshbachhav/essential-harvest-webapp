@@ -6,11 +6,12 @@ import AboutSectionTwo from "../../components/heroSection/AboutSectionTwo";
 
 import Track from "../../components/track/Track";
 import myContext from "../../context/data/myContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import underline from "../../assets/home/underline.png";
 
 import { FaStar } from "react-icons/fa";
+import Popup from "../../components/emailPopup/Popup";
 
 function Home() {
   const context = useContext(myContext);
@@ -19,9 +20,25 @@ function Home() {
   for (let index = 0; index < 5; index++) {
     stars.push(<FaStar color="green" key={index} />);
   }
+  const [showPopup, setShowPopup] = useState(false);
+  useEffect(() => {
+    const hasSeenPopup = localStorage.getItem("hasSeenPopup");
+    if (!hasSeenPopup) {
+      setShowPopup(true);
+      localStorage.setItem("hasSeenPopup", "true");
+    }
+  }, []);
+
+  const handleClosePopup = () => {
+    setShowPopup(false);
+  };
 
   return (
     <Layout>
+      <div>
+        {showPopup && <Popup handleClose={handleClosePopup} />}
+        {/* Your existing content goes here */}
+      </div>
       <div className="relative">
         <div className="z-30">
           <SwiperComponent />

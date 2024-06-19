@@ -58,7 +58,7 @@ function Signup() {
 
   return (
     <div className=" flex justify-center items-center h-screen flex-col bg-gray-50">
-      <div className="px-10 py-10 bg-white shadow-md border rounded-xl">
+      <div className="px-10 py-10 border bg-white rounded-lg">
         <div className=" flex items-center justify-center">
           <img src={logo} alt="" className="w-24  rounded-full " />
         </div>
@@ -73,7 +73,7 @@ function Signup() {
               });
             }}
             name="name"
-            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
             placeholder="Name"
           />
         </div>
@@ -89,7 +89,7 @@ function Signup() {
               });
             }}
             name="email"
-            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
             placeholder="Email"
           />
         </div>
@@ -104,7 +104,7 @@ function Signup() {
               });
             }}
             name="phoneNum"
-            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
             placeholder="Phone Number"
           />
         </div>
@@ -118,7 +118,7 @@ function Signup() {
                 password: e.target.value,
               });
             }}
-            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
             placeholder="Password"
           />
         </div>

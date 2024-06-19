@@ -18,21 +18,45 @@ function Login() {
     password: "",
   });
   const login = async () => {
+    // try {
+    //   const result = account.createEmailSession(user.email, user.password);
+    //   result.then(
+    //     function (response) {
+    //       console.log("rsponse", response); // Success
+    //       localStorage.setItem("user", JSON.stringify(response));
+    //       window.location.href = "#/allproducts";
+    //       toast.success("Login Succesfully");
+    //     },
+    //     function (error) {
+    //       console.log("error", error); // Failure
+    //     }
+    //   );
+    //   const currentAccount = account.get();
+    //   console.log("current account", currentAccount);
+    // } catch (error) {
+    //   console.log(error);
+    //   toast.error("Failed to Login...!");
+    // }
     try {
-      const result = account.createEmailSession(user.email, user.password);
-      result.then(
-        function (response) {
-          console.log("rsponse", response); // Success
-          localStorage.setItem("user", JSON.stringify(response));
-          window.location.href = "#/allproducts";
-          toast.success("Login Succesfully");
-        },
-        function (error) {
-          console.log("error", error); // Failure
-        }
+      const currentAccount = await account.get();
+      if (currentAccount) {
+        // If there's already an active session, handle it appropriately
+        console.log("current account", currentAccount);
+        localStorage.setItem("user", JSON.stringify(currentAccount));
+        console.log("There's already an active session. Redirecting...");
+        navigate("/allproducts"); // Redirect the user to allproducts page or handle differently
+
+        return;
+      }
+
+      const result = await account.createEmailSession(
+        user.email,
+        user.password
       );
-      const currentAccount = account.get();
-      console.log("current account", currentAccount);
+      localStorage.setItem("user", JSON.stringify(result));
+      console.log("Login successful");
+      toast.success("Login Successfully");
+      navigate("/allproducts"); // Redirect the user to allproducts page after successful login
     } catch (error) {
       console.log(error);
       toast.error("Failed to Login...!");
@@ -41,7 +65,7 @@ function Login() {
 
   return (
     <div className=" flex justify-center items-center h-screen flex-col bg-gray-50">
-      <div className="px-10 py-10 bg-white border shadow-md rounded-xl">
+      <div className="px-10 py-10 border bg-white rounded-lg">
         <div className=" flex items-center justify-center">
           <img src={logo} alt="" className="w-24   rounded-full " />
         </div>
@@ -57,7 +81,7 @@ function Login() {
               });
             }}
             name="email"
-            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
             placeholder="Email"
           />
         </div>
@@ -71,7 +95,7 @@ function Login() {
                 password: e.target.value,
               });
             }}
-            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full lg:w-[20em]  text-white placeholder:text-white outline-none"
+            className=" bg-gray-600 rounded-lg mb-4 px-2 py-2 w-full   text-white placeholder:text-white outline-none"
             placeholder="Password"
           />
         </div>

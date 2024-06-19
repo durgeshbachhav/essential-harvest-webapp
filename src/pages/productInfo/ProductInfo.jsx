@@ -271,7 +271,7 @@ function ProductInfo() {
         </div>
 
         {/* for oil */}
-        {products.category == "Oil" && (
+        {products.category == "Oil" || "OIl" && (
           <div>
             <div className="bg-pearl w-full h-full py-12">
               {/* how to use it  */}

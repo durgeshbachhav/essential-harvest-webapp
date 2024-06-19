@@ -7,7 +7,8 @@ const ProtectedRouteForAdmin = ({ children }) => {
 
   if (
     admin &&
-    (admin.providerUid || admin.email) === import.meta.env.VITE_APP_ADMIN_EMAIL
+    (admin.providerUid || admin.email || admin.profileInfo?.email) ===
+      import.meta.env.VITE_APP_ADMIN_EMAIL
   ) {
     return children;
   } else {

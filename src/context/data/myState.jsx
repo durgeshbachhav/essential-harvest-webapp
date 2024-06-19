@@ -7,7 +7,6 @@ import { account, databases } from "../../appwrite/appwriteConfig";
 
 function myState(props) {
   const [mode, setMode] = useState("light");
-
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
@@ -17,19 +16,19 @@ function myState(props) {
       document.body.style.backgroundColor = "white";
     }
   };
-
   const [loading, setLoading] = useState(false);
   const productId = uuid();
   const [products, setProducts] = useState({
     id: productId,
     title: null,
-    price: null,
+    price: 0,
     imageUrl: null,
     category: null,
     description: null,
+    aboutTheProduct: [],
+    benefitsOfProducts: [],
     date: new Date(),
   });
-
   // console.log("id", productId);
   const addProduct = async () => {
     if (
@@ -44,28 +43,30 @@ function myState(props) {
       console.log(products);
       return toast.error("all fields are required");
     }
-
+    const productData = {
+      ...products,
+      price: parseInt(products.price, 10), // Ensure price is an integer
+    };
     console.log("products", product);
     setLoading(true);
     const addPromise = databases.createDocument(
       import.meta.env.VITE_APP_DATABASE_ID,
       import.meta.env.VITE_APP_PRODUCTS_COLLECTION_ID,
       uuid(),
-      products
+      productData
     );
-
     addPromise.then(
       function (response) {
         console.log(response);
         toast.success("Added product successfully");
         setTimeout(() => {
           window.location.href = "/#/dashboard";
-        }, 800);
+        }, 400);
         setLoading(false);
         setProducts({
           id: products.id,
           title: products.title,
-          price: products.price,
+          price: 0,
           imageUrl: products.imageUrl,
           category: products.category,
           description: products.description,
@@ -81,10 +82,8 @@ function myState(props) {
     );
     setProducts("");
   };
-
   const [product, setProduct] = useState([]);
   const [totalProduct, setTotalProduct] = useState(0);
-
   const getProductData = async () => {
     setLoading(true);
     const productData = databases.listDocuments(
@@ -103,14 +102,12 @@ function myState(props) {
         setProduct(productArray);
         setLoading(false);
       },
-
       function (error) {
         console.log(error);
         setLoading(false);
       }
     );
   };
-
   useEffect(() => {
     getProductData();
   }, [products]);
@@ -121,24 +118,33 @@ function myState(props) {
   };
   const updateProduct = async () => {
     setLoading(true);
+
+    // Ensure benefitsOfProducts is always an array
+    let benefitsOfProducts = products.benefitsOfProducts;
+    if (!Array.isArray(benefitsOfProducts)) {
+      benefitsOfProducts = [benefitsOfProducts];
+    }
+
+    const productData = {
+      title: products.title,
+      price: parseInt(products.price, 10), // Ensure price is an integer
+      imageUrl: products.imageUrl,
+      category: products.category,
+      description: products.description,
+      aboutTheProduct: products.aboutTheProduct,
+      benefitsOfProducts, // Ensure it's an array
+      date: new Date().toLocaleString("en-US", {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+      }),
+    };
+
     const updatePromise = databases.updateDocument(
       import.meta.env.VITE_APP_DATABASE_ID,
       import.meta.env.VITE_APP_PRODUCTS_COLLECTION_ID,
       products.$id,
-      {
-        title: products.title,
-        price: products.price,
-        imageUrl: products.imageUrl,
-        category: products.category,
-        description: products.description,
-        aboutTheProduct: products.aboutTheProduct,
-        benefitsOfProducts: products.benefitsOfProducts,
-        date: new Date().toLocaleString("en-US", {
-          month: "short",
-          day: "2-digit",
-          year: "numeric",
-        }),
-      }
+      productData
     );
     updatePromise.then(
       function (response) {
@@ -146,7 +152,7 @@ function myState(props) {
         toast.success("Product Updated successfully");
         setTimeout(() => {
           window.location.href = "/#/dashboard";
-        }, 800);
+        }, 400);
         getProductData();
         setLoading(false);
       },
@@ -202,7 +208,7 @@ function myState(props) {
         console.log(response);
         setTimeout(() => {
           window.location.href = "/#/dashboard";
-        }, 800);
+        }, 400);
         getOrderData();
         setLoading(false);
       },
@@ -294,8 +300,6 @@ function myState(props) {
 
   // set google login user
   const [loggedIn, setLoggedIn] = useState(false);
-
-  
 
   return (
     <MyContext.Provider

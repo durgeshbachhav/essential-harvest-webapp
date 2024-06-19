@@ -38,7 +38,7 @@ function DashboardTab() {
 
   const [showConfirmation, setShowConfirmation] = useState(false);
 
-  const handleDelete = () => {
+  const handleDelete = (item) => {
     deleteProduct(item);
     setShowConfirmation(false);
   };
@@ -151,7 +151,7 @@ function DashboardTab() {
                               <img className="w-16" src={imageUrl} alt="img" />
                             </th>
                             <td
-                              className="px-6 py-4 text-heading-color font-bold border"
+                              className="px-6 py-4 text-heading-color truncate font-bold border"
                               style={{ color: mode === "dark" ? "white" : "" }}
                             >
                               {title}
@@ -215,7 +215,7 @@ function DashboardTab() {
                                           <div className="flex justify-end">
                                             <button
                                               className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md mr-2"
-                                              onClick={handleDelete}
+                                              onClick={() => handleDelete(item)}
                                             >
                                               Yes
                                             </button>
@@ -355,7 +355,7 @@ function DashboardTab() {
                                 />
                               </th>
                               <td
-                                className="px-6 py-4 font-bold border"
+                                className="px-6 py-4 truncate font-bold border"
                                 style={{
                                   color: mode === "dark" ? "white" : "",
                                 }}

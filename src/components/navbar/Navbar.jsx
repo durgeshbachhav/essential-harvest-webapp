@@ -12,6 +12,14 @@ import { BsFillHandbagFill } from "react-icons/bs";
 import logo from "../../assets/logo1.png";
 import { account } from "../../appwrite/appwriteConfig";
 
+function isAdmin(user) {
+  return (
+    user?.providerUid === import.meta.env.VITE_APP_ADMIN_EMAIL ||
+    user?.email === import.meta.env.VITE_APP_ADMIN_EMAIL ||
+    user?.profileInfo?.email === import.meta.env.VITE_APP_ADMIN_EMAIL
+  );
+}
+
 function Navbar() {
   const context = useContext(myContext);
   const { mode } = context;
@@ -37,7 +45,7 @@ function Navbar() {
     // Handle the promise resolution
     promise.then(
       function (response) {
-        console.log(response); // Success
+        console.log("logout response", response); // Success
       },
       function (error) {
         console.log(error); // Failure
@@ -91,10 +99,10 @@ function Navbar() {
                 <div className="flex px-4 pb-2 pt-20">
                   <button
                     type="button"
-                    className="-m-2 inline-flex items-center justify-center rounded-md p-2 text-black"
+                    className="-m-2 mt-0 inline-flex items-center justify-center rounded-md p-2 text-black"
                     onClick={() => setOpen(false)}
                   >
-                    <RxCross2 />
+                    <RxCross2 size={30} color="white" />
                   </button>
                 </div>
                 <div className=" border-t border-black ">
@@ -116,8 +124,7 @@ function Navbar() {
                       About
                     </Link>
                   </div>
-                  {user?.providerUid ===
-                    import.meta.env.VITE_APP_ADMIN_EMAIL && (
+                  {isAdmin(user) && (
                     <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                       <Link
                         to="/dashboard"
@@ -147,7 +154,7 @@ function Navbar() {
                     </Link>
                   </div>
 
-                  {/* {user ? (
+                  {user ? (
                     <div>
                       <div className="hover:bg-leaf px-4 py-2">
                         <Link
@@ -197,46 +204,23 @@ function Navbar() {
                         Signup
                       </Link>
                     </div>
-                  )} */}
+                  )}
                 </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
         </Dialog>
       </Transition.Root>
-      <header className="relative shadow">
+      <header  className="relative shadow z-50">
         <nav aria-label="Top" className=" px-4 sm:px-6 lg:px-8  nav-height">
           <div className="">
             <div className="flex nav-height nav-width items-center justify-center">
-              <button
-                type="button"
-                className=" p-2  lg:hidden"
-                onClick={() => setOpen(true)}
-                style={{
-                  backgroundColor: mode === "dark" ? "rgb(80 82 87)" : "",
-                  color: mode === "dark" ? "white" : "",
-                }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-6 h-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              </button>
+             
 
               {/* Logo */}
-              <div className="flex ">
-                <Link to={"/"} className="flex">
-                  <div className="flex items-center justify-center">
+              <div className=" ">
+                <Link to={"/"} className="">
+                  <div className="">
                     <img
                       src={logo}
                       alt=""
@@ -263,8 +247,7 @@ function Navbar() {
                     About
                   </Link>
 
-                  {user?.providerUid ===
-                    import.meta.env.VITE_APP_ADMIN_EMAIL && (
+                  {isAdmin(user) && (
                     <Link
                       to={"/dashboard"}
                       className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
@@ -287,7 +270,7 @@ function Navbar() {
                   >
                     All Products
                   </Link>
-                  {/* {user ? (
+                  {user ? (
                     <div className="relative ">
                       <button
                         onClick={toggleDropdown}
@@ -329,7 +312,7 @@ function Navbar() {
                     >
                       Signup
                     </Link>
-                  )} */}
+                  )}
                 </div>
 
                 {/* Cart */}
@@ -355,6 +338,27 @@ function Navbar() {
                   </Link>
                 </div>
               </div>
+              <button
+                type="button"
+                className=" p-2  lg:hidden"
+                onClick={() => setOpen(true)}
+               
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </nav>

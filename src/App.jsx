@@ -28,7 +28,10 @@ import ProtectedRouteForAdmin from "./pages/admin/ProtectedRouteForAdmin/Protect
 import OurStory from "./pages/other/OurStory";
 import About from "./pages/other/About";
 import Verify from "./pages/other/Verify";
-import UpiPayment from "./pages/upiPayment/UpiPayment";
+import CancellationAndRefund from "./pages/other/CancellationAndRefund";
+import TermsAndCondition from "./pages/other/TermsAndCondition";
+import ShippingAndDelivery from "./pages/other/ShippingAndDelivery";
+import Quiz from "./pages/quiz/Quiz";
 
 function App() {
   return (
@@ -84,12 +87,15 @@ function App() {
             }
           />
           <Route path="/*" element={<NoPage />} />
-          <Route path="/return-policy" element={<ReturnPolicy />} />
-          <Route path="/contact" element={<ContactUs />} />
           <Route path="/ourstory" element={<OurStory />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="/payment" element={<UpiPayment />} />
+          <Route path="/return-policy" element={<ReturnPolicy />} />
+          <Route path="/cancellation-and-refund" element={<CancellationAndRefund />} />
+          <Route path="/term-and-condition" element={<TermsAndCondition />} />
+          <Route path="/shipping-and-delivery" element={<ShippingAndDelivery />} />
+          <Route path="/routine-recommender-page" element={<Quiz />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
         <Toaster />

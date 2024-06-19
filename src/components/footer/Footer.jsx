@@ -34,8 +34,8 @@ function Footer() {
                 </li>
 
                 <li>
-                  <Link to="/cart" className="text-sub-heading-color">
-                    Cart
+                  <Link to="/ourstory" className="text-sub-heading-color">
+                    Our Story
                   </Link>
                 </li>
               </nav>
@@ -46,21 +46,29 @@ function Footer() {
               </h2>
               <nav className="list-none mb-10">
                 <li>
-                  <Link
-                    to={"/return-policy"}
-                    className="text-sub-heading-color"
-                  >
-                    Return Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to={"/about"} className="text-sub-heading-color">
-                    Our Story
-                  </Link>
-                </li>
-                <li>
                   <Link to={"/contact"} className="text-sub-heading-color">
                     Contact Us
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    to={"/shipping-and-delivery"}
+                    className="text-sub-heading-color"
+                  >
+                    Shipping And Delivery
+                  </Link>
+                </li>
+
+
+                <li>
+                  <Link to={"/cancellation-and-refund"} className="text-sub-heading-color">
+                    Cancellation and Refund
+                  </Link>
+                </li>
+                <li>
+                  <Link to={"/return-policy"} className="text-sub-heading-color">
+                    Return Policy
                   </Link>
                 </li>
               </nav>
@@ -75,8 +83,18 @@ function Footer() {
                     to={"/privacypolicy"}
                     className="text-sub-heading-color"
                   >
-                    Privacy
+                    Privacy Policy
                   </Link>
+
+                </li>
+                <li>
+                  <Link
+                    to={"/term-and-condition"}
+                    className="text-sub-heading-color"
+                  >
+                    Terms And Condition
+                  </Link>
+
                 </li>
               </nav>
             </div>

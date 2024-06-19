@@ -34,7 +34,7 @@ function Order() {
     setExpandedOrderId(orderId === expandedOrderId ? null : orderId);
   };
   const [showMessage, setShowMessage] = useState(false);
-  console.log('order detail from order page ',order)
+  console.log('order detail from order page ', order)
   return (
     <Layout>
       {order.length > 0 ? (

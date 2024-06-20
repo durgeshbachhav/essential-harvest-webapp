@@ -106,10 +106,8 @@ function AboutSectionOne() {
     <div className="container mx-auto px-4 py-8">
       {/* Personalized Skincare Routine */}
       <div className="mb-8 flex items-center justify-center flex-col text-heading-color">
-        <h2 className="text-3xl text-center font-semibold font-primary mb-4">Personalized Skincare Routine</h2>
-        <p className="text-lg mb-4 font-secondary text-center">
-          Get your personalized routine by just answering a simple 2-minute quiz. Our professionals will review and evaluate your concerns and we will create the most suitable regimen for you.
-        </p>
+        <h2 className="text-3xl text-center font-semibold font-primary mb-4">Let us know Your Skin Better</h2>
+        
         <Link to={`/routine-recommender-page`} className="mt-4 focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-everglade  hover:bg-everglade ease-in duration-300  secondary-font cursor-pointer">Build Now
           <IoIosArrowDroprightCircle className="w-5 h-5" />
 

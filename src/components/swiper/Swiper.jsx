@@ -1,6 +1,6 @@
 import { useContext, useRef } from "react";
-import eh1 from "../../assets/home/bottle5.png";
-import eh2 from "../../assets/home/newbottle.png";
+import eh1 from "../../assets/productsNew/rosegerenium.png";
+import eh2 from "../../assets/productsNew/oil.png";
 
 
 import AboutSectionOne from "../heroSection/AboutSectionOne";
@@ -36,13 +36,14 @@ const SwiperComponent = () => {
   const navigate = useNavigate();
   const projects = [
     {
-      image: "https://res.cloudinary.com/dd3f552gn/image/upload/v1719293155/essential%20harvest%20images/DSC02022_Final_1_ojd5p1.jpg",
+      image: eh1,
+      title: "Rose Generium",
       description:
         "Our cosmetic products are formulated with natural and organic ingredients, free from harsh chemicals, to promote healthy and radiant skin.",
       link: "",
     },
     {
-      image: "https://res.cloudinary.com/dd3f552gn/image/upload/v1719293084/essential%20harvest%20images/DSC02015_F1_f8qbse.jpg",
+      image:eh2,
       title: "Rose Generium Oil",
       description:
         "From cleansers and moisturizers to serums and masks, our skincare range offers a comprehensive regimen for all skin types.",
@@ -97,7 +98,7 @@ const SwiperComponent = () => {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="flex flex-col items-center justify-center "
+        className="flex flex-col items-center justify-center w-full h-full "
       >
         <div className=" absolute -top-20 rotate-12 md:-top-10 md:rotate-0 left-0">
           <img src={flowerTopLeft} alt="" className="w-96 " />
@@ -105,8 +106,8 @@ const SwiperComponent = () => {
         <div className="hidden md:block  absolute -top-20 right-0">
           <img src={flowerTopRight} alt="" className="w-96 " />
         </div>
-        <img src={eh1} className="w-96 h-96 z-20" />
-        <h1 className="text-4xl font-extrabold text-gray-700 z-20">
+        <img src={eh1} className="w-full h-full" />
+        <h1 className="absolute bottom-5 text-4xl font-extrabold text-gray-700 z-20">
           Rose Gerenium Hydrosol
         </h1>
       </SwiperSlide>
@@ -125,8 +126,8 @@ const SwiperComponent = () => {
         <div className="  absolute -top-20 right-0">
           <img src={flowerTopRight} alt="" className="w-96 " />
         </div>
-        <img src={eh2} alt="" className="w-96 h-96 " />
-        <h1 className="text-4xl font-extrabold text-gray-700 z-20">
+        <img src={eh2} alt="" className="w-full h-full" />
+        <h1 className="absolute bottom-10 text-4xl font-extrabold text-gray-700 z-20">
           Rose Geranium Essential Oil
         </h1>
       </SwiperSlide>

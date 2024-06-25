@@ -1,8 +1,8 @@
 .swiperr {
   width: 100%;
   height: 70vh;
-  background: url("../../assets/home/bg.jpg");
-  /* background-color: #cea352; */
+  /* background: url("../../assets/home/bg.jpg"); */
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
 }

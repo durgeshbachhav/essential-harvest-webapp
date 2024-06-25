@@ -36,14 +36,13 @@ const SwiperComponent = () => {
   const navigate = useNavigate();
   const projects = [
     {
-      image: eh1,
-      title: "Rose Generium",
+      image: "https://res.cloudinary.com/dd3f552gn/image/upload/v1719293155/essential%20harvest%20images/DSC02022_Final_1_ojd5p1.jpg",
       description:
         "Our cosmetic products are formulated with natural and organic ingredients, free from harsh chemicals, to promote healthy and radiant skin.",
       link: "",
     },
     {
-      image:eh2,
+      image: "https://res.cloudinary.com/dd3f552gn/image/upload/v1719293084/essential%20harvest%20images/DSC02015_F1_f8qbse.jpg",
       title: "Rose Generium Oil",
       description:
         "From cleansers and moisturizers to serums and masks, our skincare range offers a comprehensive regimen for all skin types.",

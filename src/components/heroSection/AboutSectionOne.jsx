@@ -107,7 +107,7 @@ function AboutSectionOne() {
       {/* Personalized Skincare Routine */}
       <div className="mb-8 flex items-center justify-center flex-col text-heading-color">
         <h2 className="text-3xl text-center font-semibold font-primary mb-4">Let us know Your Skin Better</h2>
-        
+
         <Link to={`/routine-recommender-page`} className="mt-4 focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-everglade  hover:bg-everglade ease-in duration-300  secondary-font cursor-pointer">Build Now
           <IoIosArrowDroprightCircle className="w-5 h-5" />
 

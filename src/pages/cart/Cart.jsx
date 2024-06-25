@@ -179,7 +179,7 @@ function Cart() {
       order_receipt: "order_rcptid_" + name,
       name: "Essential Harvest",
       image: logo,
-      description: "for testing purpose",
+      // description: "for testing purpose",
       handler: function (response) {
         toast.success("Payment Successful");
         const paymentId = response.razorpay_payment_id;

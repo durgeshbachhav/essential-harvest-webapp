@@ -43,7 +43,7 @@ const SwiperComponent = () => {
       link: "",
     },
     {
-      image:eh2,
+      image: eh2,
       title: "Rose Generium Oil",
       description:
         "From cleansers and moisturizers to serums and masks, our skincare range offers a comprehensive regimen for all skin types.",
@@ -86,12 +86,12 @@ const SwiperComponent = () => {
       modules={[Mousewheel, Pagination, Parallax, Navigation, EffectCreative]}
       className="mySwiper  swiperr"
     >
-      <div className=" absolute  -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
-        <img src={flowerBottomLeft} alt="" className="w-96 " />
+      {/* <div className=" absolute  -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
+        <img src={flowerBottomLeft} alt="" className="w-96 z-50" />
       </div>
       <div className="absolute -bottom-20 -right-24 md:bottom-0 swinging-image">
-        <img src={flowerBottomRight} alt="" className="w-96 " />
-      </div>
+        <img src={flowerBottomRight} alt="" className="w-96 z-50" />
+      </div> */}
       <SwiperSlide
         style={{
           backgroundColor: ``,
@@ -100,6 +100,12 @@ const SwiperComponent = () => {
         }}
         className="flex flex-col items-center justify-center w-full h-full "
       >
+        <div className=" absolute  -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
+          <img src={flowerBottomLeft} alt="" className="w-96 z-50" />
+        </div>
+        <div className="absolute -bottom-20 -right-24 md:bottom-0 swinging-image">
+          <img src={flowerBottomRight} alt="" className="w-96 z-50" />
+        </div>
         <div className=" absolute -top-20 rotate-12 md:-top-10 md:rotate-0 left-0">
           <img src={flowerTopLeft} alt="" className="w-96 " />
         </div>
@@ -120,6 +126,12 @@ const SwiperComponent = () => {
           backgroundPosition: "center",
         }}
       >
+        <div className=" absolute  -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
+          <img src={flowerBottomLeft} alt="" className="w-96 z-50" />
+        </div>
+        <div className="absolute -bottom-20 -right-24 md:bottom-0 swinging-image">
+          <img src={flowerBottomRight} alt="" className="w-96 z-50" />
+        </div>
         <div className="hidden md:block absolute -top-20 rotate-12 md:-top-10 md:rotate-0 left-0">
           <img src={flowerTopLeft} alt="" className="w-96 " />
         </div>

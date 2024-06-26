@@ -33,9 +33,8 @@ import TermsAndCondition from "./pages/other/TermsAndCondition";
 import ShippingAndDelivery from "./pages/other/ShippingAndDelivery";
 import Quiz from "./pages/quiz/Quiz";
 import LocomotiveScroll from 'locomotive-scroll';
-
-
-
+import Gallery from "./pages/gallery/Gallery";
+import MusicPlayer from "./components/musicPlayer/MusicPlayer";
 
 function App() {
   const locomotiveScroll = new LocomotiveScroll();
@@ -101,9 +100,11 @@ function App() {
           <Route path="/term-and-condition" element={<TermsAndCondition />} />
           <Route path="/shipping-and-delivery" element={<ShippingAndDelivery />} />
           <Route path="/routine-recommender-page" element={<Quiz />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
         <Toaster />
+        <MusicPlayer />
       </Router>
     </MyState>
   );

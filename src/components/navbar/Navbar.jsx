@@ -106,7 +106,7 @@ function Navbar() {
                   </button>
                 </div>
                 <div className=" border-t border-black ">
-                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
+                  <div className=" hover:bg-leaf px-4 py-4 border-b-2">
                     <Link
                       to="/"
                       className="text-sm font-medium text-white "
@@ -115,7 +115,7 @@ function Navbar() {
                       Home
                     </Link>
                   </div>
-                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
+                  <div className=" hover:bg-leaf px-4 py-4 border-b-2">
                     <Link
                       to="/allproducts"
                       className="text-sm font-medium text-white "
@@ -124,7 +124,7 @@ function Navbar() {
                       All Products
                     </Link>
                   </div>
-                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
+                  <div className=" hover:bg-leaf px-4 py-4 border-b-2">
                     <Link
                       to="/about"
                       className="text-sm font-medium text-white "
@@ -134,7 +134,7 @@ function Navbar() {
                     </Link>
                   </div>
                   {isAdmin(user) && (
-                    <div className=" hover:bg-leaf px-4 py-2 border-b-2">
+                    <div className=" hover:bg-leaf px-4 py-4 border-b-2">
                       <Link
                         to="/dashboard"
                         className="text-sm font-medium text-white "
@@ -144,7 +144,7 @@ function Navbar() {
                       </Link>
                     </div>
                   )}
-                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
+                  <div className=" hover:bg-leaf px-4 py-4 border-b-2">
                     <Link
                       to="/ourstory"
                       className="text-sm font-medium text-white "
@@ -153,11 +153,20 @@ function Navbar() {
                       Our Story
                     </Link>
                   </div>
+                  <div className=" hover:bg-leaf px-4 py-4 border-b-2">
+                    <Link
+                      to="/gallery"
+                      className="text-sm font-medium text-white "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Gallery
+                    </Link>
+                  </div>
 
 
                   {user ? (
                     <div>
-                      <div className="hover:bg-leaf px-4 py-2">
+                      <div className="hover:bg-leaf px-4 py-4">
                         <Link
                           onClick={toggleDropdown}
                           style={{ color: mode === "dark" ? "white" : "" }}
@@ -168,13 +177,13 @@ function Navbar() {
                       </div>
                       {isOpen && (
                         <div>
-                          <div className="block font-bold px-4 py-2 text-sm text-everglade bg-leaf hover:bg-gray-100">
+                          <div className="block font-bold px-4 py-4 text-sm text-everglade bg-leaf hover:bg-gray-100">
                             Hi,{" "}
                             {user?.profileInfo?.name ||
                               user?.providerUid ||
                               user?.name}
                           </div>
-                          <div className="bg-chestnut text-white hover:bg-leaf px-4 py-2 border-b-2">
+                          <div className="bg-chestnut text-white hover:bg-leaf px-4 py-4 border-b-2">
                             <Link
                               to="/order"
                               className="-m-2 block p-2 text-sm font-medium text-white cursor-pointer"
@@ -183,7 +192,7 @@ function Navbar() {
                               Orders
                             </Link>
                           </div>
-                          <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
+                          <div className="bg-chestnut hover:bg-leaf px-4 py-4 border-b-2">
                             <Link
                               onClick={logout}
                               className="-m-2 block p-2 text-sm font-medium text-white cursor-pointer"
@@ -196,7 +205,7 @@ function Navbar() {
                       )}
                     </div>
                   ) : (
-                    <div className="bg-chestnut hover:bg-leaf px-4 py-2 border-b-2">
+                    <div className="bg-chestnut hover:bg-leaf px-4 py-4 border-b-2">
                       <Link
                         to={"/signup"}
                         className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer"
@@ -263,6 +272,13 @@ function Navbar() {
                     style={{ color: mode === "dark" ? "white" : "" }}
                   >
                     Our Story
+                  </Link>
+                  <Link
+                    to={"/gallery"}
+                    className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white "
+                    style={{ color: mode === "dark" ? "white" : "" }}
+                  >
+                    Gallery
                   </Link>
                   <Link
                     to={"/allproducts"}

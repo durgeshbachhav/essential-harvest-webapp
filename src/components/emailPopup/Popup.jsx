@@ -1,75 +1,46 @@
 import React from "react";
 import "./popup.css";
 import { MdCancel } from "react-icons/md";
+import img from '../../assets/productsNew/herosectionmobile.webp';
+import imgforMobileScreen from '../../assets/productsNew/herosection.webp'
+import { Link } from "react-router-dom";
 
 const Popup = ({ handleClose }) => {
-  const handleSubmit = async (e) => {
-    e.preventDefault();
 
-    const email = e.target.email.value;
-    const name = e.target.name.value;
 
-    const formData = new FormData();
-    formData.append("email", email);
-    formData.append("name", name);
-
-    try {
-      const response = await fetch(
-        "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTZhMDYzMjA0MzE1MjZjNTUzMTUxMzQi_pc",
-        {
-          method: "POST",
-          body: formData,
-        }
-      );
-
-      if (response.ok) {
-        console.log("Form data sent successfully");
-        handleClose(); // Close the pop-up form after successful submission
-      } else {
-        console.error("Failed to send form data");
-      }
-    } catch (error) {
-      console.error("Error occurred while sending form data:", error);
-    }
-  };
 
   return (
-    <div className="popup rounded-xl">
-      <div className="popup-inner">
-        <div className="mb-4 sm:mb-8 lg:mb-4 flex items-center justify-between">
-          <h2 className="text-center text-xl font-bold text-green-500 sm:text-xl lg:text-left lg:text-2xl">
-            Stay Updated
+    <div className="popup-container" onClick={handleClose}>
+      <section className="popup  overflow-hidden rounded-lg shadow-2xl md:grid md:grid-cols-3" onClick={(e) => e.stopPropagation()}>
+
+        <img
+          alt=""
+          src={img}
+          className="hidden h-32 w-full object-cover md:h-full md:block"
+        />
+        <img
+          alt=""
+          src={imgforMobileScreen}
+          className="h-32 w-full object-cover md:hidden"
+        />
+        <div className="p-4 relative text-center sm:p-6 md:col-span-2 lg:p-8">
+          <div onClick={handleClose} className="absolute right-4 top-4 cursor-pointer">
+            <MdCancel color="green" size={24} />
+          </div>
+          <p className="text-sm text-everglade font-semibold uppercase tracking-widest">Let Us Know</p>
+          <h2 className="mt-6 font-black uppercase">
+            <span className="text-4xl text-everglade sm:text-5xl lg:text-6xl">Your Skin</span>
+            <span className="mt-2 block text-everglade text-sm">fill the form now!</span>
           </h2>
-          <MdCancel size={20} color="red" onClick={handleClose} />
-        </div>
-
-        <div className="flex flex-col items-center lg:items-end">
-          <form
-            onSubmit={handleSubmit}
-            className="mb-3 flex flex-col w-full max-w-md gap-2"
+          <Link
+            className="mt-8 inline-block w-full bg-everglade py-4 text-sm font-bold uppercase tracking-widest text-white"
+            to={`/routine-recommender-page`}
           >
-            <input
-              type="email"
-              name="email"
-              placeholder="Email"
-              className="bg-gray-white w-full flex-1 rounded border border-gray-300 px-3 py-2 text-gray-800 placeholder-gray-400 outline-none ring-green-300 transition duration-100 focus:ring"
-            />
-            <input
-              type="text"
-              name="name"
-              placeholder="Name"
-              className="bg-gray-white w-full flex-1 rounded border border-gray-300 px-3 py-2 text-gray-800 placeholder-gray-400 outline-none ring-green-300 transition duration-100 focus:ring"
-            />
+            Let Start
+          </Link>
 
-            <button
-              type="submit"
-              className="inline-block rounded bg-green-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-green-300 transition duration-100 hover:bg-green-600 focus-visible:ring active:bg-green-700 md:text-base"
-            >
-              Send
-            </button>
-          </form>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

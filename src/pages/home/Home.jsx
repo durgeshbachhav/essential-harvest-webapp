@@ -21,6 +21,7 @@ function Home() {
     stars.push(<FaStar color="green" key={index} />);
   }
   const [showPopup, setShowPopup] = useState(false);
+
   useEffect(() => {
     const hasSeenPopup = localStorage.getItem("hasSeenPopup");
     if (!hasSeenPopup) {

@@ -1,8 +1,8 @@
 import { useContext, useRef, useState, useEffect } from "react";
 import eh1 from "../../assets/productsNew/esone.webp";
-import eh2 from "../../assets/productsNew/oil.png";
-import eh1forMobile from "../../assets/productsNew/ehspraymobile.png";
-import eh2forMobile from "../../assets/productsNew/ehoilmobile.png";
+import eh2 from "../../assets/productsNew/oil.webp";
+import eh1forMobile from "../../assets/productsNew/ehspraymobile.webp";
+import eh2forMobile from "../../assets/productsNew/ehoilmobile.webp";
 
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";

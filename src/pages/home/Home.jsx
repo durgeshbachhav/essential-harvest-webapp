@@ -74,17 +74,17 @@ function Home() {
                   return (
                     <div
                       key={index}
-                      className="p-8 w-full md:w-1/3    secondary-font"
+                      className="p-8 w-full md:w-1/3 secondary-font"
                     >
                       <div
-                        className="h-full bottom-5  duration-300 ease-in-out     bg-mist border-4 hover:border-pearl shadow-md  overflow-hidden cursor-pointer "
+                        className="h-full bottom-5  duration-300 ease-in-out bg-mist border-4 hover:border-pearl shadow-md  overflow-hidden cursor-pointer "
                         onClick={() =>
                           (window.location.href = `/#/productinfo/${id}`)
                         }
                       >
                         <div className="flex w-full h-full justify-center">
                           <img
-                            className=" h-60 w-40 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
+                            className="w-full h-60 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
                             src={imageUrl}
                             alt="blog"
                           />

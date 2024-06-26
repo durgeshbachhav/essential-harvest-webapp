@@ -1,6 +1,6 @@
 import React from "react";
-import hero from "../../assets/home/hero5.png";
-import heroH5 from "../../assets/home/hero3.png";
+import hero from "../../assets/productsNew/herosection.webp";
+import heroH5 from "../../assets/productsNew/herosectionmobile.webp";
 import { useNavigate } from "react-router-dom";
 
 function HeroSection({ head, para }) {

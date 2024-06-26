@@ -1,21 +1,15 @@
-import { useContext, useRef } from "react";
-import eh1 from "../../assets/productsNew/rosegerenium.png";
+import { useContext, useRef, useState, useEffect } from "react";
+import eh1 from "../../assets/productsNew/esone.webp";
 import eh2 from "../../assets/productsNew/oil.png";
+import eh1forMobile from "../../assets/productsNew/ehspraymobile.png";
+import eh2forMobile from "../../assets/productsNew/ehoilmobile.png";
 
-
-import AboutSectionOne from "../heroSection/AboutSectionOne";
-import AboutSectionTwo from "../heroSection/AboutSectionTwo";
-import ProductCard from "../productCard/ProductCard";
 import { useNavigate } from "react-router-dom";
-import Track from "../track/Track";
-import myContext from "../../context/data/myContext";
-import "./swiper.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "./swiper.css";
-// import required modules
 import {
   Mousewheel,
   Pagination,
@@ -28,45 +22,42 @@ import flowerTopLeft from "../../assets/home/flowerstopleft.png";
 import flowerTopRight from "../../assets/home/flowerstopright.png";
 import flowerBottomLeft from "../../assets/home/flowersbottomleft.png";
 import flowerBottomRight from "../../assets/home/flowersbottomright.png";
-// import TextureOne from '../../assets/textures/Freebie-GradientTextures-01'
-// import TextureTwo from '../../assets/textures/Freebie-GradientTextures-01'
 
 const SwiperComponent = () => {
-  const ctaRef = useRef();
   const navigate = useNavigate();
-  const projects = [
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const slides = [
     {
-      image: eh1,
-      title: "Rose Generium",
-      description:
-        "Our cosmetic products are formulated with natural and organic ingredients, free from harsh chemicals, to promote healthy and radiant skin.",
-      link: "",
+      image: isMobile ? eh1forMobile : eh1,
+      title: "Rose Geranium Hydrosol",
+      link: "/allproducts",
     },
     {
-      image: eh2,
-      title: "Rose Generium Oil",
-      description:
-        "From cleansers and moisturizers to serums and masks, our skincare range offers a comprehensive regimen for all skin types.",
-      link: "",
+      image: isMobile ? eh2forMobile : eh2,
+      title: "Rose Geranium Essential Oil",
+      link: "/allproducts",
     },
   ];
-
-  const { product } = useContext(myContext);
 
   return (
     <Swiper
       direction={"vertical"}
       slidesPerView={1}
-      // spaceBetween={30}
       mousewheelControl={true}
-      // pagination={{
-      //   clickable: true,
-      // }}
       watchSlidesProgress={true}
       mousewheel={{
         releaseOnEdges: true,
       }}
-      // mousewheel={true}
       speed={600}
       parallax={true}
       data-swiper-parallax="3%"
@@ -84,65 +75,38 @@ const SwiperComponent = () => {
         },
       }}
       modules={[Mousewheel, Pagination, Parallax, Navigation, EffectCreative]}
-      className="mySwiper  swiperr"
+      className="mySwiper swiperr"
+      navigation={true}
     >
-      {/* <div className=" absolute  -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
-        <img src={flowerBottomLeft} alt="" className="w-96 z-50" />
-      </div>
-      <div className="absolute -bottom-20 -right-24 md:bottom-0 swinging-image">
-        <img src={flowerBottomRight} alt="" className="w-96 z-50" />
-      </div> */}
-      <SwiperSlide
-        style={{
-          backgroundColor: ``,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-        className="flex flex-col items-center justify-center w-full h-full "
-      >
-        <div className=" absolute  -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
-          <img src={flowerBottomLeft} alt="" className="w-96 z-50" />
-        </div>
-        <div className="absolute -bottom-20 -right-24 md:bottom-0 swinging-image">
-          <img src={flowerBottomRight} alt="" className="w-96 z-50" />
-        </div>
-        <div className=" absolute -top-20 rotate-12 md:-top-10 md:rotate-0 left-0">
-          <img src={flowerTopLeft} alt="" className="w-96 " />
-        </div>
-        <div className="hidden md:block  absolute -top-20 right-0">
-          <img src={flowerTopRight} alt="" className="w-96 " />
-        </div>
-        <img src={eh1} className="w-full h-full" />
-        <h1 className="absolute bottom-5 text-4xl font-extrabold text-gray-700 z-20">
-          Rose Gerenium Hydrosol
-        </h1>
-      </SwiperSlide>
-
-      <SwiperSlide
-        className="flex flex-col items-center justify-center "
-        style={{
-          backgroundColor: ``,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className=" absolute  -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
-          <img src={flowerBottomLeft} alt="" className="w-96 z-50" />
-        </div>
-        <div className="absolute -bottom-20 -right-24 md:bottom-0 swinging-image">
-          <img src={flowerBottomRight} alt="" className="w-96 z-50" />
-        </div>
-        <div className="hidden md:block absolute -top-20 rotate-12 md:-top-10 md:rotate-0 left-0">
-          <img src={flowerTopLeft} alt="" className="w-96 " />
-        </div>
-        <div className="  absolute -top-20 right-0">
-          <img src={flowerTopRight} alt="" className="w-96 " />
-        </div>
-        <img src={eh2} alt="" className="w-full h-full" />
-        <h1 className="absolute bottom-10 text-4xl font-extrabold text-gray-700 z-20">
-          Rose Geranium Essential Oil
-        </h1>
-      </SwiperSlide>
+      {slides.map((slide, index) => (
+        <SwiperSlide
+          key={index}
+          className="flex flex-col items-center justify-center w-full h-full relative"
+        >
+          <div className="absolute -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
+            <img src={flowerBottomLeft} alt="" className="w-96 z-50" />
+          </div>
+          <div className="absolute -bottom-20 -right-24 md:bottom-0 swinging-image">
+            <img src={flowerBottomRight} alt="" className="w-96 z-50" />
+          </div>
+          <div className="absolute -top-20 rotate-12 md:-top-10 md:rotate-0 left-0">
+            <img src={flowerTopLeft} alt="" className="w-96" />
+          </div>
+          <div className="hidden md:block absolute -top-20 right-0">
+            <img src={flowerTopRight} alt="" className="w-96" />
+          </div>
+          <img src={slide.image} className="w-full h-full  md:object-fill" alt={slide.title} />
+          <h1 className="absolute bottom-20 text-2xl md:text-4xl font-extrabold text-gray-700 z-20 text-center px-4">
+            {slide.title}
+          </h1>
+          <button
+            onClick={() => navigate(slide.link)}
+            className="absolute bottom-5 bg-gray-700 text-white py-2 px-4 rounded-full hover:bg-gray-600 transition-colors z-30"
+          >
+            Learn More
+          </button>
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };

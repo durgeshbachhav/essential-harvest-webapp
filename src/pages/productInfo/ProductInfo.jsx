@@ -31,8 +31,27 @@ import { LuVegan } from "react-icons/lu";
 import LoaderTwo from "../../components/loader/LoaderTwo";
 import oilVideo from "../../assets/videos/Video-928.mp4";
 import hydrosolVideo from "../../assets/videos/Video-366.mp4";
+import 'keen-slider/keen-slider.min.css'
+import { useKeenSlider } from 'keen-slider/react'
+
+import webImage1 from '../../assets/productsNew/one.webp'
+import webImage2 from '../../assets/productsNew/two.webp'
+import spray from '../../assets/productsNew/spray.webp'
+import oil from '../../assets/productsNew/es_oil_bottles.webp'
 
 function ProductInfo() {
+  const [sliderRef, instanceRef] = useKeenSlider(
+    {
+      slideChanged() {
+        console.log('slide changed')
+      },
+    },
+    [
+      // add plugins here
+    ]
+  )
+
+
   const navigate = useNavigate();
   const context = useContext(myContext);
   const { loading, setLoading } = context;
@@ -134,6 +153,9 @@ function ProductInfo() {
 
   //
   console.log("productdata", products);
+  //  oil  =    6bad7b34-0716-48a0-b721-db755b946c5b
+  // spray = a3526d0c-11be-43d9-94f7-12a19c474426
+
 
   return (
     <Layout>
@@ -146,11 +168,30 @@ function ProductInfo() {
               {products && (
                 <div>
                   <div className=" px-4 py-10  flex flex-wrap items-center justify-center md:px-16">
-                    <img
-                      alt="ecommerce"
-                      className="lg:w-1/3 content-center h-96 lg:h-auto   object-cover object-center rounded hover:scale-105 cursor-pointer "
-                      src={products.imageUrl}
-                    />
+                    <div className="w-full lg:w-1/2">
+                      <div ref={sliderRef} className="keen-slider  flex  w-full max-h-96 lg:px-10 lg:py-6 mt-6 lg:mt-0">
+                        <img
+                          alt="ecommerce"
+                          className="keen-slider__slide  w-full h-full "
+                          src={products.imageUrl}
+                        />
+                        <img
+                          alt="ecommerce"
+                          className="keen-slider__slide  w-full h-full "
+                          src={products._id == "6bad7b34-0716-48a0-b721-db755b946c5b" ? oil : spray}
+                        />
+                        <img
+                          alt="ecommerce"
+                          className="keen-slider__slide object-contain"
+                          src={webImage1}
+                        />
+                        <img
+                          alt="ecommerce"
+                          className="keen-slider__slide object-contain"
+                          src={webImage2}
+                        />
+                      </div>
+                    </div>
                     <div className="p-4 lg:w-1/2 w-full lg:px-10 lg:py-6 mt-6 lg:mt-0  ">
                       <h2 className="text-sm primary-font text-primary-950 tracking-widest">
                         Essential Harvest

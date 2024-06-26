@@ -117,6 +117,15 @@ function Navbar() {
                   </div>
                   <div className=" hover:bg-leaf px-4 py-2 border-b-2">
                     <Link
+                      to="/allproducts"
+                      className="text-sm font-medium text-white "
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      All Products
+                    </Link>
+                  </div>
+                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
+                    <Link
                       to="/about"
                       className="text-sm font-medium text-white "
                       style={{ color: mode === "dark" ? "white" : "" }}
@@ -144,15 +153,7 @@ function Navbar() {
                       Our Story
                     </Link>
                   </div>
-                  <div className=" hover:bg-leaf px-4 py-2 border-b-2">
-                    <Link
-                      to="/allproducts"
-                      className="text-sm font-medium text-white "
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      All Products
-                    </Link>
-                  </div>
+
 
                   {user ? (
                     <div>
@@ -211,11 +212,11 @@ function Navbar() {
           </div>
         </Dialog>
       </Transition.Root>
-      <header  className="relative shadow z-50">
+      <header className="relative shadow z-50">
         <nav aria-label="Top" className=" px-4 sm:px-6 lg:px-8  nav-height">
           <div className="">
             <div className="flex nav-height nav-width items-center justify-center">
-             
+
 
               {/* Logo */}
               <div className=" ">
@@ -342,7 +343,7 @@ function Navbar() {
                 type="button"
                 className=" p-2  lg:hidden"
                 onClick={() => setOpen(true)}
-               
+
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

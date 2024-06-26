@@ -77,7 +77,7 @@ function Allproducts() {
                     >
                       <div className="flex justify-center">
                         <img
-                          className=" h-60 w-40 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
+                          className=" w-full h-60 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
                           src={imageUrl}
                           alt="blog"
                         />

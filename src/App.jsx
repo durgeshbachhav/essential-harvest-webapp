@@ -32,8 +32,13 @@ import CancellationAndRefund from "./pages/other/CancellationAndRefund";
 import TermsAndCondition from "./pages/other/TermsAndCondition";
 import ShippingAndDelivery from "./pages/other/ShippingAndDelivery";
 import Quiz from "./pages/quiz/Quiz";
+import LocomotiveScroll from 'locomotive-scroll';
+
+
+
 
 function App() {
+  const locomotiveScroll = new LocomotiveScroll();
   return (
     <MyState>
       <Router>

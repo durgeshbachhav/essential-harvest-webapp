@@ -34,7 +34,7 @@ const Popup = ({ handleClose }) => {
   };
 
   return (
-    <div className="popup">
+    <div className="popup rounded-xl">
       <div className="popup-inner">
         <div className="mb-4 sm:mb-8 lg:mb-4 flex items-center justify-between">
           <h2 className="text-center text-xl font-bold text-green-500 sm:text-xl lg:text-left lg:text-2xl">

@@ -53,7 +53,7 @@ function ProductCard() {
               return (
                 <div
                   key={index}
-                  className="p-8 w-full md:w-1/4  rounded-lg    secondary-font"
+                  className="p-8 w-full md:w-1/4  rounded-lg secondary-font"
                 >
                   <div
                     className="h-full bottom-5  duration-300 ease-in-out    rounded-lg bg-gradient-to-tr from-gray-50 to-gray-200 border-opacity-20  overflow-hidden cursor-pointer hover:scale-110 "
@@ -65,9 +65,9 @@ function ProductCard() {
                       (window.location.href = `/#/productinfo/${id}`)
                     }
                   >
-                    <div className="flex justify-center">
+                    <div className="flex w-full justify-center">
                       <img
-                        className=" h-40 w-40 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
+                        className="w-full p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out coverobject"
                         src={imageUrl}
                         alt="blog"
                       />

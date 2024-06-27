@@ -4,27 +4,6 @@ import { Link } from "react-router-dom";
 
 const Gallery = () => {
 
-     const audio = document.getElementById('backgroundAudio');
-     const playPauseButton = document.getElementById('playPauseButton');
-     const playIcon = document.getElementById('playIcon');
-     const pauseIcon = document.getElementById('pauseIcon');
-     const playPauseIcon = document.getElementById('playPauseIcon');
-
-     function togglePlayPause() {
-          if (audio.paused) {
-               audio.play();
-               playIcon.classList.add('hidden');
-               pauseIcon.classList.remove('hidden');
-               playPauseIcon.innerText = 'Pause';
-          } else {
-               audio.pause();
-               playIcon.classList.remove('hidden');
-               pauseIcon.classList.add('hidden');
-               playPauseIcon.innerText = 'Play';
-          }
-     }
-
-
      return (
           <Layout>
                <div className="bg-white py-6 sm:py-8 lg:py-12">
@@ -60,11 +39,8 @@ const Gallery = () => {
                                    <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Retro</span>
                               </Link>
                          </div> */}
-
                     </div>
                </div>
-
-
           </Layout>
      )
 };

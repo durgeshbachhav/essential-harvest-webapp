@@ -153,8 +153,7 @@ function ProductInfo() {
 
   //
   console.log("productdata", products);
-  //  oil  =    6bad7b34-0716-48a0-b721-db755b946c5b
-  // spray = a3526d0c-11be-43d9-94f7-12a19c474426
+
 
 
   return (
@@ -177,8 +176,8 @@ function ProductInfo() {
                         />
                         <img
                           alt="ecommerce"
-                          className="keen-slider__slide  w-full h-full "
-                          src={products._id == "6bad7b34-0716-48a0-b721-db755b946c5b" ? oil : spray}
+                          className="keen-slider__slide w-full h-full"
+                          src={products.category && products.category.toLowerCase() === "oil" ? oil : spray}
                         />
                         <img
                           alt="ecommerce"

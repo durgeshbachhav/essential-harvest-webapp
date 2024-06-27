@@ -1,11 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import music from '../../assets/music/websitebg.mp3'
-import { IoMusicalNote } from 'react-icons/io5';
+import { IoMusicalNote, IoPauseCircle, IoPlayCircle } from 'react-icons/io5';
 
 const MusicPlayer = () => {
-     const [isPlaying, setIsPlaying] = useState(false);
+     const [isPlaying, setIsPlaying] = useState(true);
      const [isExpanded, setIsExpanded] = useState(true);
      const audioRef = useRef(new Audio(music));
+
+     useEffect(() => {
+          audioRef.current.loop = true; // Makes the audio loop
+          audioRef.current.playbackRate = 0.8; // Slows down the tempo (adjust as needed)
+          audioRef.current.play().catch(error => console.log("Autoplay prevented:", error));
+     }, []);
 
      const togglePlay = () => {
           if (isPlaying) {
@@ -25,7 +31,7 @@ const MusicPlayer = () => {
                {isExpanded ? (
                     <aside className="flex items-center justify-center gap-4 rounded-lg bg-black px-5 py-3 text-white">
                          <button onClick={togglePlay} className="text-sm font-medium hover:opacity-75">
-                              {isPlaying ? 'Pause Music 🎵' : 'Play Music 🎵'}
+                              {isPlaying ? <IoPauseCircle size={24} /> : <IoPlayCircle size={24} />}
                          </button>
                          <button className="rounded bg-white/20 p-1 hover:bg-white/10" onClick={() => setIsExpanded(false)}>
                               <span className="sr-only">Close</span>

@@ -76,7 +76,7 @@ const SwiperComponent = () => {
       }}
       modules={[Mousewheel, Pagination, Parallax, Navigation, EffectCreative]}
       className="mySwiper swiperr"
-      navigation={true}
+    // navigation={true}
     >
       {slides.map((slide, index) => (
         <SwiperSlide

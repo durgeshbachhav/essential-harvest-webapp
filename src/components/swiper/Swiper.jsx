@@ -1,8 +1,8 @@
 import { useContext, useRef, useState, useEffect } from "react";
-import eh1 from "../../assets/productsNew/esone.webp";
-import eh2 from "../../assets/productsNew/oil.webp";
-import eh1forMobile from "../../assets/productsNew/ehspraymobile.webp";
-import eh2forMobile from "../../assets/productsNew/ehoilmobile.webp";
+import eh1 from "../../assets/productsNew/spraydesktop.webp";
+import eh2 from "../../assets/productsNew/oildesktop.webp";
+import eh1forMobile from "../../assets/productsNew/spraymobile.webp";
+import eh2forMobile from "../../assets/productsNew/oilwebp.webp";
 
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -60,7 +60,7 @@ const SwiperComponent = () => {
       }}
       speed={600}
       parallax={true}
-      data-swiper-parallax="3%"
+      data-swiper-parallax="1%"
       grabCursor={true}
       loop={true}
       effect={"creative"}
@@ -83,12 +83,7 @@ const SwiperComponent = () => {
           key={index}
           className="flex flex-col items-center justify-center w-full h-full relative"
         >
-          <div className="absolute -bottom-20 -left-52 md:-bottom-10 md:-left-10 swinging-image">
-            <img src={flowerBottomLeft} alt="" className="w-96 z-50" />
-          </div>
-          <div className="absolute -bottom-20 -right-24 md:bottom-0 swinging-image">
-            <img src={flowerBottomRight} alt="" className="w-96 z-50" />
-          </div>
+
           <div className="absolute -top-20 rotate-12 md:-top-10 md:rotate-0 left-0">
             <img src={flowerTopLeft} alt="" className="w-96" />
           </div>

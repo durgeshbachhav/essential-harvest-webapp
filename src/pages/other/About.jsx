@@ -76,7 +76,7 @@ const About = () => {
         </p>
         <div className=" py-6 sm:py-8 lg:py-12">
           <div className="mx-auto max-w-screen-2xl px-4 md:px-4">
-            <div className="grid grid-cols-2 gap-4 rounded-lg md:grid-cols-3 lg:gap-6">
+            <div className="grid grid-cols-1 gap-4 rounded-lg md:grid-cols-3 lg:gap-6">
               <div className="flex flex-col items-center justify-center rounded-lg  bg-green-100 p-4">
                 <h2 className="text-xl font-medium text-center sm:text-2xl mb-3">
                   Holistic Wellness

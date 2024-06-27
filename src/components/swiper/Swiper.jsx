@@ -1,6 +1,6 @@
 import { useContext, useRef, useState, useEffect } from "react";
-import eh1 from "../../assets/productsNew/spraydesktop.webp";
-import eh2 from "../../assets/productsNew/oildesktop.webp";
+import eh1 from "../../assets/productsNew/spraydesk.webp";
+import eh2 from "../../assets/productsNew/oildesk.webp";
 import eh1forMobile from "../../assets/productsNew/spraymobile.webp";
 import eh2forMobile from "../../assets/productsNew/oilwebp.webp";
 
@@ -83,14 +83,23 @@ const SwiperComponent = () => {
           key={index}
           className="flex flex-col items-center justify-center w-full h-full relative"
         >
-
           <div className="absolute -top-20 rotate-12 md:-top-10 md:rotate-0 left-0">
             <img src={flowerTopLeft} alt="" className="w-96" />
           </div>
           <div className="hidden md:block absolute -top-20 right-0">
             <img src={flowerTopRight} alt="" className="w-96" />
           </div>
-          <img src={slide.image} className="w-full h-full  md:object-fill" alt={slide.title} />
+          <div className="hidden md:block absolute -bottom-20 rotate-12 md:-bottom-10 md:rotate-0 left-0">
+            <img src={flowerBottomLeft} alt="" className="w-96" />
+          </div>
+          <div className="hidden md:block absolute -bottom-20 rotate-12 md:-bottom-10 md:rotate-0 right-0">
+            <img src={flowerBottomRight} alt="" className="w-96" />
+          </div>
+          <img
+            src={slide.image}
+            className="w-full h-full object-cover md:object-scale-down"
+            alt={slide.title}
+          />
           <h1 className="absolute bottom-20 text-2xl md:text-4xl font-extrabold text-gray-700 z-20 text-center px-4">
             {slide.title}
           </h1>

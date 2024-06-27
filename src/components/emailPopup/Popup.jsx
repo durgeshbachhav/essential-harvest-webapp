@@ -6,12 +6,9 @@ import imgforMobileScreen from '../../assets/productsNew/herosection.webp'
 import { Link } from "react-router-dom";
 
 const Popup = ({ handleClose }) => {
-
-
-
   return (
     <div className="popup-container" onClick={handleClose}>
-      <section className="popup  overflow-hidden rounded-lg shadow-2xl md:grid md:grid-cols-3" onClick={(e) => e.stopPropagation()}>
+      <section className="popup  overflow-hidden max-w-3xl rounded-lg shadow-2xl md:grid md:grid-cols-3" onClick={(e) => e.stopPropagation()}>
 
         <img
           alt=""

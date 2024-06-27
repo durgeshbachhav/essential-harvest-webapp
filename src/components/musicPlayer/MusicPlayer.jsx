@@ -1,25 +1,44 @@
 import React, { useState, useRef, useEffect } from 'react';
-import music from '../../assets/music/websitebg.mp3'
-import { IoMusicalNote, IoPauseCircle, IoPlayCircle } from 'react-icons/io5';
+import music from '../../assets/music/websitebg.mp3';
+import { IoMusicalNote } from 'react-icons/io5';
+import { FaPause, FaPlay } from 'react-icons/fa';
 
 const MusicPlayer = () => {
-     const [isPlaying, setIsPlaying] = useState(true);
+     const [isPlaying, setIsPlaying] = useState(false);
      const [isExpanded, setIsExpanded] = useState(true);
-     const audioRef = useRef(new Audio(music));
+     const [audioLoaded, setAudioLoaded] = useState(false);
+     const audioRef = useRef(null);
 
      useEffect(() => {
-          audioRef.current.loop = true; // Makes the audio loop
-          audioRef.current.playbackRate = 0.8; // Slows down the tempo (adjust as needed)
-          audioRef.current.play().catch(error => console.log("Autoplay prevented:", error));
+          audioRef.current = new Audio(music);
+          audioRef.current.loop = true;
+          audioRef.current.addEventListener('canplaythrough', () => setAudioLoaded(true));
+
+          return () => {
+               if (audioRef.current) {
+                    audioRef.current.pause();
+                    audioRef.current.src = '';
+               }
+          };
      }, []);
 
-     const togglePlay = () => {
-          if (isPlaying) {
+     useEffect(() => {
+          if (audioLoaded && isPlaying) {
+               audioRef.current.play().catch(error => {
+                    console.error("Error playing audio:", error);
+                    setIsPlaying(false);
+               });
+          } else if (audioRef.current) {
                audioRef.current.pause();
-          } else {
-               audioRef.current.play();
           }
-          setIsPlaying(!isPlaying);
+     }, [isPlaying, audioLoaded]);
+
+     const togglePlay = () => {
+          if (audioLoaded) {
+               setIsPlaying(!isPlaying);
+          } else {
+               console.log("Audio is not loaded yet");
+          }
      };
 
      const toggleExpand = () => {
@@ -30,8 +49,8 @@ const MusicPlayer = () => {
           <div className="fixed bottom-4 end-4 z-50">
                {isExpanded ? (
                     <aside className="flex items-center justify-center gap-4 rounded-lg bg-black px-5 py-3 text-white">
-                         <button onClick={togglePlay} className="text-sm font-medium hover:opacity-75">
-                              {isPlaying ? <IoPauseCircle size={24} /> : <IoPlayCircle size={24} />}
+                         <button onClick={togglePlay} className="text-sm font-medium hover:opacity-75" disabled={!audioLoaded}>
+                              {isPlaying ? <FaPause /> : <FaPlay />}
                          </button>
                          <button className="rounded bg-white/20 p-1 hover:bg-white/10" onClick={() => setIsExpanded(false)}>
                               <span className="sr-only">Close</span>

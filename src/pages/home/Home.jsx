@@ -106,7 +106,7 @@ function Home() {
                           </h1>
                           {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                           <p className="focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-chestnut  hover:bg-everglade ease-in duration-300  secondary-font">
-                            order now
+                            Order Now
                             <FaAngleDoubleRight />
                           </p>
                         </div>

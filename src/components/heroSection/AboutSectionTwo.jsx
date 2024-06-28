@@ -198,7 +198,7 @@ function AboutSectionTwo() {
               className="mt-4 focus:outline-none flex items-center justify-between text-white  font-medium text-sm px-4 py-2 w-32 bg-everglade  hover:bg-everglade ease-in duration-300  secondary-font cursor-pointer"
               onClick={() => navigate("/allproducts")}
             >
-              Shop now
+              Shop Now
               <IoIosArrowDroprightCircle className="w-5 h-5" />
             </div>
           </div>

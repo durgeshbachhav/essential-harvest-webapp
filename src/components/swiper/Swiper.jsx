@@ -1,9 +1,8 @@
 import { useContext, useRef, useState, useEffect } from "react";
 import eh1 from "../../assets/productsNew/spraydesk.webp";
 import eh2 from "../../assets/productsNew/oildesk.webp";
-import eh1forMobile from "../../assets/productsNew/spraymobile.webp";
-import eh2forMobile from "../../assets/productsNew/oilwebp.webp";
-
+import eh1forMobile from "../../assets/productsNew/one1.webp";
+import eh2forMobile from "../../assets/productsNew/two2.webp";
 import { useNavigate } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -17,7 +16,6 @@ import {
   EffectCreative,
   Navigation,
 } from "swiper/modules";
-
 import flowerTopLeft from "../../assets/home/flowerstopleft.png";
 import flowerTopRight from "../../assets/home/flowerstopright.png";
 import flowerBottomLeft from "../../assets/home/flowersbottomleft.png";
@@ -100,12 +98,12 @@ const SwiperComponent = () => {
             className="w-full h-full object-cover md:object-scale-down"
             alt={slide.title}
           />
-          <h1 className="absolute bottom-20 text-2xl md:text-4xl font-extrabold text-gray-700 z-20 text-center px-4">
+          <h1 className="absolute bottom-20 text-2xl md:text-4xl font-extrabold text-everglade md:text-white z-20 text-center px-4">
             {slide.title}
           </h1>
           <button
             onClick={() => navigate(slide.link)}
-            className="absolute bottom-5 bg-gray-700 text-white py-2 px-4 rounded-full hover:bg-gray-600 transition-colors z-30"
+            className="absolute bottom-5 bg-everglade text-white py-2 px-4 rounded-full hover:bg-green-600 transition-colors z-30"
           >
             Learn More
           </button>

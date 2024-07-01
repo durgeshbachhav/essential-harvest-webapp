@@ -311,7 +311,7 @@ function ProductInfo() {
         </div>
 
         {/* for oil */}
-        {products.category == "Oil" || "OIl" && (
+        {products.category == "OIl" && (
           <div>
             <div className="bg-pearl w-full h-full py-12">
               {/* how to use it  */}
@@ -449,7 +449,7 @@ function ProductInfo() {
         )}
 
         {/* for hydrosol */}
-        {products.category == "Hydrosol" && (
+        {products.category == "Spray" && (
           <div>
             <div className="bg-pearl w-full h-full py-12">
               {/* how to use it  */}

@@ -40,16 +40,19 @@ import spray from '../../assets/productsNew/spray.webp'
 import oil from '../../assets/productsNew/es_oil_bottles.webp'
 
 function ProductInfo() {
+  const [currentSlide, setCurrentSlide] = useState(0);
   const [sliderRef, instanceRef] = useKeenSlider(
     {
-      slideChanged() {
-        console.log('slide changed')
+      slideChanged(slider) {
+        setCurrentSlide(slider.track.details.rel);
       },
     },
     [
       // add plugins here
     ]
   )
+
+
 
 
   const navigate = useNavigate();
@@ -168,10 +171,10 @@ function ProductInfo() {
                 <div>
                   <div className=" px-4 py-10  flex flex-wrap items-center justify-center md:px-16">
                     <div className="w-full lg:w-1/2">
-                      <div ref={sliderRef} className="keen-slider  flex  w-full max-h-96 lg:px-10 lg:py-6 mt-6 lg:mt-0">
+                      <div ref={sliderRef} className="keen-slider flex w-full max-h-96 lg:px-10 lg:py-6 mt-6 lg:mt-0">
                         <img
                           alt="ecommerce"
-                          className="keen-slider__slide  w-full h-full "
+                          className="keen-slider__slide w-full h-full"
                           src={products.imageUrl}
                         />
                         <img
@@ -190,6 +193,18 @@ function ProductInfo() {
                           src={webImage2}
                         />
                       </div>
+                      {instanceRef.current && (
+                        <div className="flex justify-center mt-4">
+                          {[...Array(instanceRef.current.track.details.slides.length).keys()].map((idx) => (
+                            <button
+                              key={idx}
+                              onClick={() => instanceRef.current?.moveToIdx(idx)}
+                              className={`w-3 h-3 rounded-full mx-1 focus:outline-none ${currentSlide === idx ? 'bg-gray-800' : 'bg-gray-300'
+                                }`}
+                            ></button>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <div className="p-4 lg:w-1/2 w-full lg:px-10 lg:py-6 mt-6 lg:mt-0  ">
                       <h2 className="text-sm primary-font text-primary-950 tracking-widest">
@@ -323,7 +338,7 @@ function ProductInfo() {
                 <div className="w-full h-full md:w-1/2  flex items-center justify-center">
                   <video
                     controls={true}
-                    autoPlay
+
                     loop
                     muted
                     className="rounded-lg w-64"
@@ -461,7 +476,7 @@ function ProductInfo() {
                 <div className="w-full h-full md:w-1/2  flex items-center justify-center">
                   <video
                     controls={true}
-                    autoPlay
+
                     loop
                     muted
                     className="rounded-lg w-64"

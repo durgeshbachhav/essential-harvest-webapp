@@ -4,7 +4,13 @@ import "./loadertwo.css";
 const LoaderTwo = () => {
   return (
     <div className=" h-[80vh] flex items-center justify-center">
-      <div className="loader"></div>
+     <div className="loader">
+    <div className="circle"></div>
+    <div className="circle"></div>
+    <div className="circle"></div>
+    <div className="circle"></div>
+</div>
+
     </div>
   );
 };

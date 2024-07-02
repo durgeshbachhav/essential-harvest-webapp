@@ -26,34 +26,50 @@ function Signup() {
   const signup = async (e) => {
     e.preventDefault();
 
-    if (
-      user.name === "" ||
-      user.phoneNum === "" ||
-      user.email === "" ||
-      user.password === ""
-    ) {
-      return toast.error("All fields are required");
-    }
-    const result = account.create(
-      uuid(),
-      user.email,
-      user.password,
-      user.name,
-      user.phoneNum
-    );
-
-    result.then(
-      function (response) {
-        localStorage.setItem("user", JSON.stringify(response));
-        console.log("user", response);
-        navigate("/login");
-        toast.success("Signup Succesfully");
-      },
-      function (error) {
-        console.log(error); // Failure
-        toast.error("response ffaied");
+    try {
+      if (
+        user.name === "" ||
+        user.phoneNum === "" ||
+        user.email === "" ||
+        user.password === ""
+      ) {
+        return toast.error("All fields are required");
       }
-    );
+
+      if (user.password.length < 8 || user.password.length > 265) {
+        return toast.error("Password must be between 8 and 265 characters long");
+      }
+      const result = account.create(
+        uuid(),
+        user.email,
+        user.password,
+        user.name,
+        user.phoneNum
+      );
+
+      result.then(
+        function (response) {
+          localStorage.setItem("user", JSON.stringify(response));
+          console.log("user", response);
+          navigate("/login");
+          toast.success("Signup Succesfully");
+        },
+        function (error) {
+          console.log(error); // Failure
+          toast.error("response ffaied");
+        }
+      );
+    } // In both Signup.jsx and Login.jsx
+    catch (error) {
+      console.error("Error:", error);
+      if (error.type === 'user_invalid_credentials') {
+        toast.error("Invalid credentials. Please check your email and password.");
+      } else if (error.type === 'user_already_exists') {
+        toast.error("An account with this email already exists.");
+      } else {
+        toast.error("An unexpected error occurred. Please try again.");
+      }
+    }
   };
 
   return (

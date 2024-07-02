@@ -17,49 +17,26 @@ function Login() {
     email: "",
     password: "",
   });
+  // In your Login.jsx
   const login = async () => {
-    // try {
-    //   const result = account.createEmailSession(user.email, user.password);
-    //   result.then(
-    //     function (response) {
-    //       console.log("rsponse", response); // Success
-    //       localStorage.setItem("user", JSON.stringify(response));
-    //       window.location.href = "#/allproducts";
-    //       toast.success("Login Succesfully");
-    //     },
-    //     function (error) {
-    //       console.log("error", error); // Failure
-    //     }
-    //   );
-    //   const currentAccount = account.get();
-    //   console.log("current account", currentAccount);
-    // } catch (error) {
-    //   console.log(error);
-    //   toast.error("Failed to Login...!");
-    // }
     try {
-      const currentAccount = await account.get();
-      if (currentAccount) {
-        // If there's already an active session, handle it appropriately
-        console.log("current account", currentAccount);
-        localStorage.setItem("user", JSON.stringify(currentAccount));
-        console.log("There's already an active session. Redirecting...");
-        navigate("/allproducts"); // Redirect the user to allproducts page or handle differently
 
-        return;
+      // If no session exists, create a new one
+      const result = await account.createEmailSession(user.email, user.password);
+      localStorage.setItem("user", JSON.stringify(result));
+      console.log("Login successful", result);
+      toast.success("Login Successfully");
+      navigate("/allproducts");
+    }
+
+    catch (error) {
+      console.error("Error:", error);
+      if (error.type === 'user_invalid_credentials') {
+        toast.error("Invalid credentials. Please check your email and password.");
+      } else {
+        toast.error("An unexpected error occurred. Please try again.");
       }
 
-      const result = await account.createEmailSession(
-        user.email,
-        user.password
-      );
-      localStorage.setItem("user", JSON.stringify(result));
-      console.log("Login successful");
-      toast.success("Login Successfully");
-      navigate("/allproducts"); // Redirect the user to allproducts page after successful login
-    } catch (error) {
-      console.log(error);
-      toast.error("Failed to Login...!");
     }
   };
 

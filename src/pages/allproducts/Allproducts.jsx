@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Filter from "../../components/filter/Filter";
 import ProductCard from "../../components/productCard/ProductCard";
 import Layout from "../../components/layout/Layout";
@@ -8,7 +8,43 @@ import { addToCart } from "../../redux/cartSlice";
 import "../../components/productCard/ProductCard.scss";
 import { FaStar } from "react-icons/fa";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import LoaderTwo from "../../components/loader/LoaderTwo";
 function Allproducts() {
+  // const context = useContext(myContext);
+  // const {
+  //   mode,
+  //   product,
+  //   searchkey,
+  //   setSearchkey,
+  //   filterType,
+  //   setFilterType,
+  //   filterPrice,
+  //   setFilterPrice,
+  // } = context;
+
+  // const dispatch = useDispatch();
+  // const cartItems = useSelector((state) => state.cart);
+  // const [loading ,setLoading ]=useState(true);
+
+  // const addCart = (product) => {
+  //   dispatch(addToCart(product));
+  //   toast.success("add to cart");
+  // };
+
+  // useEffect(() => {
+  //   localStorage.setItem("cart", JSON.stringify(cartItems));
+
+  // }, [cartItems]);
+  // useEffect(() => {
+  //   window.scrollTo(0, 0);
+
+  // }, []);
+  // console.log("product", product);
+  // if(loading){
+  //   return <Layout><LoaderTwo /></Layout>
+  // }
+
+
   const context = useContext(myContext);
   const {
     mode,
@@ -23,19 +59,37 @@ function Allproducts() {
 
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart);
+  const [loading, setLoading] = useState(true);
 
   const addCart = (product) => {
     dispatch(addToCart(product));
-    toast.success("add to cart");
+    toast.success("Added to cart");
   };
 
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cartItems));
   }, [cartItems]);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (product) {
+      setLoading(false);
+    }
+  }, [product]);
+
   console.log("product", product);
+
+  if (loading) {
+    return (
+      <Layout>
+        <LoaderTwo />
+      </Layout>
+    );
+  }
+
 
   const stars = [];
   for (let index = 0; index < 5; index++) {

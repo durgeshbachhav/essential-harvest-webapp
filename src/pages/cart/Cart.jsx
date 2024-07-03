@@ -23,14 +23,247 @@ import { FaWhatsapp } from "react-icons/fa";
 
 function Cart() {
 
+  // const [showDeliveryChargesModal, setShowDeliveryChargesModal] = useState(false);
+
+  // // Function to toggle visibility of delivery charges modal
+  // const toggleDeliveryChargesModal = () => {
+  //   setShowDeliveryChargesModal(!showDeliveryChargesModal);
+  // };
+
+
+
+  // const deliveryChargesModal = (
+  //   <div onClick={toggleDeliveryChargesModal} className="fixed inset-0 flex items-center justify-center z-50 ">
+  //     <div className="absolute inset-0 bg-black opacity-50 z-40"></div>
+  //     <div className="bg-white p-4 rounded-md z-50">
+  //       <div className="flex justify-between items-center">
+  //         <h2 className="text-lg font-semibold mb-2">Delivery Charges</h2>
+  //         <IoIosCloseCircle color="red" size={20} />
+
+  //       </div>
+  //       <p className="mb-2">Maharashtra: <span className="font-bold">₹69</span></p>
+  //       <p>All Over India (Except Maharashtra): <span className="font-bold"> ₹99</span></p>
+
+  //     </div>
+  //   </div>
+  // );
+
+
+  // const navigate = useNavigate();
+  // const context = useContext(myContext);
+  // const { mode, getOrderData } = context;
+  // const dispatch = useDispatch();
+
+  // const cartItems = useSelector((state) => state.cart);
+
+  // const deleteCart = (item) => {
+  //   dispatch(deleteFromCart(item));
+  //   toast.success("Deleted item from cart");
+  // };
+
+  // const clearAllCart = () => {
+  //   dispatch(clearCart());
+  // };
+
+  // useEffect(() => {
+  //   localStorage.setItem("cart", JSON.stringify(cartItems));
+  // }, [cartItems]);
+
+  // const [totalAmount, setTotalAmount] = useState(0);
+
+  // useEffect(() => {
+  //   let temp = 0;
+  //   cartItems.forEach((cartItem) => {
+  //     temp = temp + parseInt(cartItem.price);
+  //   });
+  //   setTotalAmount(temp);
+  // }, [cartItems]);
+
+  // const [quantityMap, setQuantityMap] = useState({});
+  // const increaseQuantity = (itemId) => {
+  //   setQuantityMap((prevQuantityMap) => ({
+  //     ...prevQuantityMap,
+  //     [itemId]: (prevQuantityMap[itemId] || 1) + 1,
+  //   }));
+  // };
+
+  // const decreaseQuantity = (itemId) => {
+  //   setQuantityMap((prevQuantityMap) => {
+  //     const newQuantity = (prevQuantityMap[itemId] || 1) - 1;
+  //     return {
+  //       ...prevQuantityMap,
+  //       [itemId]: newQuantity > 0 ? newQuantity : 1,
+  //     };
+  //   });
+  // };
+
+  // const updateTotalAmount = () => {
+  //   let temp = 0;
+  //   cartItems.forEach((cartItem) => {
+  //     const itemId = cartItem.$id;
+  //     const quantity = quantityMap[itemId] || 1;
+  //     temp += parseInt(cartItem.price) * quantity;
+  //   });
+  //   setTotalAmount(temp);
+  // };
+
+  // useEffect(() => {
+  //   updateTotalAmount();
+  // }, [cartItems, quantityMap]);
+
+  // const [name, setName] = useState("");
+  // const [address, setAddress] = useState("");
+  // const [pincode, setPincode] = useState("");
+  // const [phoneNumber, setPhoneNumber] = useState("");
+
+  // const user = JSON.parse(localStorage.getItem("user"));
+  // const [loggedIn, setLoggedIn] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+
+  // const handleBuyNow = () => {
+  //   if (loggedIn) {
+  //     setShowModal(true);
+  //   } else {
+  //     navigate("/login");
+  //   }
+  // };
+
+  // const handleLogin = () => {
+  //   if (user) {
+  //     setLoggedIn(true);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   handleLogin();
+  // }, []);
+
+  // const calculateShipping = () => {
+  //   // Check if total amount is eligible for free shipping
+  //   if (totalAmount >= 699) return 0;
+
+  //   // Normalize address to lowercase
+  //   const normalizedAddress = address.toLowerCase();
+
+  //   // Use regular expression to match any variant of "Maharashtra"
+  //   const maharashtraPattern = /maharashtra|maharastra|maharstra/;
+  //   if (maharashtraPattern.test(normalizedAddress)) return 69;
+
+  //   // Default shipping charge
+  //   return 99;
+  // };
+
+  // // Calculate shipping based on the address and total amount
+  // const shipping = calculateShipping();
+  // // Calculate grand total including shipping
+  // const grandTotal = shipping + totalAmount;
+  // const buyNow = async () => {
+  //   if (!name || !address || !pincode || !phoneNumber) {
+  //     return toast.error("All fields are required");
+  //   }
+  //   const addressInfo = {
+  //     name,
+  //     address,
+  //     pincode,
+  //     phoneNumber,
+  //     date: new Date(),
+  //   };
+  //   let orderInfo;
+  //   var options = {
+  //     key: import.meta.env.VITE_PAYMENT_GATEWAY_KEY,
+  //     key_secret: import.meta.env.VITE_PAYMENT_GATEWAY_KEY_SECRET,
+  //     amount: parseInt(grandTotal * 100), // Use grandTotal here
+  //     currency: "INR",
+  //     order_receipt: "order_rcptid_" + name,
+  //     name: "Essential Harvest",
+  //     image: logo,
+  //     notes: {
+  //       name: name,
+  //       mobile: phoneNumber
+  //     },
+  //     handler: function (response) {
+  //       toast.success("Payment Successful");
+  //       const paymentId = response.razorpay_payment_id;
+  //       const addressInfoJsonString = JSON.stringify(addressInfo);
+  //       const cartItemsJsonString1 = cartItems.reduce((acc, curr, index) => {
+  //         acc[index] = {
+  //           category: curr.category,
+  //           date: new Date(curr.date).toDateString(),
+  //           description: curr.description,
+  //           title: curr.title,
+  //           imageUrl: curr.imageUrl,
+  //           price: curr.price,
+  //           quantity: quantityMap[curr.id] || 1,
+  //           time: new Date(curr.date).toDateString(),
+  //         };
+  //         return acc;
+  //       }, {});
+  //       const cartItemsJsonString = JSON.stringify(cartItemsJsonString1);
+
+  //       orderInfo = {
+  //         cartItemsJsonString,
+  //         addressInfoJsonString,
+  //         date: new Date(),
+  //         email: user.providerUid || user.profileInfo.email,
+  //         userid: user.userId,
+  //         grand: String(grandTotal), // Use grandTotal here
+  //         paymentId,
+  //       };
+
+  //       databases.createDocument(
+  //         import.meta.env.VITE_APP_DATABASE_ID,
+  //         import.meta.env.VITE_APP_ORDERS_COLLECTION_ID,
+  //         ID.unique(),
+  //         orderInfo
+  //       ).then(
+  //         function (response) {
+  //           console.log('order response ; ', response)
+  //           clearAllCart();
+  //           getOrderData();
+  //           window.location.href = "#/order";
+  //         },
+  //         function (error) {
+  //           console.log("error", error);
+  //         }
+  //       );
+
+  //       axios.post(
+  //         "https://connect.pabbly.com/workflow/sendwebhookdata/IjU3NjUwNTZhMDYzNjA0MzQ1MjZhNTUzNDUxMzMi_pc",
+  //         {
+  //           paymentId: paymentId,
+  //           name,
+  //           address,
+  //           pincode,
+  //           phoneNumber,
+  //           orderInfo: orderInfo,
+  //         },
+  //         {
+  //           headers: {
+  //             "Content-Type": "application/json",
+  //           },
+  //         }
+  //       ).then((response) => {
+  //         toast.success("Your Order is confirmed");
+  //       }).catch((error) => {
+  //         console.error("Error calling webhook:", error);
+  //       });
+  //     },
+  //     theme: {
+  //       color: "#3399cc",
+  //     },
+  //   };
+
+  //   var pay = new window.Razorpay(options);
+  //   pay.open();
+  // };
+
+
   const [showDeliveryChargesModal, setShowDeliveryChargesModal] = useState(false);
 
   // Function to toggle visibility of delivery charges modal
   const toggleDeliveryChargesModal = () => {
     setShowDeliveryChargesModal(!showDeliveryChargesModal);
   };
-
-
 
   const deliveryChargesModal = (
     <div onClick={toggleDeliveryChargesModal} className="fixed inset-0 flex items-center justify-center z-50 ">
@@ -39,15 +272,12 @@ function Cart() {
         <div className="flex justify-between items-center">
           <h2 className="text-lg font-semibold mb-2">Delivery Charges</h2>
           <IoIosCloseCircle color="red" size={20} />
-
         </div>
         <p className="mb-2">Maharashtra: <span className="font-bold">₹69</span></p>
         <p>All Over India (Except Maharashtra): <span className="font-bold"> ₹99</span></p>
-
       </div>
     </div>
   );
-
 
   const navigate = useNavigate();
   const context = useContext(myContext);
@@ -142,21 +372,21 @@ function Cart() {
     // Check if total amount is eligible for free shipping
     if (totalAmount >= 699) return 0;
 
-    // Normalize address to lowercase
-    const normalizedAddress = address.toLowerCase();
-
-    // Use regular expression to match any variant of "Maharashtra"
-    const maharashtraPattern = /maharashtra|maharastra|maharstra/;
-    if (maharashtraPattern.test(normalizedAddress)) return 69;
+    // Check pincode for Maharashtra
+    const maharashtraPincodes = ["40", "41", "42", "43", "44"];
+    if (maharashtraPincodes.some((prefix) => pincode.startsWith(prefix))) {
+      return 69;
+    }
 
     // Default shipping charge
     return 99;
   };
 
-  // Calculate shipping based on the address and total amount
+  // Calculate shipping based on the pincode and total amount
   const shipping = calculateShipping();
   // Calculate grand total including shipping
   const grandTotal = shipping + totalAmount;
+
   const buyNow = async () => {
     if (!name || !address || !pincode || !phoneNumber) {
       return toast.error("All fields are required");
@@ -270,8 +500,8 @@ function Cart() {
                   const quantity = quantityMap[item.$id] || 1;
 
                   return (
-                    <div key={index} className="w-full justify-between mb-6 shadow-xl bg-mist p-6 sm:flex sm:justify-start" style={{ backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "", color: mode === "dark" ? "white" : "" }}>
-                      <img src={imageUrl} alt="product-image" className="w-full sm:w-40" />
+                    <div key={index} className="w-full justify-between mb-6 shadow-xl bg-mist p-6 sm:flex sm:justify-start gap-6" style={{ backgroundColor: mode === "dark" ? "rgb(32 33 34)" : "", color: mode === "dark" ? "white" : "" }}>
+                      <img src={imageUrl} alt="product-image" className="w-full object-cover sm:w-40" />
                       <div className="sm:flex sm:w-full sm:justify-between">
                         <div className="mt-5 sm:mt-0">
                           <h2 className="text-xl font-semibold text-heading-color border-b-2 py-4" style={{ color: mode === "dark" ? "white" : "" }}>{title}</h2>

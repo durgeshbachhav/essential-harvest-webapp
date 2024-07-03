@@ -76,11 +76,11 @@ const SocialLogin = () => {
   // };
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 w-full">
 
       <button
         onClick={handleLoginWithGoogle}
-        className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+        className="flex items-center justify-between py-2 px-4 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
       >
         <svg
           viewBox="0 0 24 24"
@@ -148,7 +148,7 @@ const SocialLogin = () => {
             fill="#FFF"
           ></path>
         </svg>
-        <span className="ml-2">Sign in with Google</span>
+        <span className="ml-2 w-full">Sign in with Google</span>
       </button>
     </div>
   );

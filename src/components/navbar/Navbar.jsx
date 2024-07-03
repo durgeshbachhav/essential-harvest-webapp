@@ -46,6 +46,7 @@ function Navbar() {
     promise.then(
       function (response) {
         console.log("logout response", response);
+        navigate('/login')
       },
       function (error) {
         console.log(error);

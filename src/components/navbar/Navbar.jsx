@@ -1,8 +1,8 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import myContext from "../../context/data/myContext";
 // import { BsFillCloudSunFill } from 'react-icons/bs'
 // import { FiSun } from 'react-icons/fi'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
@@ -12,47 +12,49 @@ import { BsFillHandbagFill } from "react-icons/bs";
 import logo from "../../assets/logo1.png";
 import { account } from "../../appwrite/appwriteConfig";
 
-function isAdmin(user) {
+const isAdmin = (user) => {
+  const adminEmail = import.meta.env.VITE_APP_ADMIN_EMAIL;
   return (
-    user?.providerUid === import.meta.env.VITE_APP_ADMIN_EMAIL ||
-    user?.email === import.meta.env.VITE_APP_ADMIN_EMAIL ||
-    user?.profileInfo?.email === import.meta.env.VITE_APP_ADMIN_EMAIL
+    user?.providerUid === adminEmail ||
+    user?.email === adminEmail ||
+    user?.profileInfo?.email === adminEmail
   );
-}
-
+};
 function Navbar() {
   const context = useContext(myContext);
   const { mode } = context;
 
   const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate()
+  const [user, setUser] = useState(null);
+  const [isAdminUser, setIsAdminUser] = useState(false);
+
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    setUser(storedUser);
+    setIsAdminUser(isAdmin(storedUser));
+  }, []);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  const user = JSON.parse(localStorage.getItem("user"));
-  // console.log("user ", user);
 
   const logout = () => {
-    // Clear user data from local storage
     localStorage.clear("user");
-
-    // Redirect the user to the login page
-
-    // Delete sessions associated with the user's account
     const promise = account.deleteSessions();
-
-    // Handle the promise resolution
     promise.then(
       function (response) {
-        console.log("logout response", response); // Success
+        console.log("logout response", response);
       },
       function (error) {
-        console.log(error); // Failure
+        console.log(error);
       }
     );
-    window.location.href = "/login";
+    navigate('/login')
   };
+
+
 
   const cartItems = useSelector((state) => state.cart);
   var useremail = JSON.parse(localStorage.getItem("user"));
@@ -133,16 +135,16 @@ function Navbar() {
                       About
                     </Link>
                   </div>
-                  {isAdmin(user) && (
+                  {isAdminUser && (
                     <div className=" hover:bg-leaf px-4 py-4 border-b-2">
                       <Link
                         to="/dashboard"
-                        className="text-sm font-medium text-white "
+                        className="text-sm font-medium text-white"
                         style={{ color: mode === "dark" ? "white" : "" }}
                       >
                         Dashboard
                       </Link>
-                    </div>
+                    </div >
                   )}
                   <div className=" hover:bg-leaf px-4 py-4 border-b-2">
                     <Link
@@ -250,6 +252,13 @@ function Navbar() {
                     Home
                   </Link>
                   <Link
+                    to={"/allproducts"}
+                    className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
+                    style={{ color: mode === "dark" ? "white" : "" }}
+                  >
+                    All Products
+                  </Link>
+                  <Link
                     to={"/about"}
                     className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
                     style={{ color: mode === "dark" ? "white" : "" }}
@@ -257,15 +266,8 @@ function Navbar() {
                     About
                   </Link>
 
-                  {isAdmin(user) && (
-                    <Link
-                      to={"/dashboard"}
-                      className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
-                      style={{ color: mode === "dark" ? "white" : "" }}
-                    >
-                      Dashboard
-                    </Link>
-                  )}
+
+
                   <Link
                     to={"/ourstory"}
                     className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white "
@@ -280,13 +282,18 @@ function Navbar() {
                   >
                     Gallery
                   </Link>
-                  <Link
-                    to={"/allproducts"}
-                    className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
-                    style={{ color: mode === "dark" ? "white" : "" }}
-                  >
-                    All Products
-                  </Link>
+                  {isAdminUser && (
+
+                    <Link
+                      to={"/dashboard"}
+                      className="text-sm p-2 font-medium  transition  duration-300 hover:bg-chestnut   hover:text-white"
+                      style={{ color: mode === "dark" ? "white" : "" }}
+                    >
+                      Dashboard
+                    </Link>
+
+                  )}
+
                   {user ? (
                     <div className="relative ">
                       <button

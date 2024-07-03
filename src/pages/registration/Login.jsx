@@ -20,38 +20,23 @@ function Login() {
   // In your Login.jsx
   const login = async () => {
     try {
-      // First, check if there's an existing session
-      let session;
-      try {
-        session = await account.getSession('current');
-      } catch (sessionError) {
-        // If there's no session, this will throw an error, which is expected
-        console.log("No active session found");
-      }
-
-      if (session) {
-        // If there's an existing session, use it
-        console.log("Already logged in", session);
-        localStorage.setItem("user", JSON.stringify(session));
-        toast.success(" logged in");
-        navigate("/allproducts");
-      } else {
-        // If no session exists, create a new one
-        const result = await account.createEmailSession(user.email, user.password);
-        localStorage.setItem("user", JSON.stringify(result));
-        console.log("Login successful", result);
-        toast.success("Login Successful");
-        navigate("/allproducts");
-      }
+      setLoading(true);
+      // This creates a session for a manually created user
+      const session = await account.createEmailSession(user.email, user.password);
+      
+      // This fetches the user details
+      const userDetails = await account.get();
+      
+      // Combine session and user details
+      const userInfo = { ...session, ...userDetails };
+      localStorage.setItem("user", JSON.stringify(userInfo));
+      
+      toast.success("Login Successful");
+      navigate("/allproducts");
     } catch (error) {
-      console.error("Error:", error);
-      if (error.type === 'user_invalid_credentials') {
-        toast.error("Invalid credentials. Please check your email and password.");
-      } else if (error.code === 401) {
-        toast.error("Authentication failed. Please try again.");
-      } else {
-        toast.error("An unexpected error occurred. Please try again.");
-      }
+      // Your error handling...
+    } finally {
+      setLoading(false);
     }
   };
 

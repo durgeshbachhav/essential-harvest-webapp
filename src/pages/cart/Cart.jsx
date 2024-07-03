@@ -23,8 +23,6 @@ import { FaWhatsapp } from "react-icons/fa";
 
 function Cart() {
 
-
-
   const [showDeliveryChargesModal, setShowDeliveryChargesModal] = useState(false);
 
   // Function to toggle visibility of delivery charges modal
@@ -179,7 +177,10 @@ function Cart() {
       order_receipt: "order_rcptid_" + name,
       name: "Essential Harvest",
       image: logo,
-      // description: "for testing purpose",
+      notes: {
+        name: name,
+        mobile: phoneNumber
+      },
       handler: function (response) {
         toast.success("Payment Successful");
         const paymentId = response.razorpay_payment_id;
@@ -216,6 +217,7 @@ function Cart() {
           orderInfo
         ).then(
           function (response) {
+            console.log('order response ; ', response)
             clearAllCart();
             getOrderData();
             window.location.href = "#/order";
@@ -257,7 +259,7 @@ function Cart() {
 
   return (
     <div>
-      {cartItems.length > 0 ? (
+      {cartItems?.length > 0 ? (
         <Layout className="cart">
           <div className="pt-5 mb-[0%]" style={{ backgroundColor: mode === "dark" ? "#282c34" : "", color: mode === "dark" ? "white" : "" }}>
             <h1 className="mt-5 mb-10 text-center text-4xl font-bold primary-font text-heading-color">Cart items</h1>

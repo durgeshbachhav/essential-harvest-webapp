@@ -8,6 +8,7 @@ import "../Admin.scss";
 function Dashboard() {
   const context = useContext(myContext);
   const { mode, totalOrder, totalProduct } = context;
+  console.log('totalorder : ', totalOrder)
   return (
     <Layout>
       <section className=" body-font pt-10 pb-10 ">

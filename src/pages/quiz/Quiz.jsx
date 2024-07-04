@@ -1,19 +1,30 @@
+
 import { useState } from "react";
 import Layout from "../../components/layout/Layout";
 import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from "react-icons/io";
-import acne from '../../assets/skin/Acne.jpg'
-import Darkspots from '../../assets/skin/Darkspots.jpg'
-import Dryness from '../../assets/skin/Dryness.jpg'
-import Other from '../../assets/skin/Other.jpg'
-import Wrinkles from '../../assets/skin/Wrinkles.jpg'
+import acne from '../../assets/skin/Acne.jpg';
+import Darkspots from '../../assets/skin/Darkspots.jpg';
+import Dryness from '../../assets/skin/Dryness.jpg';
+import Other from '../../assets/skin/Other.jpg';
+import Wrinkles from '../../assets/skin/Wrinkles.jpg';
 import skin from "../../assets/skin/skin.jpg";
 
 const Quiz = () => {
   const questions = [
     {
       type: "input",
-      question: "Hi, let's get to know your skin better! What's your name?",
+      question: "Hi, greetings! Can you share your name?",
       key: "name"
+    },
+    {
+      type: "input",
+      question: "Hi, can you share your email?",
+      key: "email"
+    },
+    {
+      type: "input",
+      question: "Hi, can you share your phone number?",
+      key: "phone"
     },
     {
       type: "select",
@@ -105,6 +116,8 @@ const Quiz = () => {
       // Prepare data to send
       const payload = {
         name: responses.name,
+        email: responses.email,
+        phone: responses.phone,
         newToSkincare: responses.newToSkincare,
         gender: responses.gender,
         ageGroup: responses.ageGroup,
@@ -153,13 +166,35 @@ const Quiz = () => {
         </div>
         <div className="flex items-center justify-center flex-col md:w-1/2">
           <h2 className="text-3xl text-center font-semibold font-primary mb-4">
-             Essential Harvest Quiz
+            Essential Harvest
           </h2>
           <p className="text-lg mb-4 font-secondary text-center">
             {questionText}
           </p>
 
-          {currentQuestion.type === "input" && (
+          {currentQuestion.type === "input" && currentQuestion.key === "email" && (
+            <input
+              type="email"
+              name="email"
+              value={responses.email || ""}
+              onChange={handleResponseChange}
+              className="bg-gray-600 max-w-sm rounded-lg mb-4 px-2 py-2 w-full text-white placeholder:text-white outline-none"
+              placeholder="Enter your email"
+            />
+          )}
+
+          {currentQuestion.type === "input" && currentQuestion.key === "phone" && (
+            <input
+              type="tel"
+              name="phone"
+              value={responses.phone || ""}
+              onChange={handleResponseChange}
+              className="bg-gray-600 max-w-sm rounded-lg mb-4 px-2 py-2 w-full text-white placeholder:text-white outline-none"
+              placeholder="Enter your phone number"
+            />
+          )}
+
+          {currentQuestion.type === "input" && currentQuestion.key !== "email" && currentQuestion.key !== "phone" && (
             <input
               type="text"
               name={currentQuestion.key}
@@ -171,7 +206,7 @@ const Quiz = () => {
           )}
 
           {currentQuestion.type === "select" && (
-            <div className="  grid grid-cols-2 gap-1">
+            <div className="grid grid-cols-2 gap-1">
               {currentQuestion.options.map((option, index) => (
                 <label key={index} htmlFor={`quiz_option_${index}`} className="block cursor-pointer rounded-lg border border-gray-300 bg-white p-4 text-sm font-medium shadow-sm mt-2 hover:border-blue-500 hover:bg-blue-50 transition-colors duration-150">
                   <input
@@ -258,3 +293,4 @@ const Quiz = () => {
 };
 
 export default Quiz;
+

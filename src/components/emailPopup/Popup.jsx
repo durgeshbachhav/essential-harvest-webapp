@@ -26,8 +26,8 @@ const Popup = ({ handleClose }) => {
           </div>
           <p className="text-sm text-everglade font-semibold uppercase tracking-widest">Let Us Know</p>
           <h2 className="mt-6 font-black uppercase">
-            <span className="text-4xl text-everglade sm:text-5xl lg:text-6xl">Your Skin</span>
-            <span className="mt-2 block text-everglade text-sm">fill the form now!</span>
+            <span className="text-4xl text-everglade sm:text-5xl lg:text-6xl">Your Skin Better</span>
+            <span className="mt-2 block text-everglade text-sm">give us five second of your time!</span>
           </h2>
           <Link
             className="mt-8 inline-block w-full bg-everglade py-4 text-sm font-bold uppercase tracking-widest text-white"
